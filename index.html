@@ -82,12 +82,11 @@
    RESET & BASE
    ========================================= */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; font-size: 16px; }
+html { scroll-behavior: smooth; font-size: 16px; overflow-x: hidden; }
 body {
   font-family: 'DM Sans', system-ui, sans-serif;
   background: var(--navy);
   color: var(--cream);
-  overflow-x: hidden;
   line-height: 1.7;
 }
 img { display: block; max-width: 100%; }
@@ -1817,7 +1816,7 @@ const revealObserver = new IntersectionObserver((entries) => {
       revealObserver.unobserve(entry.target);
     }
   });
-}, { threshold: 0.1, rootMargin: '-40px 0px' });
+}, { threshold: 0, rootMargin: '0px 0px -60px 0px' });
 reveals.forEach(el => revealObserver.observe(el));
 
 // STEP ANIMATIONS (same observer)
