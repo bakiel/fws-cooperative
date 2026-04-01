@@ -31,12 +31,17 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 body { font-family: 'DM Sans', sans-serif; background: var(--navy); color: var(--cream); overflow-x: hidden; line-height: 1.7; }
 img { display: block; max-width: 100%; } a { text-decoration: none; color: inherit; }
-.nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 0 5%; height: 72px; display: flex; align-items: center; justify-content: space-between; background: rgba(15,26,46,0.95); backdrop-filter: blur(20px); border-bottom: 1px solid var(--border); }
-.nav-logo { display: flex; align-items: center; gap: 12px; }
-.nav-logo img { width: 36px; height: 36px; filter: brightness(0) invert(1); }
-.nav-logo-name { font-family: 'Cormorant Garamond', serif; font-size: 17px; font-weight: 700; color: var(--cream); }
-.nav-back { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; font-weight: 600; color: rgba(245,240,232,0.55); padding: 6px 14px; border-radius: 6px; border: 1px solid rgba(255,255,255,0.1); transition: 0.2s; }
-.nav-back:hover { color: var(--cream); border-color: rgba(255,255,255,0.25); }
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:0 5%;height:72px;display:flex;align-items:center;justify-content:space-between;background:rgba(15,26,46,0.95);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);}
+.nav-logo{display:flex;align-items:center;gap:12px;text-decoration:none;}
+.nav-logo img{width:36px;height:36px;filter:brightness(0) invert(1);}
+.nav-logo-name{font-family:'Cormorant Garamond',serif;font-size:17px;font-weight:700;color:var(--cream);}
+.nav-links{display:flex;align-items:center;gap:4px;list-style:none;}
+.nav-links a{font-size:13px;font-weight:600;color:rgba(245,240,232,0.65);padding:6px 12px;border-radius:6px;transition:color 0.2s,background 0.2s;text-decoration:none;}
+.nav-links a:hover{color:var(--cream);background:rgba(255,255,255,0.06);}
+.nav-links a.active{color:var(--crimson);}
+.nav-cta{background:var(--crimson)!important;color:white!important;padding:7px 18px!important;border-radius:6px;}
+.nav-cta:hover{opacity:0.88!important;}
+
 .nav-back svg { width: 14px; height: 14px; stroke: currentColor; fill: none; stroke-width: 2; }
 
 /* PAGE LAYOUT */
@@ -95,12 +100,16 @@ img { display: block; max-width: 100%; } a { text-decoration: none; color: inher
 <nav class="nav">
   <a href="../index.html" class="nav-logo">
     <img src="../assets/icons/fws-logo.svg" alt="FWS">
-    <div class="nav-logo-name">Family World School Cooperative</div>
+    <div class="nav-logo-name">Family World School</div>
   </a>
-  <a href="../index.html" class="nav-back">
-    <svg viewBox="0 0 16 16"><path d="M10 4l-4 4 4 4"/></svg>
-    Back to Home
-  </a>
+  <ul class="nav-links">
+    <li><a href="educators.html">For Educators</a></li>
+    <li><a href="institutions.html">For Institutions</a></li>
+    <li><a href="courses.html">Courses</a></li>
+    <li><a href="esi.html">ESI</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="booking.html" class="nav-cta">Book Now</a></li>
+  </ul>
 </nav>
 
 <div class="page-wrap">
