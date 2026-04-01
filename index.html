@@ -1,0 +1,1838 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Family World School Cooperative - Learning. Together. Everywhere.</title>
+<meta name="description" content="A cooperative of world-class educators supporting homes, families, and independent schools globally. ESI, courses, tutoring, and more.">
+<!-- Favicon -->
+<link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg">
+<link rel="shortcut icon" href="assets/icons/favicon.svg">
+<!-- Open Graph / WhatsApp / Social Sharing -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://familyworldschoolcooperative.org/">
+<meta property="og:title" content="Family World School Cooperative">
+<meta property="og:description" content="A cooperative of world-class educators supporting homes, families, and independent schools globally. ESI, courses, and tutoring.">
+<meta property="og:image" content="https://familyworldschoolcooperative.org/assets/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:site_name" content="Family World School Cooperative">
+<!-- Twitter/X Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Family World School Cooperative">
+<meta name="twitter:description" content="A cooperative of world-class educators supporting homes, families, and independent schools globally.">
+<meta name="twitter:image" content="https://familyworldschoolcooperative.org/assets/og-image.jpg">
+
+<style>
+/* =========================================
+   DESIGN TOKENS
+   ========================================= */
+:root {
+  --crimson:    #c72028;
+  --crimson-dk: #a01820;
+  --crimson-lt: #e84040;
+  --navy:       #0f1a2e;
+  --navy-s:     #1a2a3a;
+  --navy-l:     #243447;
+  --gold:       #c9a84c;
+  --gold-lt:    #e8c96a;
+  --cream:      #f5f0e8;
+  --cream-dk:   #e8e0d0;
+  --off-white:  #f8f5f0;
+  --dark:       #1a1a1a;
+  --muted:      #6b7a8d;
+  --border:     rgba(201,168,76,0.25);
+}
+
+/* =========================================
+   FONTS
+   ========================================= */
+@font-face {
+  font-family: 'Cormorant Garamond';
+  src: url('assets/fonts/cormorant-garamond-400.woff2') format('woff2');
+  font-weight: 400; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: 'Cormorant Garamond';
+  src: url('assets/fonts/cormorant-garamond-600.woff2') format('woff2');
+  font-weight: 600; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: 'Cormorant Garamond';
+  src: url('assets/fonts/cormorant-garamond-700.woff2') format('woff2');
+  font-weight: 700; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: 'DM Sans';
+  src: url('assets/fonts/dm-sans-400.woff2') format('woff2');
+  font-weight: 400; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: 'DM Sans';
+  src: url('assets/fonts/dm-sans-600.woff2') format('woff2');
+  font-weight: 600; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: 'DM Sans';
+  src: url('assets/fonts/dm-sans-700.woff2') format('woff2');
+  font-weight: 700; font-style: normal; font-display: swap;
+}
+
+/* =========================================
+   RESET & BASE
+   ========================================= */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; font-size: 16px; }
+body {
+  font-family: 'DM Sans', system-ui, sans-serif;
+  background: var(--navy);
+  color: var(--cream);
+  overflow-x: hidden;
+  line-height: 1.7;
+}
+img { display: block; max-width: 100%; }
+a { text-decoration: none; color: inherit; }
+
+/* =========================================
+   NAVIGATION
+   ========================================= */
+.nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  padding: 0 5%;
+  height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: background 0.4s, backdrop-filter 0.4s;
+}
+.nav.scrolled {
+  background: rgba(15, 26, 46, 0.92);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border);
+}
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.nav-logo img {
+  width: 40px;
+  height: 40px;
+  filter: brightness(0) invert(1);
+}
+.nav-logo-text {
+  display: flex;
+  flex-direction: column;
+}
+.nav-logo-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--cream);
+  line-height: 1.1;
+  letter-spacing: 0.02em;
+}
+.nav-logo-sub {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  list-style: none;
+}
+.nav-links a {
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  color: rgba(245,240,232,0.7);
+  padding: 6px 14px;
+  border-radius: 6px;
+  transition: color 0.2s, background 0.2s;
+}
+.nav-links a:hover {
+  color: var(--cream);
+  background: rgba(255,255,255,0.06);
+}
+.nav-cta {
+  background: var(--crimson) !important;
+  color: white !important;
+  border-radius: 8px !important;
+  padding: 8px 20px !important;
+  transition: background 0.2s, transform 0.15s !important;
+}
+.nav-cta:hover {
+  background: var(--crimson-dk) !important;
+  transform: translateY(-1px);
+}
+.nav-mobile-btn {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  color: var(--cream);
+}
+
+/* =========================================
+   HERO
+   ========================================= */
+.hero {
+  position: relative;
+  height: 100vh;
+  min-height: 700px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+.hero-bg {
+  position: absolute;
+  inset: -5%;
+  z-index: 0;
+}
+.hero-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 35%;
+  transform-origin: center;
+}
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(
+    135deg,
+    rgba(15,26,46,0.88) 0%,
+    rgba(15,26,46,0.7) 40%,
+    rgba(199,32,40,0.25) 100%
+  );
+}
+.hero-grain {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+  pointer-events: none;
+  opacity: 0.5;
+}
+.hero-content {
+  position: relative;
+  z-index: 3;
+  padding: 0 8%;
+  max-width: 800px;
+}
+.hero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 24px;
+  opacity: 0;
+  transform: translateY(20px);
+}
+.hero-eyebrow::before {
+  content: '';
+  display: block;
+  width: 32px;
+  height: 1px;
+  background: var(--gold);
+}
+.hero-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(52px, 7vw, 96px);
+  font-weight: 700;
+  line-height: 1.02;
+  letter-spacing: -0.02em;
+  color: var(--cream);
+  margin-bottom: 24px;
+  opacity: 0;
+  transform: translateY(30px);
+}
+.hero-title span {
+  color: var(--crimson);
+}
+.hero-subtitle {
+  font-size: clamp(16px, 2vw, 20px);
+  font-weight: 400;
+  color: rgba(245,240,232,0.75);
+  max-width: 520px;
+  margin-bottom: 40px;
+  line-height: 1.65;
+  opacity: 0;
+  transform: translateY(20px);
+}
+.hero-actions {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  opacity: 0;
+  transform: translateY(20px);
+}
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--crimson);
+  color: white;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  padding: 14px 28px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+  letter-spacing: 0.01em;
+}
+.btn-primary:hover {
+  background: var(--crimson-dk);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(199,32,40,0.4);
+}
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  color: var(--cream);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  padding: 14px 28px;
+  border-radius: 8px;
+  border: 1px solid rgba(245,240,232,0.3);
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s, transform 0.15s;
+}
+.btn-secondary:hover {
+  background: rgba(255,255,255,0.07);
+  border-color: rgba(245,240,232,0.6);
+  transform: translateY(-2px);
+}
+.hero-scroll-hint {
+  position: absolute;
+  bottom: 40px;
+  left: 8%;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: rgba(245,240,232,0.4);
+  opacity: 0;
+}
+.scroll-line {
+  width: 40px;
+  height: 1px;
+  background: rgba(245,240,232,0.3);
+  position: relative;
+  overflow: hidden;
+}
+.scroll-line::after {
+  content: '';
+  position: absolute;
+  top: 0; left: -100%;
+  width: 100%;
+  height: 100%;
+  background: var(--gold);
+  animation: scrollSlide 2s ease-in-out infinite;
+}
+@keyframes scrollSlide {
+  0% { left: -100%; }
+  50% { left: 0%; }
+  100% { left: 100%; }
+}
+
+/* =========================================
+   PORTAL STRIP
+   ========================================= */
+.portals {
+  background: var(--navy-s);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  padding: 0;
+}
+.portals-inner {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+.portal-item {
+  padding: 40px 5%;
+  border-right: 1px solid var(--border);
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  cursor: pointer;
+  transition: background 0.25s;
+  position: relative;
+  overflow: hidden;
+}
+.portal-item:last-child { border-right: none; }
+.portal-item::before {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 3px;
+  background: var(--crimson);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+  transform-origin: left;
+}
+.portal-item:hover::before { transform: scaleX(1); }
+.portal-item:hover { background: rgba(255,255,255,0.03); }
+.portal-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  background: rgba(199,32,40,0.15);
+  border: 1px solid rgba(199,32,40,0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.portal-icon svg { width: 20px; height: 20px; stroke: var(--crimson); fill: none; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+.portal-text { flex: 1; }
+.portal-label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 4px;
+}
+.portal-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--cream);
+  margin-bottom: 6px;
+}
+.portal-desc {
+  font-size: 13px;
+  color: rgba(245,240,232,0.55);
+  line-height: 1.5;
+}
+.portal-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--crimson);
+  margin-top: 10px;
+  letter-spacing: 0.03em;
+  transition: gap 0.2s;
+}
+.portal-link:hover { gap: 8px; }
+.portal-link svg { width: 14px; height: 14px; stroke: currentColor; fill: none; stroke-width: 2; }
+
+/* =========================================
+   WHAT IS FWS
+   ========================================= */
+.about-strip {
+  padding: 100px 8%;
+  background: var(--navy);
+  position: relative;
+  overflow: hidden;
+}
+.about-strip::before {
+  content: '';
+  position: absolute;
+  top: -200px; right: -200px;
+  width: 600px; height: 600px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(199,32,40,0.06) 0%, transparent 70%);
+  pointer-events: none;
+}
+.about-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+.about-text .section-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 20px;
+}
+.about-text .section-eyebrow::before {
+  content: '';
+  width: 28px; height: 1px;
+  background: var(--gold);
+}
+.about-text h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(36px, 4vw, 56px);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: var(--cream);
+  margin-bottom: 24px;
+}
+.about-text h2 em {
+  font-style: italic;
+  color: var(--crimson);
+}
+.about-text p {
+  font-size: 16px;
+  color: rgba(245,240,232,0.7);
+  line-height: 1.8;
+  margin-bottom: 16px;
+}
+.about-text p:last-of-type { margin-bottom: 32px; }
+.network-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(201,168,76,0.1);
+  border: 1px solid rgba(201,168,76,0.3);
+  border-radius: 20px;
+  padding: 5px 12px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: var(--gold);
+  text-transform: uppercase;
+}
+.badge::before {
+  content: '';
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--gold);
+}
+.about-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2px;
+}
+.stat-card {
+  background: var(--navy-s);
+  padding: 32px;
+  border: 1px solid var(--border);
+  position: relative;
+  overflow: hidden;
+  transition: background 0.25s;
+}
+.stat-card:first-child { border-radius: 12px 0 0 0; }
+.stat-card:nth-child(2) { border-radius: 0 12px 0 0; }
+.stat-card:nth-child(3) { border-radius: 0 0 0 12px; }
+.stat-card:last-child { border-radius: 0 0 12px 0; }
+.stat-card:hover { background: var(--navy-l); }
+.stat-card::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 3px; height: 100%;
+  background: var(--crimson);
+}
+.stat-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 48px;
+  font-weight: 700;
+  color: var(--cream);
+  line-height: 1;
+  margin-bottom: 8px;
+}
+.stat-num span { color: var(--crimson); }
+.stat-label {
+  font-size: 13px;
+  color: rgba(245,240,232,0.5);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+/* =========================================
+   THREE PATHWAYS BENTO
+   ========================================= */
+.pathways {
+  padding: 100px 8%;
+  background: var(--navy-s);
+  position: relative;
+}
+.section-header {
+  text-align: center;
+  margin-bottom: 64px;
+}
+.section-header .section-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 16px;
+}
+.section-header .section-eyebrow::before,
+.section-header .section-eyebrow::after {
+  content: '';
+  width: 28px; height: 1px;
+  background: var(--gold);
+}
+.section-header h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(36px, 4vw, 56px);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: var(--cream);
+  margin-bottom: 16px;
+}
+.section-header p {
+  font-size: 17px;
+  color: rgba(245,240,232,0.6);
+  max-width: 520px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+.bento-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto auto;
+  gap: 16px;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+.bento-card {
+  background: var(--navy);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 16px;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+  transition: transform 0.3s ease, border-color 0.3s;
+}
+.bento-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(199,32,40,0.4);
+}
+.bento-card-img {
+  position: relative;
+  overflow: hidden;
+}
+.bento-card-img img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+.bento-card:hover .bento-card-img img { transform: scale(1.05); }
+.bento-card-img::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 60%;
+  background: linear-gradient(to top, var(--navy), transparent);
+}
+.bento-card-body {
+  padding: 24px 28px 32px;
+}
+.bento-tag {
+  display: inline-block;
+  background: rgba(199,32,40,0.15);
+  border: 1px solid rgba(199,32,40,0.3);
+  color: var(--crimson-lt);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 4px;
+  margin-bottom: 14px;
+}
+.bento-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--cream);
+  margin-bottom: 10px;
+  line-height: 1.15;
+}
+.bento-desc {
+  font-size: 14px;
+  color: rgba(245,240,232,0.6);
+  line-height: 1.65;
+  margin-bottom: 20px;
+}
+.bento-features {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 24px;
+}
+.bento-features li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: rgba(245,240,232,0.65);
+}
+.bento-features li::before {
+  content: '';
+  width: 16px; height: 16px;
+  border-radius: 50%;
+  background: rgba(199,32,40,0.2);
+  border: 1px solid rgba(199,32,40,0.4);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='none' stroke='%23c72028' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' d='M4 8l2.5 2.5L12 5'/%3E%3C/svg%3E");
+  flex-shrink: 0;
+}
+.bento-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--crimson-lt);
+  letter-spacing: 0.03em;
+  transition: gap 0.2s;
+}
+.bento-cta:hover { gap: 10px; }
+.bento-cta svg { width: 16px; height: 16px; stroke: currentColor; fill: none; stroke-width: 2; }
+
+/* =========================================
+   HOW IT WORKS
+   ========================================= */
+.how-it-works {
+  padding: 100px 8%;
+  background: var(--navy);
+  position: relative;
+  overflow: hidden;
+}
+.how-it-works::after {
+  content: '';
+  position: absolute;
+  bottom: -300px; left: -200px;
+  width: 700px; height: 700px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(201,168,76,0.04) 0%, transparent 70%);
+  pointer-events: none;
+}
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  max-width: 1280px;
+  margin: 0 auto;
+  position: relative;
+}
+.steps-grid::before {
+  content: '';
+  position: absolute;
+  top: 32px;
+  left: 12.5%; right: 12.5%;
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--border), var(--border), transparent);
+}
+.step {
+  padding: 0 24px;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(24px);
+}
+.step-num {
+  width: 64px; height: 64px;
+  border-radius: 50%;
+  background: var(--navy-s);
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 24px;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--gold);
+  position: relative;
+  z-index: 1;
+  transition: background 0.3s, border-color 0.3s;
+}
+.step:hover .step-num {
+  background: rgba(199,32,40,0.15);
+  border-color: var(--crimson);
+  color: var(--crimson);
+}
+.step-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--cream);
+  margin-bottom: 10px;
+}
+.step-desc {
+  font-size: 14px;
+  color: rgba(245,240,232,0.55);
+  line-height: 1.65;
+}
+
+/* =========================================
+   ESI SPOTLIGHT
+   ========================================= */
+.esi-section {
+  padding: 100px 8%;
+  background: var(--navy-s);
+}
+.esi-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+.esi-visual {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+}
+.esi-visual img {
+  width: 100%;
+  height: 480px;
+  object-fit: cover;
+  border-radius: 16px;
+}
+.esi-visual::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 16px;
+  background: linear-gradient(135deg, rgba(199,32,40,0.15), transparent);
+  z-index: 1;
+  pointer-events: none;
+}
+.esi-badge-float {
+  position: absolute;
+  bottom: 24px; left: 24px;
+  z-index: 2;
+  background: rgba(15,26,46,0.9);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.esi-badge-icon {
+  width: 36px; height: 36px;
+  border-radius: 8px;
+  background: rgba(199,32,40,0.2);
+  display: flex; align-items: center; justify-content: center;
+}
+.esi-badge-icon svg { width: 18px; height: 18px; stroke: var(--crimson); fill: none; stroke-width: 1.5; }
+.esi-badge-text strong {
+  display: block;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--cream);
+}
+.esi-badge-text span {
+  font-size: 12px;
+  color: var(--muted);
+}
+.esi-content .section-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 20px;
+}
+.esi-content .section-eyebrow::before {
+  content: ''; width: 28px; height: 1px; background: var(--gold);
+}
+.esi-content h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(32px, 3.5vw, 48px);
+  font-weight: 700;
+  color: var(--cream);
+  margin-bottom: 20px;
+  line-height: 1.1;
+}
+.esi-content p {
+  font-size: 15px;
+  color: rgba(245,240,232,0.65);
+  line-height: 1.8;
+  margin-bottom: 32px;
+}
+.esi-types {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 32px;
+}
+.esi-type {
+  background: var(--navy);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 20px;
+  transition: border-color 0.25s;
+}
+.esi-type:hover { border-color: var(--crimson); }
+.esi-type-label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--crimson-lt);
+  margin-bottom: 6px;
+}
+.esi-type-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--cream);
+  margin-bottom: 8px;
+}
+.esi-type-desc {
+  font-size: 13px;
+  color: rgba(245,240,232,0.55);
+  line-height: 1.5;
+}
+
+/* =========================================
+   TESTIMONIALS
+   ========================================= */
+.testimonials {
+  padding: 100px 8%;
+  background: var(--off-white);
+}
+.testimonials .section-header .section-eyebrow {
+  color: var(--crimson);
+}
+.testimonials .section-header .section-eyebrow::before,
+.testimonials .section-header .section-eyebrow::after { background: var(--crimson); }
+.testimonials .section-header h2 { color: var(--dark); }
+.testimonials .section-header p { color: rgba(26,26,26,0.55); }
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+.testimonial-card {
+  background: white;
+  border-radius: 16px;
+  padding: 36px;
+  border: 1px solid rgba(0,0,0,0.06);
+  position: relative;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.testimonial-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 50px rgba(0,0,0,0.08);
+}
+.testimonial-quote {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 72px;
+  line-height: 0.7;
+  color: var(--crimson);
+  margin-bottom: 16px;
+  opacity: 0.4;
+}
+.testimonial-text {
+  font-size: 15px;
+  color: rgba(26,26,26,0.7);
+  line-height: 1.75;
+  margin-bottom: 28px;
+  font-style: italic;
+}
+.testimonial-author {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.testimonial-avatar {
+  width: 40px; height: 40px;
+  border-radius: 50%;
+  background: var(--crimson);
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: white;
+}
+.testimonial-name {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--dark);
+}
+.testimonial-role {
+  font-size: 12px;
+  color: rgba(26,26,26,0.45);
+  margin-top: 1px;
+}
+
+/* =========================================
+   NETWORK SECTION
+   ========================================= */
+.network {
+  padding: 80px 8%;
+  background: var(--navy);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  text-align: center;
+}
+.network-label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 40px;
+}
+.network-logos {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 60px;
+  flex-wrap: wrap;
+}
+.network-logo-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  opacity: 0.5;
+  transition: opacity 0.25s;
+  cursor: default;
+}
+.network-logo-item:hover { opacity: 0.85; }
+.network-logo-circle {
+  width: 52px; height: 52px;
+  border-radius: 50%;
+  background: var(--navy-s);
+  border: 1px solid var(--border);
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--gold);
+}
+.network-logo-name {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+  text-align: center;
+  max-width: 100px;
+  text-transform: uppercase;
+}
+
+/* =========================================
+   CTA BANNER
+   ========================================= */
+.cta-banner {
+  padding: 100px 8%;
+  background: var(--crimson);
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+.cta-banner::before {
+  content: '';
+  position: absolute;
+  top: -100px; right: -100px;
+  width: 500px; height: 500px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.05);
+  pointer-events: none;
+}
+.cta-banner::after {
+  content: '';
+  position: absolute;
+  bottom: -150px; left: -100px;
+  width: 600px; height: 600px;
+  border-radius: 50%;
+  background: rgba(0,0,0,0.08);
+  pointer-events: none;
+}
+.cta-banner h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(40px, 5vw, 72px);
+  font-weight: 700;
+  color: white;
+  margin-bottom: 16px;
+  line-height: 1.1;
+  position: relative;
+  z-index: 1;
+}
+.cta-banner p {
+  font-size: 18px;
+  color: rgba(255,255,255,0.75);
+  margin-bottom: 40px;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  z-index: 1;
+}
+.cta-actions {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+  position: relative;
+  z-index: 1;
+}
+.btn-white {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: white;
+  color: var(--crimson);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  padding: 14px 28px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.15s, box-shadow 0.2s;
+  letter-spacing: 0.01em;
+}
+.btn-white:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.2);
+}
+.btn-outline-white {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  color: white;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  padding: 14px 28px;
+  border-radius: 8px;
+  border: 2px solid rgba(255,255,255,0.6);
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s, transform 0.15s;
+}
+.btn-outline-white:hover {
+  background: rgba(255,255,255,0.1);
+  border-color: white;
+  transform: translateY(-2px);
+}
+
+/* =========================================
+   FOOTER
+   ========================================= */
+footer {
+  background: #070e1c;
+  padding: 80px 8% 40px;
+  border-top: 1px solid rgba(255,255,255,0.05);
+}
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1.5fr;
+  gap: 60px;
+  margin-bottom: 60px;
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.footer-brand {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.footer-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.footer-logo img {
+  width: 36px; height: 36px;
+  filter: brightness(0) invert(1);
+  opacity: 0.8;
+}
+.footer-logo-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--cream);
+}
+.footer-brand-desc {
+  font-size: 13px;
+  color: rgba(245,240,232,0.35);
+  line-height: 1.65;
+  max-width: 280px;
+}
+.footer-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--gold);
+  opacity: 0.7;
+  text-transform: uppercase;
+}
+.footer-col h4 {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 20px;
+}
+.footer-links {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.footer-links a {
+  font-size: 13px;
+  color: rgba(245,240,232,0.4);
+  transition: color 0.2s;
+}
+.footer-links a:hover { color: var(--cream); }
+.footer-newsletter p {
+  font-size: 13px;
+  color: rgba(245,240,232,0.45);
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+.footer-form {
+  display: flex;
+  gap: 8px;
+}
+.footer-form input {
+  flex: 1;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 6px;
+  padding: 10px 14px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  color: var(--cream);
+  outline: none;
+  transition: border-color 0.2s;
+}
+.footer-form input::placeholder { color: rgba(245,240,232,0.25); }
+.footer-form input:focus { border-color: var(--crimson); }
+.footer-form button {
+  background: var(--crimson);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 16px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.footer-form button:hover { background: var(--crimson-dk); }
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.05);
+  padding-top: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+.footer-copy {
+  font-size: 12px;
+  color: rgba(245,240,232,0.25);
+}
+.footer-copy a { color: rgba(245,240,232,0.4); transition: color 0.2s; }
+.footer-copy a:hover { color: var(--cream); }
+.footer-legal {
+  display: flex;
+  gap: 24px;
+}
+.footer-legal a {
+  font-size: 12px;
+  color: rgba(245,240,232,0.25);
+  transition: color 0.2s;
+}
+.footer-legal a:hover { color: var(--cream); }
+
+/* =========================================
+   SCROLL REVEAL
+   ========================================= */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+.reveal-delay-4 { transition-delay: 0.4s; }
+
+/* =========================================
+   RESPONSIVE
+   ========================================= */
+@media (max-width: 1024px) {
+  .about-inner { grid-template-columns: 1fr; gap: 48px; }
+  .esi-inner { grid-template-columns: 1fr; gap: 48px; }
+  .steps-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
+  .steps-grid::before { display: none; }
+  .bento-grid { grid-template-columns: 1fr 1fr; }
+  .portals-inner { grid-template-columns: 1fr; }
+  .portal-item { border-right: none; border-bottom: 1px solid var(--border); }
+  .portal-item:last-child { border-bottom: none; }
+  .footer-grid { grid-template-columns: 1fr 1fr; gap: 40px; }
+  .testimonials-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 768px) {
+  .nav-links { display: none; }
+  .nav-mobile-btn { display: block; }
+  .hero-content { padding: 0 6%; }
+  .about-strip, .pathways, .how-it-works, .esi-section, .testimonials, .cta-banner { padding: 70px 6%; }
+  .bento-grid { grid-template-columns: 1fr; }
+  .about-stats { grid-template-columns: 1fr 1fr; }
+  .testimonials-grid { grid-template-columns: 1fr; }
+  .esi-types { grid-template-columns: 1fr; }
+  .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+  .footer-bottom { flex-direction: column; gap: 16px; text-align: center; }
+  .cta-actions { flex-direction: column; align-items: center; }
+  .hero-actions { flex-direction: column; }
+  .steps-grid { grid-template-columns: 1fr; }
+  .network-logos { gap: 32px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+</style>
+</head>
+<body>
+
+<!-- NAVIGATION -->
+<nav class="nav" id="mainNav">
+  <div class="nav-logo">
+    <img src="assets/icons/fws-logo.svg" alt="FWS Cooperative">
+    <div class="nav-logo-text">
+      <span class="nav-logo-name">Family World School</span>
+      <span class="nav-logo-sub">Cooperative</span>
+    </div>
+  </div>
+  <ul class="nav-links">
+    <li><a href="pages/educators.html">For Educators</a></li>
+    <li><a href="pages/institutions.html">For Institutions</a></li>
+    <li><a href="pages/courses.html">Courses</a></li>
+    <li><a href="pages/esi.html">ESI</a></li>
+    <li><a href="pages/about.html">About</a></li>
+    <li><a href="pages/booking.html" class="nav-cta">Book Now</a></li>
+  </ul>
+  <button class="nav-mobile-btn" aria-label="Menu">
+    <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+      <path d="M3 6h16M3 12h16M3 18h16"/>
+    </svg>
+  </button>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg">
+    <img src="assets/images/hero-home.jpg" alt="Family learning together" id="heroBg">
+  </div>
+  <div class="hero-overlay"></div>
+  <div class="hero-grain"></div>
+  <div class="hero-content">
+    <div class="hero-eyebrow" id="heroEyebrow">A Global Educational Cooperative</div>
+    <h1 class="hero-title" id="heroTitle">
+      Learning.<br>
+      <span>Together.</span><br>
+      Everywhere.
+    </h1>
+    <p class="hero-subtitle" id="heroSubtitle">
+      A cooperative of world-class educators supporting homes, families, and independent schools globally. ESI, courses, tutoring, and live virtual classrooms.
+    </p>
+    <div class="hero-actions" id="heroActions">
+      <a href="pages/educators.html" class="btn-primary">
+        Join as Educator
+        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+      </a>
+      <a href="pages/about.html" class="btn-secondary">
+        Learn More
+        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+      </a>
+    </div>
+  </div>
+  <div class="hero-scroll-hint" id="heroScroll">
+    <span class="scroll-line"></span>
+    <span>Scroll to explore</span>
+  </div>
+</section>
+
+<!-- PORTAL STRIP -->
+<section class="portals">
+  <div class="portals-inner">
+    <a href="pages/educators.html" class="portal-item">
+      <div class="portal-icon">
+        <svg viewBox="0 0 24 24"><path d="M12 14l9-5-9-5-9 5 9 5z"/><path d="M12 14l6.16-3.422A12.083 12.083 0 0 1 22 21a12.083 12.083 0 0 1-10-5z"/><path d="M2 21a12.083 12.083 0 0 1 3.84-10.422L12 14"/></svg>
+      </div>
+      <div class="portal-text">
+        <div class="portal-label">For Educators</div>
+        <div class="portal-title">Teach. Earn. Grow.</div>
+        <div class="portal-desc">Join as a substitute or regular educator. Create courses. Offer tutoring sessions.</div>
+        <div class="portal-link">
+          Get started
+          <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+        </div>
+      </div>
+    </a>
+    <a href="pages/institutions.html" class="portal-item">
+      <div class="portal-icon">
+        <svg viewBox="0 0 24 24"><path d="M3 21h18M3 10h18M5 6l7-3 7 3M4 10v11M20 10v11M9 21v-6h6v6"/></svg>
+      </div>
+      <div class="portal-text">
+        <div class="portal-label">For Institutions</div>
+        <div class="portal-title">Staffed. Supported. Stable.</div>
+        <div class="portal-desc">Access substitute educators, manage regular educator contracts, and streamline scheduling.</div>
+        <div class="portal-link">
+          Learn more
+          <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+        </div>
+      </div>
+    </a>
+    <a href="pages/members.html" class="portal-item">
+      <div class="portal-icon">
+        <svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+      </div>
+      <div class="portal-text">
+        <div class="portal-label">For Families</div>
+        <div class="portal-title">Learn. Thrive. Connect.</div>
+        <div class="portal-desc">Access world-class courses, book private tutoring, and join a global learning community.</div>
+        <div class="portal-link">
+          Start learning
+          <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+        </div>
+      </div>
+    </a>
+  </div>
+</section>
+
+<!-- WHAT IS FWS -->
+<section class="about-strip">
+  <div class="about-inner">
+    <div class="about-text reveal">
+      <div class="section-eyebrow">Our Mission</div>
+      <h2>A cooperative <em>built for</em> independent educators and learners</h2>
+      <p>
+        Family World School Cooperative supports independent educational programs - including private non-government schools, home-school cooperatives, and family homeschools - with the educators, tools, and structure they need to thrive.
+      </p>
+      <p>
+        We are part of the <strong>It's My Miracle</strong> nonprofit and the <strong>Miraculous Transitions</strong> and <strong>DCA Network</strong>, working collaboratively with international educators, academic authors, and curriculum designers.
+      </p>
+      <div class="network-badges">
+        <span class="badge">It's My Miracle</span>
+        <span class="badge">Miraculous Transitions</span>
+        <span class="badge">DCA Network</span>
+        <span class="badge">Nonprofit</span>
+      </div>
+    </div>
+    <div class="about-stats reveal reveal-delay-2">
+      <div class="stat-card">
+        <div class="stat-num">3<span>+</span></div>
+        <div class="stat-label">Service Programs</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">10<span>+</span></div>
+        <div class="stat-label">Videos per Course</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">2<span>x</span></div>
+        <div class="stat-label">Educator Tracks</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">1<span>st</span></div>
+        <div class="stat-label">Global Cooperative</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- THREE PATHWAYS BENTO -->
+<section class="pathways">
+  <div class="section-header reveal">
+    <div class="section-eyebrow">Our Programs</div>
+    <h2>Three pathways to excellence</h2>
+    <p>Whether you teach, run a school, or learn at home - FWS has a pathway designed for you.</p>
+  </div>
+  <div class="bento-grid">
+    <div class="bento-card reveal reveal-delay-1">
+      <div class="bento-card-img">
+        <img src="assets/images/card-substitute.jpg" alt="Educator Support Initiative">
+      </div>
+      <div class="bento-card-body">
+        <div class="bento-tag">ESI Program</div>
+        <div class="bento-title">Educator Support Initiative</div>
+        <div class="bento-desc">Substitute and regular educators on demand. Calendar-based availability, semester contracts, and Zoom integration for seamless classroom continuity.</div>
+        <ul class="bento-features">
+          <li>Substitute hourly and daily rates</li>
+          <li>Semester-long regular contracts</li>
+          <li>Online contract signing</li>
+          <li>Zoom and Google Meets integration</li>
+        </ul>
+        <a href="pages/esi.html" class="bento-cta">
+          Explore ESI
+          <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+        </a>
+      </div>
+    </div>
+    <div class="bento-card reveal reveal-delay-2">
+      <div class="bento-card-img">
+        <img src="assets/images/hero-courses.jpg" alt="FWS Courses">
+      </div>
+      <div class="bento-card-body">
+        <div class="bento-tag">Courses</div>
+        <div class="bento-title">FWS Course Library</div>
+        <div class="bento-desc">Every FWS educator produces a 10-video course available to members. Browse subjects, purchase courses, and access rich learning content anytime.</div>
+        <ul class="bento-features">
+          <li>10-video course per educator</li>
+          <li>Track your learning progress</li>
+          <li>Available to all FWS members</li>
+          <li>Educator-verified content</li>
+        </ul>
+        <a href="pages/courses.html" class="bento-cta">
+          Browse Courses
+          <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+        </a>
+      </div>
+    </div>
+    <div class="bento-card reveal reveal-delay-3">
+      <div class="bento-card-img">
+        <img src="assets/images/card-tutor.jpg" alt="Tutoring">
+      </div>
+      <div class="bento-card-body">
+        <div class="bento-tag">Tutoring</div>
+        <div class="bento-title">Private Tutoring Sessions</div>
+        <div class="bento-desc">Book private tutoring with FWS educators via a monthly subscription plan. Educators set their availability; members book sessions directly after subscribing.</div>
+        <ul class="bento-features">
+          <li>Monthly subscription plan</li>
+          <li>Educator availability calendar</li>
+          <li>Live video sessions</li>
+          <li>Book after course purchase</li>
+        </ul>
+        <a href="pages/members.html" class="bento-cta">
+          Book Tutoring
+          <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="how-it-works">
+  <div class="section-header reveal">
+    <div class="section-eyebrow">Getting Started</div>
+    <h2>How FWS works</h2>
+    <p>From sign-up to teaching or learning - it takes four simple steps.</p>
+  </div>
+  <div class="steps-grid">
+    <div class="step reveal reveal-delay-1">
+      <div class="step-num">1</div>
+      <div class="step-title">Choose Your Role</div>
+      <div class="step-desc">Sign up as an Educator, an Institution, or an Individual Member. Each path has its own tailored onboarding.</div>
+    </div>
+    <div class="step reveal reveal-delay-2">
+      <div class="step-num">2</div>
+      <div class="step-title">Sign Your Contract</div>
+      <div class="step-desc">Contracts are completed and signed online. Regular educators are assigned semester schedules. Substitutes post availability on the calendar.</div>
+    </div>
+    <div class="step reveal reveal-delay-3">
+      <div class="step-num">3</div>
+      <div class="step-title">Teach or Learn</div>
+      <div class="step-desc">Educators deliver classes via Zoom or Google Meets. Members access courses and book tutoring. Institutions request and manage their educators seamlessly.</div>
+    </div>
+    <div class="step reveal reveal-delay-4">
+      <div class="step-num">4</div>
+      <div class="step-title">Grow Together</div>
+      <div class="step-desc">Track earnings, course purchases, and session history. The cooperative grows stronger with every educator and family that joins.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ESI SPOTLIGHT -->
+<section class="esi-section">
+  <div class="esi-inner">
+    <div class="esi-visual reveal">
+      <img src="assets/images/hero-educators.jpg" alt="FWS Educator Support Initiative">
+      <div class="esi-badge-float">
+        <div class="esi-badge-icon">
+          <svg viewBox="0 0 24 24"><path d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 0 1-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>
+        </div>
+        <div class="esi-badge-text">
+          <strong>Zoom and Google Meets Ready</strong>
+          <span>Live classroom sessions included</span>
+        </div>
+      </div>
+    </div>
+    <div class="esi-content reveal reveal-delay-2">
+      <div class="section-eyebrow">ESI Program</div>
+      <h2>Educator continuity for every classroom</h2>
+      <p>The Educator Support Initiative ensures your learning program never misses a beat. Whether you need a substitute for a day or a consistent weekly educator for an entire semester, FWS connects you with qualified professionals.</p>
+      <div class="esi-types">
+        <div class="esi-type">
+          <div class="esi-type-label">Short-Term</div>
+          <div class="esi-type-title">Substitute Educators</div>
+          <div class="esi-type-desc">Post availability on the calendar. Hourly rate up to 2 hours, daily rate thereafter. Immediate classroom coverage when needed.</div>
+        </div>
+        <div class="esi-type">
+          <div class="esi-type-label">Long-Term</div>
+          <div class="esi-type-title">Regular Educators</div>
+          <div class="esi-type-desc">Semester-long contracts with consistent weekly schedules. Absence penalties fund automatic substitute coverage for your institution.</div>
+        </div>
+      </div>
+      <a href="pages/esi.html" class="btn-primary">
+        Explore ESI
+        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials">
+  <div class="section-header reveal">
+    <div class="section-eyebrow">Community Voices</div>
+    <h2>What our members say</h2>
+    <p>Families, educators, and institutions sharing their FWS experience.</p>
+  </div>
+  <div class="testimonials-grid">
+    <div class="testimonial-card reveal reveal-delay-1">
+      <div class="testimonial-quote">"</div>
+      <div class="testimonial-text">FWS has given our home-school cooperative the professional structure we always needed. The ESI program means we never have to scramble when an educator is unavailable. It's a true community.</div>
+      <div class="testimonial-author">
+        <div class="testimonial-avatar">M</div>
+        <div>
+          <div class="testimonial-name">Miriam T.</div>
+          <div class="testimonial-role">Home-School Cooperative Director</div>
+        </div>
+      </div>
+    </div>
+    <div class="testimonial-card reveal reveal-delay-2">
+      <div class="testimonial-quote">"</div>
+      <div class="testimonial-text">I created my first 10-video course through FWS and within the first month, five families had purchased it. The platform makes it easy to track purchases and schedule tutoring. I love what we're building here.</div>
+      <div class="testimonial-author">
+        <div class="testimonial-avatar">D</div>
+        <div>
+          <div class="testimonial-name">David R.</div>
+          <div class="testimonial-role">FWS Educator - Mathematics</div>
+        </div>
+      </div>
+    </div>
+    <div class="testimonial-card reveal reveal-delay-3">
+      <div class="testimonial-quote">"</div>
+      <div class="testimonial-text">My children's education improved dramatically when we joined FWS. The tutoring subscription means they get one-on-one attention from educators who genuinely care. YAH Khai - this is the model the world needs.</div>
+      <div class="testimonial-author">
+        <div class="testimonial-avatar">S</div>
+        <div>
+          <div class="testimonial-name">Sister Abigail B.</div>
+          <div class="testimonial-role">FWS Family Member</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NETWORK -->
+<section class="network">
+  <div class="network-label">Part of the Network</div>
+  <div class="network-logos">
+    <div class="network-logo-item">
+      <div class="network-logo-circle">IM</div>
+      <div class="network-logo-name">It's My Miracle</div>
+    </div>
+    <div class="network-logo-item">
+      <div class="network-logo-circle">MT</div>
+      <div class="network-logo-name">Miraculous Transitions</div>
+    </div>
+    <div class="network-logo-item">
+      <div class="network-logo-circle">DC</div>
+      <div class="network-logo-name">DCA Network</div>
+    </div>
+    <div class="network-logo-item">
+      <div class="network-logo-circle">FW</div>
+      <div class="network-logo-name">Family World School</div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BANNER -->
+<section class="cta-banner">
+  <h2>Ready to Join the FWS Cooperative?</h2>
+  <p>Whether you teach, run a school, or learn at home - your place in FWS is waiting.</p>
+  <div class="cta-actions">
+    <a href="pages/educators.html" class="btn-white">
+      I'm an Educator
+      <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+    </a>
+    <a href="pages/institutions.html" class="btn-outline-white">
+      I run a School
+      <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+    </a>
+    <a href="pages/members.html" class="btn-outline-white">
+      I'm a Family Member
+      <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+    </a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="footer-logo">
+        <img src="assets/icons/fws-logo.svg" alt="FWS Logo">
+        <div class="footer-logo-name">Family World School Cooperative</div>
+      </div>
+      <div class="footer-brand-desc">
+        A cooperative of international educators, curriculum designers, and academic authors working collaboratively to support independent education globally.
+      </div>
+      <div class="footer-tag">Part of the DCA Network</div>
+    </div>
+    <div class="footer-col">
+      <h4>Programs</h4>
+      <ul class="footer-links">
+        <li><a href="pages/esi.html">Educator Support Initiative</a></li>
+        <li><a href="pages/courses.html">FWS Course Library</a></li>
+        <li><a href="pages/members.html">Tutoring Subscriptions</a></li>
+        <li><a href="pages/booking.html">Book a Session</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>About FWS</h4>
+      <ul class="footer-links">
+        <li><a href="pages/about.html">Our Story</a></li>
+        <li><a href="pages/educators.html">For Educators</a></li>
+        <li><a href="pages/institutions.html">For Institutions</a></li>
+        <li><a href="pages/about.html#network">Our Network</a></li>
+        <li><a href="pages/contact.html">Contact Us</a></li>
+      </ul>
+    </div>
+    <div class="footer-col footer-newsletter">
+      <h4>Stay Connected</h4>
+      <p>Get updates on new courses, educator opportunities, and cooperative news.</p>
+      <div class="footer-form">
+        <input type="email" placeholder="Your email address">
+        <button type="button">Join</button>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-copy">
+      &copy; 2026 Family World School Cooperative. Part of <a href="#">It's My Miracle</a> nonprofit.
+    </div>
+    <div class="footer-legal">
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms of Service</a>
+      <a href="#">Contact</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+// NAV SCROLL EFFECT
+const nav = document.getElementById('mainNav');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('scrolled', window.scrollY > 60);
+});
+
+// HERO PARALLAX
+const heroBg = document.getElementById('heroBg');
+window.addEventListener('scroll', () => {
+  if (heroBg) {
+    heroBg.style.transform = `translateY(${window.scrollY * 0.25}px)`;
+  }
+});
+
+// HERO ENTRANCE ANIMATIONS
+function animateHero() {
+  const eyebrow = document.getElementById('heroEyebrow');
+  const title = document.getElementById('heroTitle');
+  const subtitle = document.getElementById('heroSubtitle');
+  const actions = document.getElementById('heroActions');
+  const scroll = document.getElementById('heroScroll');
+
+  const items = [eyebrow, title, subtitle, actions, scroll];
+  items.forEach((el, i) => {
+    if (!el) return;
+    setTimeout(() => {
+      el.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+      el.style.opacity = '1';
+      el.style.transform = 'translateY(0)';
+    }, 200 + i * 150);
+  });
+}
+window.addEventListener('load', animateHero);
+
+// SCROLL REVEAL
+const reveals = document.querySelectorAll('.reveal');
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      revealObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.1, rootMargin: '-40px 0px' });
+reveals.forEach(el => revealObserver.observe(el));
+
+// STEP ANIMATIONS (same observer)
+const steps = document.querySelectorAll('.step');
+const stepObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+      entry.target.style.opacity = '1';
+      entry.target.style.transform = 'translateY(0)';
+    }
+  });
+}, { threshold: 0.1 });
+steps.forEach(el => stepObserver.observe(el));
+</script>
+
+</body>
+</html>

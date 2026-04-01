@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Favicon -->
+<link rel="icon" type="image/svg+xml" href="../assets/icons/favicon.svg">
+<link rel="shortcut icon" href="../assets/icons/favicon.svg">
+<!-- Open Graph / WhatsApp / Social Sharing -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Family World School Cooperative">
+<meta property="og:description" content="A cooperative of world-class educators supporting homes, families, and independent schools globally.">
+<meta property="og:image" content="https://familyworldschoolcooperative.org/assets/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:site_name" content="Family World School Cooperative">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://familyworldschoolcooperative.org/assets/og-image.jpg">
+<title>Contact - Family World School Cooperative</title>
+<style>
+@font-face { font-family: 'Cormorant Garamond'; src: url('../assets/fonts/cormorant-garamond-700.woff2') format('woff2'); font-weight: 700; font-display: swap; }
+@font-face { font-family: 'DM Sans'; src: url('../assets/fonts/dm-sans-400.woff2') format('woff2'); font-weight: 400; font-display: swap; }
+@font-face { font-family: 'DM Sans'; src: url('../assets/fonts/dm-sans-600.woff2') format('woff2'); font-weight: 600; font-display: swap; }
+@font-face { font-family: 'DM Sans'; src: url('../assets/fonts/dm-sans-700.woff2') format('woff2'); font-weight: 700; font-display: swap; }
+:root { --crimson:#c72028; --crimson-dk:#a01820; --navy:#0f1a2e; --navy-s:#1a2a3a; --gold:#c9a84c; --cream:#f5f0e8; --off-white:#f8f5f0; --dark:#1a1a1a; --muted:#6b7a8d; --border:rgba(201,168,76,0.25); }
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'DM Sans',sans-serif;background:var(--navy);color:var(--cream);overflow-x:hidden;line-height:1.7;}
+img{display:block;max-width:100%;}a{text-decoration:none;color:inherit;}
+svg{stroke:currentColor;fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;}
+
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:0 5%;height:72px;display:flex;align-items:center;justify-content:space-between;background:rgba(15,26,46,0.95);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);}
+.nav-logo{display:flex;align-items:center;gap:12px;}
+.nav-logo img{width:36px;height:36px;filter:brightness(0) invert(1);}
+.nav-logo-name{font-family:'Cormorant Garamond',serif;font-size:17px;font-weight:700;color:var(--cream);}
+.nav-back{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:600;color:rgba(245,240,232,0.55);padding:6px 14px;border-radius:6px;border:1px solid rgba(255,255,255,0.1);transition:0.2s;}
+.nav-back:hover{color:var(--cream);border-color:rgba(255,255,255,0.25);}
+
+.contact-layout{display:grid;grid-template-columns:1fr 460px;min-height:calc(100vh - 72px);padding-top:72px;}
+.contact-main{padding:80px 8%;background:var(--navy);}
+.contact-side{background:var(--navy-s);border-left:1px solid var(--border);padding:80px 48px;}
+
+.eyebrow{font-size:11px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:16px;display:flex;align-items:center;gap:8px;}
+.eyebrow::before{content:'';width:24px;height:1px;background:var(--gold);}
+.contact-main h1{font-family:'Cormorant Garamond',serif;font-size:clamp(40px,5vw,68px);font-weight:700;line-height:1.05;letter-spacing:-0.02em;color:var(--cream);margin-bottom:16px;}
+.contact-main h1 span{color:var(--crimson);}
+.contact-main > p{font-size:16px;color:rgba(245,240,232,0.6);margin-bottom:48px;max-width:480px;line-height:1.75;}
+
+.contact-form{max-width:560px;}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:0;}
+.form-group{margin-bottom:16px;}
+.form-group label{display:block;font-size:12px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:rgba(245,240,232,0.5);margin-bottom:6px;}
+.form-group input,.form-group select,.form-group textarea{width:100%;background:var(--navy-s);border:1px solid rgba(255,255,255,0.1);border-radius:8px;padding:12px 16px;font-family:'DM Sans',sans-serif;font-size:14px;color:var(--cream);outline:none;transition:border-color 0.2s;appearance:none;-webkit-appearance:none;}
+.form-group textarea{resize:vertical;min-height:120px;line-height:1.6;}
+.form-group input::placeholder,.form-group textarea::placeholder{color:rgba(245,240,232,0.2);}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:var(--crimson);}
+.form-group select option{background:var(--navy-s);color:var(--cream);}
+.submit-btn{display:flex;align-items:center;justify-content:center;gap:8px;background:var(--crimson);color:white;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:700;padding:14px 32px;border-radius:8px;border:none;cursor:pointer;transition:0.2s;letter-spacing:0.01em;width:100%;margin-top:8px;}
+.submit-btn:hover{background:var(--crimson-dk);transform:translateY(-1px);}
+.submit-btn.sent{background:#2d5a3d;pointer-events:none;}
+.form-note{font-size:12px;color:rgba(245,240,232,0.3);margin-top:12px;text-align:center;}
+
+.contact-side h2{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:700;color:var(--cream);margin-bottom:36px;}
+.contact-item{display:flex;align-items:flex-start;gap:16px;margin-bottom:28px;}
+.contact-icon{width:40px;height:40px;border-radius:10px;background:rgba(199,32,40,0.12);border:1px solid rgba(199,32,40,0.25);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.contact-icon svg{width:18px;height:18px;stroke:var(--crimson);}
+.contact-item-title{font-size:12px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--muted);margin-bottom:4px;}
+.contact-item-val{font-size:14px;color:var(--cream);}
+.contact-item-val a{color:var(--cream);transition:color 0.2s;}
+.contact-item-val a:hover{color:var(--gold);}
+.side-divider{height:1px;background:var(--border);margin:32px 0;}
+.response-box{background:var(--navy);border:1px solid var(--border);border-radius:12px;padding:20px;}
+.response-box-label{font-size:10px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold);margin-bottom:8px;}
+.response-box p{font-size:13px;color:rgba(245,240,232,0.55);line-height:1.65;}
+.quick-links-label{font-size:11px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold);margin-bottom:16px;margin-top:32px;}
+.quick-links{display:flex;flex-direction:column;gap:8px;}
+.quick-link{display:flex;align-items:center;justify-content:space-between;background:var(--navy);border:1px solid rgba(255,255,255,0.06);border-radius:10px;padding:14px 16px;transition:0.2s;}
+.quick-link:hover{border-color:var(--border);}
+.quick-link-name{font-size:13px;font-weight:600;color:var(--cream);}
+
+.footer-min{background:#070e1c;padding:32px 8%;border-top:1px solid rgba(255,255,255,0.05);display:flex;align-items:center;justify-content:space-between;}
+.footer-copy{font-size:12px;color:rgba(245,240,232,0.2);}
+.footer-links{display:flex;gap:20px;}
+.footer-links a{font-size:12px;color:rgba(245,240,232,0.2);transition:color 0.2s;}
+.footer-links a:hover{color:var(--cream);}
+
+@media(max-width:1024px){.contact-layout{grid-template-columns:1fr;}.contact-side{border-left:none;border-top:1px solid var(--border);padding:48px 8%;}}
+@media(max-width:640px){.form-row{grid-template-columns:1fr;}.footer-min{flex-direction:column;gap:14px;text-align:center;}}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-logo">
+    <img src="../assets/icons/fws-logo.svg" alt="FWS">
+    <div class="nav-logo-name">Family World School Cooperative</div>
+  </div>
+  <a href="../index.html" class="nav-back">
+    <svg viewBox="0 0 16 16"><path d="M10 4l-4 4 4 4"/></svg>
+    Back to Home
+  </a>
+</nav>
+
+<div class="contact-layout">
+  <div class="contact-main">
+    <div class="eyebrow">Get in Touch</div>
+    <h1>Let's start a<br><span>conversation</span></h1>
+    <p>Questions about FWS programs, membership, or partnerships? We'd love to hear from you. Fill out the form and we'll be in touch within 2 business days.</p>
+
+    <form class="contact-form" id="contactForm">
+      <div class="form-row">
+        <div class="form-group">
+          <label for="fname">First Name</label>
+          <input type="text" id="fname" placeholder="Miriam" required>
+        </div>
+        <div class="form-group">
+          <label for="lname">Last Name</label>
+          <input type="text" id="lname" placeholder="Thomas" required>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="email">Email Address</label>
+        <input type="email" id="email" placeholder="your@email.com" required>
+      </div>
+      <div class="form-group">
+        <label for="role">I am a...</label>
+        <select id="role" required>
+          <option value="" disabled selected>Select your role</option>
+          <option value="educator">Educator - interested in joining FWS</option>
+          <option value="institution">School or Institution - seeking ESI support</option>
+          <option value="individual">Individual or Family Member</option>
+          <option value="partner">Partner or Network Organization</option>
+          <option value="other">Other</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="subject">Subject</label>
+        <input type="text" id="subject" placeholder="e.g. ESI enquiry, course creation, membership..." required>
+      </div>
+      <div class="form-group">
+        <label for="message">Message</label>
+        <textarea id="message" placeholder="Tell us how we can help." required></textarea>
+      </div>
+      <button type="submit" class="submit-btn" id="submitBtn">
+        Send Message
+        <svg width="16" height="16" viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+      </button>
+      <div class="form-note">We respond within 2 business days. All information is kept confidential.</div>
+    </form>
+  </div>
+
+  <div class="contact-side">
+    <h2>Contact information</h2>
+    <div class="contact-item">
+      <div class="contact-icon">
+        <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+      </div>
+      <div>
+        <div class="contact-item-title">Email</div>
+        <div class="contact-item-val"><a href="mailto:luciusmel@gmail.com">luciusmel@gmail.com</a></div>
+      </div>
+    </div>
+    <div class="contact-item">
+      <div class="contact-icon">
+        <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+      </div>
+      <div>
+        <div class="contact-item-title">Location</div>
+        <div class="contact-item-val">Global - Operating Online</div>
+      </div>
+    </div>
+    <div class="contact-item">
+      <div class="contact-icon">
+        <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+      </div>
+      <div>
+        <div class="contact-item-title">Virtual Classroom</div>
+        <div class="contact-item-val">Zoom and Google Meets</div>
+      </div>
+    </div>
+    <div class="side-divider"></div>
+    <div class="response-box">
+      <div class="response-box-label">Response Time</div>
+      <p>We aim to respond to all enquiries within 2 business days. For urgent matters related to ESI or active contracts, please indicate this in your message subject.</p>
+    </div>
+    <div class="quick-links-label">Quick Links</div>
+    <div class="quick-links">
+      <a href="booking.html" class="quick-link">
+        <span class="quick-link-name">Book a Session</span>
+        <svg width="14" height="14" viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+      </a>
+      <a href="educators.html" class="quick-link">
+        <span class="quick-link-name">Join as Educator</span>
+        <svg width="14" height="14" viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+      </a>
+      <a href="esi.html" class="quick-link">
+        <span class="quick-link-name">ESI for Institutions</span>
+        <svg width="14" height="14" viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+      </a>
+      <a href="about.html" class="quick-link">
+        <span class="quick-link-name">About FWS</span>
+        <svg width="14" height="14" viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+      </a>
+    </div>
+  </div>
+</div>
+
+<footer class="footer-min">
+  <div class="footer-copy">&copy; 2026 Family World School Cooperative. Part of It's My Miracle nonprofit.</div>
+  <div class="footer-links">
+    <a href="../index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="booking.html">Booking</a>
+  </div>
+</footer>
+
+<script>
+document.getElementById('contactForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  const btn = document.getElementById('submitBtn');
+  btn.classList.add('sent');
+  btn.querySelector('svg').style.display = 'none';
+  const span = document.createElement('span');
+  span.textContent = 'Message Sent - Thank You!';
+  btn.textContent = '';
+  btn.appendChild(span);
+  setTimeout(() => {
+    btn.classList.remove('sent');
+    btn.textContent = 'Send Message';
+    const icon = document.createElementNS('http://www.w3.org/2000/svg','svg');
+    icon.setAttribute('width','16'); icon.setAttribute('height','16'); icon.setAttribute('viewBox','0 0 16 16');
+    const path = document.createElementNS('http://www.w3.org/2000/svg','path');
+    path.setAttribute('d','M3 8h10M9 4l4 4-4 4');
+    icon.appendChild(path);
+    btn.appendChild(icon);
+    e.target.reset();
+  }, 3000);
+});
+</script>
+</body>
+</html>

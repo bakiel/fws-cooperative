@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Favicon -->
+<link rel="icon" type="image/svg+xml" href="../assets/icons/favicon.svg">
+<link rel="shortcut icon" href="../assets/icons/favicon.svg">
+<!-- Open Graph / WhatsApp / Social Sharing -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Family World School Cooperative">
+<meta property="og:description" content="A cooperative of world-class educators supporting homes, families, and independent schools globally.">
+<meta property="og:image" content="https://familyworldschoolcooperative.org/assets/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:site_name" content="Family World School Cooperative">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://familyworldschoolcooperative.org/assets/og-image.jpg">
+<title>Book a Session - Family World School Cooperative</title>
+<meta name="description" content="Book an FWS tutoring or consultation session. Use our Square booking calendar to find a time that works for you.">
+<style>
+@font-face { font-family: 'Cormorant Garamond'; src: url('../assets/fonts/cormorant-garamond-700.woff2') format('woff2'); font-weight: 700; font-display: swap; }
+@font-face { font-family: 'DM Sans'; src: url('../assets/fonts/dm-sans-400.woff2') format('woff2'); font-weight: 400; font-display: swap; }
+@font-face { font-family: 'DM Sans'; src: url('../assets/fonts/dm-sans-600.woff2') format('woff2'); font-weight: 600; font-display: swap; }
+@font-face { font-family: 'DM Sans'; src: url('../assets/fonts/dm-sans-700.woff2') format('woff2'); font-weight: 700; font-display: swap; }
+:root {
+  --crimson: #c72028; --crimson-dk: #a01820; --navy: #0f1a2e; --navy-s: #1a2a3a;
+  --gold: #c9a84c; --cream: #f5f0e8; --off-white: #f8f5f0; --dark: #1a1a1a;
+  --muted: #6b7a8d; --border: rgba(201,168,76,0.25);
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'DM Sans', sans-serif; background: var(--navy); color: var(--cream); overflow-x: hidden; line-height: 1.7; }
+img { display: block; max-width: 100%; } a { text-decoration: none; color: inherit; }
+.nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 0 5%; height: 72px; display: flex; align-items: center; justify-content: space-between; background: rgba(15,26,46,0.95); backdrop-filter: blur(20px); border-bottom: 1px solid var(--border); }
+.nav-logo { display: flex; align-items: center; gap: 12px; }
+.nav-logo img { width: 36px; height: 36px; filter: brightness(0) invert(1); }
+.nav-logo-name { font-family: 'Cormorant Garamond', serif; font-size: 17px; font-weight: 700; color: var(--cream); }
+.nav-back { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; font-weight: 600; color: rgba(245,240,232,0.55); padding: 6px 14px; border-radius: 6px; border: 1px solid rgba(255,255,255,0.1); transition: 0.2s; }
+.nav-back:hover { color: var(--cream); border-color: rgba(255,255,255,0.25); }
+.nav-back svg { width: 14px; height: 14px; stroke: currentColor; fill: none; stroke-width: 2; }
+
+/* PAGE LAYOUT */
+.page-wrap { padding-top: 72px; min-height: 100vh; }
+.booking-layout { display: grid; grid-template-columns: 1fr 400px; min-height: calc(100vh - 72px); }
+.booking-main { padding: 64px 8%; background: var(--navy); }
+.booking-side { background: var(--navy-s); border-left: 1px solid var(--border); padding: 64px 40px; }
+
+/* BOOKING MAIN */
+.book-eyebrow { font-size: 11px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; display: flex; align-items: center; gap: 8px; }
+.book-eyebrow::before { content: ''; width: 24px; height: 1px; background: var(--gold); }
+.booking-main h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(40px, 5vw, 64px); font-weight: 700; line-height: 1.08; letter-spacing: -0.02em; color: var(--cream); margin-bottom: 16px; }
+.booking-main h1 span { color: var(--crimson); }
+.booking-main > p { font-size: 16px; color: rgba(245,240,232,0.6); line-height: 1.75; max-width: 540px; margin-bottom: 48px; }
+
+/* SQUARE WIDGET CONTAINER */
+.square-wrap { background: white; border-radius: 16px; overflow: hidden; min-height: 500px; display: flex; align-items: center; justify-content: center; border: 1px solid rgba(255,255,255,0.1); }
+.square-loading { text-align: center; padding: 60px 40px; }
+.square-loading-icon { width: 48px; height: 48px; border: 3px solid rgba(199,32,40,0.3); border-top-color: var(--crimson); border-radius: 50%; animation: spin 1s linear infinite; margin: 0 auto 16px; }
+@keyframes spin { to { transform: rotate(360deg); } }
+.square-loading p { font-size: 14px; color: rgba(26,26,26,0.5); }
+
+/* FAQ */
+.booking-faq { margin-top: 56px; }
+.booking-faq h3 { font-family: 'Cormorant Garamond', serif; font-size: 28px; font-weight: 700; color: var(--cream); margin-bottom: 24px; }
+.faq-item { border-bottom: 1px solid rgba(255,255,255,0.06); padding: 20px 0; }
+.faq-q { font-size: 15px; font-weight: 700; color: var(--cream); margin-bottom: 8px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; }
+.faq-q svg { width: 16px; height: 16px; stroke: var(--muted); fill: none; stroke-width: 2; transition: transform 0.2s; }
+.faq-item.open .faq-q svg { transform: rotate(45deg); stroke: var(--crimson); }
+.faq-a { font-size: 14px; color: rgba(245,240,232,0.55); line-height: 1.7; display: none; }
+.faq-item.open .faq-a { display: block; }
+
+/* SIDEBAR */
+.booking-side h2 { font-family: 'Cormorant Garamond', serif; font-size: 26px; font-weight: 700; color: var(--cream); margin-bottom: 32px; }
+.side-info-item { display: flex; align-items: flex-start; gap: 14px; margin-bottom: 24px; }
+.side-info-icon { width: 36px; height: 36px; border-radius: 8px; background: rgba(199,32,40,0.15); border: 1px solid rgba(199,32,40,0.3); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.side-info-icon svg { width: 16px; height: 16px; stroke: var(--crimson); fill: none; stroke-width: 1.5; }
+.side-info-title { font-size: 13px; font-weight: 700; color: var(--cream); margin-bottom: 4px; }
+.side-info-desc { font-size: 13px; color: rgba(245,240,232,0.5); line-height: 1.5; }
+.side-divider { height: 1px; background: var(--border); margin: 32px 0; }
+.side-types h3 { font-size: 12px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; }
+.session-type { background: var(--navy); border: 1px solid rgba(255,255,255,0.06); border-radius: 10px; padding: 16px; margin-bottom: 10px; transition: 0.2s; }
+.session-type:hover { border-color: var(--border); }
+.session-type-name { font-size: 14px; font-weight: 700; color: var(--cream); margin-bottom: 4px; }
+.session-type-desc { font-size: 12px; color: rgba(245,240,232,0.45); }
+.side-note { background: rgba(201,168,76,0.08); border: 1px solid rgba(201,168,76,0.2); border-radius: 10px; padding: 16px; margin-top: 32px; }
+.side-note-label { font-size: 10px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); margin-bottom: 6px; }
+.side-note p { font-size: 13px; color: rgba(245,240,232,0.6); line-height: 1.6; }
+
+@media (max-width: 1024px) { .booking-layout { grid-template-columns: 1fr; } .booking-side { border-left: none; border-top: 1px solid var(--border); padding: 48px 8%; } }
+@media (max-width: 768px) { .booking-main { padding: 48px 6%; } }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-logo">
+    <img src="../assets/icons/fws-logo.svg" alt="FWS">
+    <div class="nav-logo-name">Family World School Cooperative</div>
+  </div>
+  <a href="../index.html" class="nav-back">
+    <svg viewBox="0 0 16 16"><path d="M10 4l-4 4 4 4"/></svg>
+    Back to Home
+  </a>
+</nav>
+
+<div class="page-wrap">
+  <div class="booking-layout">
+
+    <!-- MAIN BOOKING CONTENT -->
+    <div class="booking-main">
+      <div class="book-eyebrow">Booking Calendar</div>
+      <h1>Book a<br><span>session</span></h1>
+      <p>
+        Use the calendar below to find and book your tutoring session, ESI consultation, or educator orientation call. Powered by Square Appointments.
+      </p>
+
+      <!-- SQUARE APPOINTMENTS EMBED -->
+      <div class="square-wrap" id="squareWrap">
+        <div class="square-loading" id="squareLoading">
+          <div class="square-loading-icon"></div>
+          <p>Loading booking calendar...</p>
+        </div>
+      </div>
+
+      <!-- FAQ -->
+      <div class="booking-faq">
+        <h3>Frequently asked questions</h3>
+        <div class="faq-item open">
+          <div class="faq-q" onclick="toggleFaq(this)">
+            Who can book a session?
+            <svg viewBox="0 0 16 16"><path d="M8 3v10M3 8h10"/></svg>
+          </div>
+          <div class="faq-a">Any FWS member can book a tutoring session. Individual members with an active monthly subscription can book directly from educator availability. Institutions and prospective educators can book a consultation call.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)">
+            How long are sessions?
+            <svg viewBox="0 0 16 16"><path d="M8 3v10M3 8h10"/></svg>
+          </div>
+          <div class="faq-a">Standard tutoring sessions are 60 minutes. Educator consultation calls are 30 minutes. For ESI substitute bookings under 2 hours, hourly rates apply. Daily rate applies thereafter.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)">
+            What platform will the session be on?
+            <svg viewBox="0 0 16 16"><path d="M8 3v10M3 8h10"/></svg>
+          </div>
+          <div class="faq-a">All FWS sessions are delivered via Zoom or Google Meets. After booking, you will receive a confirmation email with the meeting link for your session.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)">
+            Can I cancel or reschedule?
+            <svg viewBox="0 0 16 16"><path d="M8 3v10M3 8h10"/></svg>
+          </div>
+          <div class="faq-a">Yes. Sessions can be rescheduled or cancelled up to 24 hours before the start time without penalty. Contact us via the FWS contact page if you need assistance.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)">
+            How do I become a member to access tutoring?
+            <svg viewBox="0 0 16 16"><path d="M8 3v10M3 8h10"/></svg>
+          </div>
+          <div class="faq-a">Purchase any FWS course or subscribe to a monthly tutoring plan. Once subscribed, you can browse educator availability and book sessions directly through the booking calendar.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SIDEBAR -->
+    <div class="booking-side">
+      <h2>What to expect</h2>
+      <div class="side-info-item">
+        <div class="side-info-icon">
+          <svg viewBox="0 0 24 24"><path d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 0 1-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>
+        </div>
+        <div>
+          <div class="side-info-title">Confirmation Email</div>
+          <div class="side-info-desc">You'll receive a booking confirmation with your Zoom or Google Meets link immediately after scheduling.</div>
+        </div>
+      </div>
+      <div class="side-info-item">
+        <div class="side-info-icon">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+        </div>
+        <div>
+          <div class="side-info-title">Session Reminder</div>
+          <div class="side-info-desc">A reminder is sent 24 hours and 1 hour before your session so you're always prepared.</div>
+        </div>
+      </div>
+      <div class="side-info-item">
+        <div class="side-info-icon">
+          <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+        </div>
+        <div>
+          <div class="side-info-title">Live Video Session</div>
+          <div class="side-info-desc">All sessions are live and interactive. FWS educators use Zoom or Google Meets for all instruction.</div>
+        </div>
+      </div>
+      <div class="side-divider"></div>
+      <div class="side-types">
+        <h3>Session Types</h3>
+        <div class="session-type">
+          <div class="session-type-name">Individual Tutoring</div>
+          <div class="session-type-desc">One-on-one session with an FWS educator. 60 min. Available to monthly subscribers.</div>
+        </div>
+        <div class="session-type">
+          <div class="session-type-name">Educator Consultation</div>
+          <div class="session-type-desc">30-min call for prospective educators to learn about FWS tracks and onboarding.</div>
+        </div>
+        <div class="session-type">
+          <div class="session-type-name">Institution Intake Call</div>
+          <div class="session-type-desc">Discovery call for schools and cooperatives considering FWS membership.</div>
+        </div>
+      </div>
+      <div class="side-note">
+        <div class="side-note-label">Need help?</div>
+        <p>If you're having trouble booking, contact us directly at <a href="contact.html" style="color: var(--gold);">the contact page</a> and we'll schedule your session manually.</p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- SQUARE APPOINTMENTS EMBED -->
+<script src='https://square.site/appointments/buyer/widget/0l7acyau8d0ckn/LCDJYH06M93DM.js'></script>
+
+<script>
+// FAQ toggle
+function toggleFaq(el) {
+  const item = el.closest('.faq-item');
+  item.classList.toggle('open');
+}
+
+// Check if Square widget loaded
+setTimeout(() => {
+  const loading = document.getElementById('squareLoading');
+  // Square injects its widget into the page body - hide loading state
+  const squareEl = document.querySelector('[data-square-appointments]') || document.querySelector('.sq-appointments-wrapper');
+  if (squareEl) {
+    if (loading) loading.style.display = 'none';
+    document.getElementById('squareWrap').appendChild(squareEl);
+  } else {
+    if (loading) {
+      loading.querySelector('p').textContent = 'Use the link below to book your session directly.';
+      loading.querySelector('.square-loading-icon').style.display = 'none';
+    }
+  }
+}, 3000);
+</script>
+</body>
+</html>

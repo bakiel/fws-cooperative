@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Favicon -->
+<link rel="icon" type="image/svg+xml" href="../assets/icons/favicon.svg">
+<link rel="shortcut icon" href="../assets/icons/favicon.svg">
+<!-- Open Graph / WhatsApp / Social Sharing -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Family World School Cooperative">
+<meta property="og:description" content="A cooperative of world-class educators supporting homes, families, and independent schools globally.">
+<meta property="og:image" content="https://familyworldschoolcooperative.org/assets/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:site_name" content="Family World School Cooperative">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://familyworldschoolcooperative.org/assets/og-image.jpg">
+<title>Educator Application - Family World School Cooperative</title>
+<style>
+@font-face { font-family: 'Cormorant Garamond'; src: url('../assets/fonts/cormorant-garamond-700.woff2') format('woff2'); font-weight: 700; font-display: swap; }
+@font-face { font-family: 'DM Sans'; src: url('../assets/fonts/dm-sans-400.woff2') format('woff2'); font-weight: 400; font-display: swap; }
+@font-face { font-family: 'DM Sans'; src: url('../assets/fonts/dm-sans-600.woff2') format('woff2'); font-weight: 600; font-display: swap; }
+@font-face { font-family: 'DM Sans'; src: url('../assets/fonts/dm-sans-700.woff2') format('woff2'); font-weight: 700; font-display: swap; }
+:root { --crimson:#c72028; --crimson-dk:#a01820; --navy:#0f1a2e; --navy-s:#1a2a3a; --gold:#c9a84c; --cream:#f5f0e8; --off-white:#f8f5f0; --dark:#1a1a1a; --muted:#6b7a8d; --border:rgba(201,168,76,0.25); }
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'DM Sans',sans-serif;background:var(--navy);color:var(--cream);overflow-x:hidden;line-height:1.7;}
+a{text-decoration:none;color:inherit;}
+svg{stroke:currentColor;fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;}
+
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:0 5%;height:72px;display:flex;align-items:center;justify-content:space-between;background:rgba(15,26,46,0.95);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);}
+.nav-logo{display:flex;align-items:center;gap:12px;}
+.nav-logo img{width:36px;height:36px;filter:brightness(0) invert(1);}
+.nav-logo-name{font-family:'Cormorant Garamond',serif;font-size:17px;font-weight:700;color:var(--cream);}
+.nav-back{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:600;color:rgba(245,240,232,0.55);padding:6px 14px;border-radius:6px;border:1px solid rgba(255,255,255,0.1);transition:0.2s;}
+.nav-back:hover{color:var(--cream);}
+
+.form-page{padding:120px 0 80px;}
+.form-container{max-width:720px;margin:0 auto;padding:0 5%;}
+.form-header{margin-bottom:48px;}
+.eyebrow{font-size:11px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:16px;display:flex;align-items:center;gap:8px;}
+.eyebrow::before{content:'';width:24px;height:1px;background:var(--gold);}
+.form-header h1{font-family:'Cormorant Garamond',serif;font-size:clamp(36px,5vw,60px);font-weight:700;line-height:1.05;letter-spacing:-0.02em;color:var(--cream);margin-bottom:16px;}
+.form-header h1 span{color:var(--crimson);}
+.form-header p{font-size:15px;color:rgba(245,240,232,0.55);line-height:1.75;max-width:560px;}
+
+.form-section{background:var(--navy-s);border:1px solid rgba(255,255,255,0.06);border-radius:16px;padding:36px;margin-bottom:24px;}
+.section-title{font-size:13px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--gold);margin-bottom:24px;display:flex;align-items:center;gap:8px;}
+.section-title::before{content:'';width:16px;height:1px;background:var(--gold);}
+.form-grid{display:grid;gap:16px;}
+.form-grid.two{grid-template-columns:1fr 1fr;}
+.form-group{display:flex;flex-direction:column;gap:6px;}
+.form-group label{font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:rgba(245,240,232,0.45);}
+.form-group input,.form-group select,.form-group textarea{background:var(--navy);border:1px solid rgba(255,255,255,0.1);border-radius:8px;padding:12px 16px;font-family:'DM Sans',sans-serif;font-size:14px;color:var(--cream);outline:none;transition:border-color 0.2s;-webkit-appearance:none;appearance:none;width:100%;}
+.form-group textarea{resize:vertical;min-height:100px;line-height:1.6;}
+.form-group input::placeholder,.form-group textarea::placeholder{color:rgba(245,240,232,0.2);}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:var(--crimson);}
+.form-group select option{background:var(--navy-s);color:var(--cream);}
+.form-group .hint{font-size:11px;color:var(--muted);margin-top:2px;}
+
+.checkbox-group{display:flex;flex-direction:column;gap:10px;}
+.check-label{display:flex;align-items:center;gap:12px;cursor:pointer;padding:10px 14px;border-radius:8px;border:1px solid rgba(255,255,255,0.06);transition:0.2s;}
+.check-label:hover{border-color:rgba(255,255,255,0.12);}
+.check-label input[type="checkbox"]{width:18px;height:18px;accent-color:var(--crimson);cursor:pointer;flex-shrink:0;}
+.check-label-text{font-size:13px;color:rgba(245,240,232,0.75);}
+
+.track-cards{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:0;}
+.track-card{position:relative;}
+.track-card input[type="radio"]{position:absolute;opacity:0;width:0;height:0;}
+.track-card-body{display:flex;flex-direction:column;gap:6px;border:1.5px solid rgba(255,255,255,0.08);border-radius:12px;padding:20px;cursor:pointer;transition:0.2s;}
+.track-card input:checked + .track-card-body{border-color:var(--crimson);background:rgba(199,32,40,0.06);}
+.track-card-body:hover{border-color:rgba(255,255,255,0.2);}
+.track-tag{font-size:9px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold);margin-bottom:4px;}
+.track-name{font-size:14px;font-weight:700;color:var(--cream);}
+.track-desc{font-size:12px;color:rgba(245,240,232,0.45);line-height:1.5;}
+
+.consent-box{background:rgba(199,32,40,0.05);border:1px solid rgba(199,32,40,0.15);border-radius:12px;padding:24px;margin-bottom:24px;}
+.consent-box h4{font-size:13px;font-weight:700;color:var(--cream);margin-bottom:12px;}
+.consent-box p{font-size:12px;color:rgba(245,240,232,0.5);line-height:1.7;margin-bottom:16px;}
+.consent-check{display:flex;align-items:flex-start;gap:12px;}
+.consent-check input{width:18px;height:18px;accent-color:var(--crimson);margin-top:2px;flex-shrink:0;}
+.consent-check label{font-size:13px;color:rgba(245,240,232,0.7);line-height:1.6;cursor:pointer;}
+
+.submit-row{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;}
+.submit-note{font-size:12px;color:var(--muted);}
+.submit-btn{display:inline-flex;align-items:center;gap:8px;background:var(--crimson);color:white;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:700;padding:14px 36px;border-radius:8px;border:none;cursor:pointer;transition:0.2s;}
+.submit-btn:hover{background:var(--crimson-dk);transform:translateY(-1px);}
+.submit-btn.sent{background:#2d5a3d;pointer-events:none;}
+.progress-bar{height:2px;background:rgba(255,255,255,0.06);border-radius:2px;margin-bottom:48px;}
+.progress-fill{height:100%;background:var(--crimson);border-radius:2px;width:0%;transition:width 0.4s ease;}
+
+@media(max-width:640px){.form-grid.two{grid-template-columns:1fr;}.track-cards{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-logo">
+    <img src="../assets/icons/fws-logo.svg" alt="FWS">
+    <div class="nav-logo-name">Family World School Cooperative</div>
+  </div>
+  <a href="educators.html" class="nav-back">
+    <svg viewBox="0 0 16 16"><path d="M10 4l-4 4 4 4"/></svg>
+    Educators
+  </a>
+</nav>
+
+<div class="form-page">
+  <div class="form-container">
+
+    <div class="form-header">
+      <div class="eyebrow">Join the Network</div>
+      <h1>Educator <span>Application</span></h1>
+      <p>Apply to join FWS as a substitute educator, regular educator, or course creator. We'll review your application and follow up within 2 business days.</p>
+    </div>
+
+    <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+
+    <form id="educatorForm">
+
+      <!-- SECTION 1: PERSONAL INFO -->
+      <div class="form-section">
+        <div class="section-title">Personal Information</div>
+        <div class="form-grid two">
+          <div class="form-group">
+            <label for="fname">First Name *</label>
+            <input type="text" id="fname" name="fname" placeholder="Miriam" required>
+          </div>
+          <div class="form-group">
+            <label for="lname">Last Name *</label>
+            <input type="text" id="lname" name="lname" placeholder="Thomas" required>
+          </div>
+        </div>
+        <div class="form-grid two" style="margin-top:16px;">
+          <div class="form-group">
+            <label for="email">Email Address *</label>
+            <input type="email" id="email" name="email" placeholder="your@email.com" required>
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone / WhatsApp</label>
+            <input type="tel" id="phone" name="phone" placeholder="+1 555 000 0000">
+          </div>
+        </div>
+        <div class="form-grid" style="margin-top:16px;">
+          <div class="form-group">
+            <label for="location">Country / Region *</label>
+            <input type="text" id="location" name="location" placeholder="e.g. United States, Israel, South Africa" required>
+          </div>
+        </div>
+      </div>
+
+      <!-- SECTION 2: TRACK SELECTION -->
+      <div class="form-section">
+        <div class="section-title">ESI Track - Choose Your Role</div>
+        <div class="track-cards">
+          <div class="track-card">
+            <input type="radio" name="esi_track" id="track_substitute" value="substitute">
+            <label class="track-card-body" for="track_substitute">
+              <div class="track-tag">Track A</div>
+              <div class="track-name">Substitute Educator</div>
+              <div class="track-desc">Short-notice availability. Post open days. Institutions book you for 1-day or short sessions.</div>
+            </label>
+          </div>
+          <div class="track-card">
+            <input type="radio" name="esi_track" id="track_regular" value="regular">
+            <label class="track-card-body" for="track_regular">
+              <div class="track-tag">Track B</div>
+              <div class="track-name">Regular Educator</div>
+              <div class="track-desc">Semester contracts. Fixed weekly schedule. Build a long-term relationship with institutions.</div>
+            </label>
+          </div>
+        </div>
+        <div class="form-group" style="margin-top:16px;">
+          <label>I also want to create FWS Courses (10-video library)</label>
+          <div class="check-label" style="margin-top:6px;">
+            <input type="checkbox" id="create_courses" name="create_courses">
+            <span class="check-label-text">Yes - I want to create a course library and earn per purchase</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- SECTION 3: QUALIFICATIONS -->
+      <div class="form-section">
+        <div class="section-title">Qualifications and Teaching Experience</div>
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="qualification">Highest Teaching Qualification *</label>
+            <select id="qualification" name="qualification" required>
+              <option value="" disabled selected>Select your qualification</option>
+              <option>Bachelor of Education (BEd)</option>
+              <option>Postgraduate Certificate in Education (PGCE)</option>
+              <option>Bachelor's Degree + Teaching Certification</option>
+              <option>Master's in Education</option>
+              <option>Alternative Teaching Certification</option>
+              <option>Subject Expert / Industry Professional</option>
+              <option>Other - please specify in notes</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-grid" style="margin-top:16px;">
+          <div class="form-group">
+            <label>Years of Teaching Experience *</label>
+            <select name="experience" required>
+              <option value="" disabled selected>Select experience</option>
+              <option>Less than 1 year</option>
+              <option>1-3 years</option>
+              <option>3-5 years</option>
+              <option>5-10 years</option>
+              <option>10+ years</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-grid" style="margin-top:16px;">
+          <div class="form-group">
+            <label>Teaching Experience Type</label>
+            <div class="checkbox-group">
+              <label class="check-label"><input type="checkbox" name="exp_type" value="classroom"> <span class="check-label-text">Classroom / school-based teaching</span></label>
+              <label class="check-label"><input type="checkbox" name="exp_type" value="homeschool"> <span class="check-label-text">Home school or cooperative learning</span></label>
+              <label class="check-label"><input type="checkbox" name="exp_type" value="online"> <span class="check-label-text">Online / virtual teaching</span></label>
+              <label class="check-label"><input type="checkbox" name="exp_type" value="tutoring"> <span class="check-label-text">Private tutoring</span></label>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SECTION 4: SUBJECTS AND AGE GROUPS -->
+      <div class="form-section">
+        <div class="section-title">Subjects and Age Groups</div>
+        <div class="form-grid">
+          <div class="form-group">
+            <label>Primary Subject Areas *</label>
+            <div class="checkbox-group">
+              <label class="check-label"><input type="checkbox" name="subjects" value="mathematics"> <span class="check-label-text">Mathematics</span></label>
+              <label class="check-label"><input type="checkbox" name="subjects" value="science"> <span class="check-label-text">Science (Biology, Chemistry, Physics)</span></label>
+              <label class="check-label"><input type="checkbox" name="subjects" value="language_arts"> <span class="check-label-text">Language Arts / English Literature</span></label>
+              <label class="check-label"><input type="checkbox" name="subjects" value="history"> <span class="check-label-text">History and Social Studies</span></label>
+              <label class="check-label"><input type="checkbox" name="subjects" value="languages"> <span class="check-label-text">Foreign Languages</span></label>
+              <label class="check-label"><input type="checkbox" name="subjects" value="arts"> <span class="check-label-text">Arts and Creative Studies</span></label>
+              <label class="check-label"><input type="checkbox" name="subjects" value="health"> <span class="check-label-text">Health, Wellness and Nutrition</span></label>
+              <label class="check-label"><input type="checkbox" name="subjects" value="technology"> <span class="check-label-text">Technology and Computing</span></label>
+              <label class="check-label"><input type="checkbox" name="subjects" value="other_subject"> <span class="check-label-text">Other - specify below</span></label>
+            </div>
+          </div>
+        </div>
+        <div class="form-group" style="margin-top:16px;">
+          <label for="other_subjects">Other Subject Areas</label>
+          <input type="text" id="other_subjects" name="other_subjects" placeholder="e.g. Hebrew Studies, Financial Literacy, Coding">
+        </div>
+        <div class="form-grid" style="margin-top:16px;">
+          <div class="form-group">
+            <label>Age Groups You Can Teach</label>
+            <div class="checkbox-group">
+              <label class="check-label"><input type="checkbox" name="age_groups" value="early"> <span class="check-label-text">Early Childhood (3-6 years)</span></label>
+              <label class="check-label"><input type="checkbox" name="age_groups" value="primary"> <span class="check-label-text">Primary (7-11 years)</span></label>
+              <label class="check-label"><input type="checkbox" name="age_groups" value="middle"> <span class="check-label-text">Middle School (12-14 years)</span></label>
+              <label class="check-label"><input type="checkbox" name="age_groups" value="high"> <span class="check-label-text">High School (15-18 years)</span></label>
+              <label class="check-label"><input type="checkbox" name="age_groups" value="adult"> <span class="check-label-text">Adult Learners (18+)</span></label>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SECTION 5: AVAILABILITY -->
+      <div class="form-section">
+        <div class="section-title">Availability and Platform</div>
+        <div class="form-grid">
+          <div class="form-group">
+            <label>General Availability</label>
+            <div class="checkbox-group">
+              <label class="check-label"><input type="checkbox" name="availability" value="weekday_mornings"> <span class="check-label-text">Weekday Mornings</span></label>
+              <label class="check-label"><input type="checkbox" name="availability" value="weekday_afternoons"> <span class="check-label-text">Weekday Afternoons</span></label>
+              <label class="check-label"><input type="checkbox" name="availability" value="weekday_evenings"> <span class="check-label-text">Weekday Evenings</span></label>
+              <label class="check-label"><input type="checkbox" name="availability" value="weekends"> <span class="check-label-text">Weekends</span></label>
+              <label class="check-label"><input type="checkbox" name="availability" value="flexible"> <span class="check-label-text">Flexible - varies week to week</span></label>
+            </div>
+          </div>
+        </div>
+        <div class="form-grid" style="margin-top:16px;">
+          <div class="form-group">
+            <label>Teaching Platform Comfort</label>
+            <div class="checkbox-group">
+              <label class="check-label"><input type="checkbox" name="platforms" value="zoom"> <span class="check-label-text">Zoom (confident user)</span></label>
+              <label class="check-label"><input type="checkbox" name="platforms" value="google_meets"> <span class="check-label-text">Google Meets</span></label>
+              <label class="check-label"><input type="checkbox" name="platforms" value="in_person"> <span class="check-label-text">In-person (for local institutions)</span></label>
+            </div>
+          </div>
+        </div>
+        <div class="form-grid" style="margin-top:16px;">
+          <div class="form-group">
+            <label>Time Zone *</label>
+            <input type="text" name="timezone" placeholder="e.g. EST (UTC-5), CAT (UTC+2), IDT (UTC+3)" required>
+          </div>
+        </div>
+      </div>
+
+      <!-- SECTION 6: ADDITIONAL INFO -->
+      <div class="form-section">
+        <div class="section-title">Additional Information</div>
+        <div class="form-group">
+          <label for="background">Brief Professional Background</label>
+          <textarea id="background" name="background" placeholder="Tell us about your teaching background, any specialist areas, and what drew you to FWS..."></textarea>
+        </div>
+        <div class="form-group" style="margin-top:16px;">
+          <label for="rate_expectation">Rate Expectations (optional)</label>
+          <input type="text" id="rate_expectation" name="rate_expectation" placeholder="e.g. $30-40/hour for substituting, open to discussion for contracts">
+          <div class="hint">This helps us match you to appropriate institutions. All final rates are agreed directly between you and FWS.</div>
+        </div>
+        <div class="form-group" style="margin-top:16px;">
+          <label for="how_heard">How did you hear about FWS?</label>
+          <select id="how_heard" name="how_heard">
+            <option value="" disabled selected>Select</option>
+            <option>DCA Network referral</option>
+            <option>It's My Miracle / Miraculous Transitions</option>
+            <option>Word of mouth / personal referral</option>
+            <option>Social media</option>
+            <option>Online search</option>
+            <option>Other</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- CONSENT -->
+      <div class="consent-box">
+        <h4>Declarations and Consent</h4>
+        <p>By submitting this application, you confirm the following. FWS will review your application and may request supporting documentation (qualifications, ID) before activation in the network.</p>
+        <div class="consent-check" style="margin-bottom:12px;">
+          <input type="checkbox" id="consent_bg" name="consent_bg" required>
+          <label for="consent_bg">I consent to a background verification check as part of the FWS onboarding process. I understand this is required to protect learners in the network.</label>
+        </div>
+        <div class="consent-check" style="margin-bottom:12px;">
+          <input type="checkbox" id="consent_terms" name="consent_terms" required>
+          <label for="consent_terms">I agree to the FWS Educator Terms, including availability commitments, booking protocols, and the absence penalty policy for regular educators.</label>
+        </div>
+        <div class="consent-check">
+          <input type="checkbox" id="consent_data" name="consent_data" required>
+          <label for="consent_data">I consent to FWS holding and processing my personal information for the purpose of this application and the ESI program.</label>
+        </div>
+      </div>
+
+      <div class="submit-row">
+        <div class="submit-note">We respond within 2 business days. All information is kept confidential.</div>
+        <button type="submit" class="submit-btn" id="submitBtn">
+          Submit Application
+          <svg width="16" height="16" viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+        </button>
+      </div>
+
+    </form>
+  </div>
+</div>
+
+<script>
+// Progress bar based on filled fields
+function updateProgress() {
+  const required = document.querySelectorAll('[required]');
+  let filled = 0;
+  required.forEach(el => {
+    if (el.type === 'checkbox') { if (el.checked) filled++; }
+    else if (el.value && el.value !== '') filled++;
+  });
+  const pct = Math.min(100, Math.round((filled / required.length) * 100));
+  document.getElementById('progressFill').style.width = pct + '%';
+}
+document.querySelectorAll('input, select, textarea').forEach(el => {
+  el.addEventListener('change', updateProgress);
+  el.addEventListener('input', updateProgress);
+});
+
+// Form submission
+document.getElementById('educatorForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  const btn = document.getElementById('submitBtn');
+  btn.classList.add('sent');
+  const span = document.createElement('span');
+  span.textContent = 'Application Submitted - Thank You!';
+  const icon = btn.querySelector('svg');
+  if (icon) icon.style.display = 'none';
+  btn.textContent = '';
+  btn.appendChild(span);
+  document.getElementById('progressFill').style.width = '100%';
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Favicon -->
+<link rel="icon" type="image/svg+xml" href="../assets/icons/favicon.svg">
+<link rel="shortcut icon" href="../assets/icons/favicon.svg">
+<!-- Open Graph / WhatsApp / Social Sharing -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Family World School Cooperative">
+<meta property="og:description" content="A cooperative of world-class educators supporting homes, families, and independent schools globally.">
+<meta property="og:image" content="https://familyworldschoolcooperative.org/assets/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:site_name" content="Family World School Cooperative">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://familyworldschoolcooperative.org/assets/og-image.jpg">
+<title>Course Library - Family World School Cooperative</title>
+<style>
+@font-face { font-family: 'Cormorant Garamond'; src: url('../assets/fonts/cormorant-garamond-400.woff2') format('woff2'); font-weight: 400; font-display: swap; }
+@font-face { font-family: 'Cormorant Garamond'; src: url('../assets/fonts/cormorant-garamond-700.woff2') format('woff2'); font-weight: 700; font-display: swap; }
+@font-face { font-family: 'DM Sans'; src: url('../assets/fonts/dm-sans-400.woff2') format('woff2'); font-weight: 400; font-display: swap; }
+@font-face { font-family: 'DM Sans'; src: url('../assets/fonts/dm-sans-600.woff2') format('woff2'); font-weight: 600; font-display: swap; }
+@font-face { font-family: 'DM Sans'; src: url('../assets/fonts/dm-sans-700.woff2') format('woff2'); font-weight: 700; font-display: swap; }
+:root { --crimson:#c72028;--crimson-dk:#a01820;--crimson-lt:#e84040;--navy:#0f1a2e;--navy-s:#1a2a3a;--navy-l:#243447;--gold:#c9a84c;--cream:#f5f0e8;--off-white:#f8f5f0;--dark:#1a1a1a;--muted:#6b7a8d;--border:rgba(201,168,76,0.25); }
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'DM Sans',sans-serif;background:var(--navy);color:var(--cream);overflow-x:hidden;line-height:1.7;}
+img{display:block;max-width:100%;}a{text-decoration:none;color:inherit;}
+svg{stroke:currentColor;fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;}
+
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:0 5%;height:72px;display:flex;align-items:center;justify-content:space-between;background:rgba(15,26,46,0.95);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);}
+.nav-logo{display:flex;align-items:center;gap:12px;}
+.nav-logo img{width:36px;height:36px;filter:brightness(0) invert(1);}
+.nav-name{font-family:'Cormorant Garamond',serif;font-size:17px;font-weight:700;color:var(--cream);}
+.nav-links{display:flex;align-items:center;gap:4px;list-style:none;}
+.nav-links a{font-size:13px;font-weight:600;color:rgba(245,240,232,0.6);padding:6px 12px;border-radius:6px;transition:0.2s;}
+.nav-links a:hover,.nav-links a.active{color:var(--cream);}
+.nav-links a.active{color:var(--crimson);}
+.nav-cta{background:var(--crimson)!important;color:white!important;padding:7px 18px!important;border-radius:6px!important;}
+
+/* HERO */
+.page-hero{padding:140px 8% 60px;position:relative;overflow:hidden;}
+.page-hero::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(199,32,40,0.05),transparent 60%);pointer-events:none;}
+.page-hero-inner{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;max-width:1280px;margin:0 auto;}
+.eyebrow{font-size:11px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:16px;display:flex;align-items:center;gap:8px;}
+.eyebrow::before{content:'';width:24px;height:1px;background:var(--gold);}
+.page-hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(44px,6vw,80px);font-weight:700;line-height:1.04;letter-spacing:-0.02em;color:var(--cream);margin-bottom:20px;}
+.page-hero h1 span{color:var(--crimson);}
+.page-hero p{font-size:16px;color:rgba(245,240,232,0.65);line-height:1.8;margin-bottom:32px;}
+.btn-primary{display:inline-flex;align-items:center;gap:8px;background:var(--crimson);color:white;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:700;padding:13px 26px;border-radius:8px;border:none;cursor:pointer;transition:0.2s;}
+.btn-primary:hover{background:var(--crimson-dk);transform:translateY(-2px);}
+.hero-stats{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+.hero-stat{background:var(--navy-s);border:1px solid var(--border);border-radius:12px;padding:24px;position:relative;overflow:hidden;}
+.hero-stat::after{content:'';position:absolute;left:0;top:0;width:3px;height:100%;background:var(--crimson);}
+.stat-num{font-family:'Cormorant Garamond',serif;font-size:44px;font-weight:700;color:var(--cream);line-height:1;margin-bottom:4px;}
+.stat-num span{color:var(--crimson);}
+.stat-label{font-size:12px;color:rgba(245,240,232,0.45);text-transform:uppercase;letter-spacing:0.08em;font-weight:600;}
+
+/* FILTERS */
+.filters-bar{padding:32px 8%;background:var(--navy-s);border-bottom:1px solid rgba(255,255,255,0.06);}
+.filters-inner{display:flex;align-items:center;gap:12px;max-width:1280px;margin:0 auto;flex-wrap:wrap;}
+.filter-label{font-size:12px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--muted);margin-right:4px;}
+.filter-btn{padding:7px 16px;border-radius:20px;background:transparent;border:1px solid rgba(255,255,255,0.12);color:rgba(245,240,232,0.55);font-family:'DM Sans',sans-serif;font-size:13px;font-weight:600;cursor:pointer;transition:0.2s;}
+.filter-btn:hover,.filter-btn.active{background:rgba(199,32,40,0.15);border-color:var(--crimson);color:var(--cream);}
+
+/* COURSE GRID */
+.course-library{padding:64px 8% 100px;background:var(--navy);}
+.courses-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;max-width:1280px;margin:0 auto;}
+.course-card{background:var(--navy-s);border:1px solid rgba(255,255,255,0.06);border-radius:14px;overflow:hidden;transition:0.3s;cursor:pointer;}
+.course-card:hover{transform:translateY(-5px);border-color:rgba(199,32,40,0.35);box-shadow:0 20px 40px rgba(0,0,0,0.2);}
+.course-cover{height:180px;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;}
+.course-cover svg{width:48px;height:48px;opacity:0.3;}
+.course-cover.math{background:linear-gradient(135deg,#1a2a3a,#0f2040);}
+.course-cover.science{background:linear-gradient(135deg,#1a3a2a,#0f2a1a);}
+.course-cover.language{background:linear-gradient(135deg,#3a1a1a,#2a0f0f);}
+.course-cover.history{background:linear-gradient(135deg,#3a2a1a,#2a1a0f);}
+.course-cover.arts{background:linear-gradient(135deg,#2a1a3a,#1a0f2a);}
+.course-cover.health{background:linear-gradient(135deg,#1a3a3a,#0f2a2a);}
+.course-tag{position:absolute;top:12px;left:12px;background:rgba(15,26,46,0.85);backdrop-filter:blur(8px);border:1px solid var(--border);border-radius:4px;padding:3px 8px;font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold);}
+.course-body{padding:20px 24px 28px;}
+.course-educator{font-size:12px;color:var(--muted);margin-bottom:6px;display:flex;align-items:center;gap:6px;}
+.educator-dot{width:6px;height:6px;border-radius:50%;background:var(--crimson);}
+.course-title{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:700;color:var(--cream);margin-bottom:8px;line-height:1.2;}
+.course-desc{font-size:13px;color:rgba(245,240,232,0.5);line-height:1.55;margin-bottom:16px;}
+.course-meta{display:flex;align-items:center;justify-content:space-between;}
+.course-videos{display:flex;align-items:center;gap:5px;font-size:12px;color:rgba(245,240,232,0.4);font-weight:600;}
+.course-videos svg{width:14px;height:14px;stroke:var(--crimson-lt);}
+.course-level{font-size:11px;font-weight:700;letter-spacing:0.06em;background:rgba(201,168,76,0.1);border:1px solid rgba(201,168,76,0.2);color:var(--gold);padding:3px 8px;border-radius:4px;}
+
+/* HOW COURSES WORK */
+.how-courses{padding:80px 8%;background:var(--navy-s);}
+.how-inner{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;max-width:1280px;margin:0 auto;}
+.how-text .eyebrow2{font-size:11px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:16px;display:flex;align-items:center;gap:8px;}
+.how-text .eyebrow2::before{content:'';width:24px;height:1px;background:var(--gold);}
+.how-text h2{font-family:'Cormorant Garamond',serif;font-size:clamp(32px,4vw,48px);font-weight:700;color:var(--cream);margin-bottom:16px;line-height:1.1;}
+.how-text p{font-size:15px;color:rgba(245,240,232,0.6);line-height:1.8;margin-bottom:28px;}
+.how-points{display:flex;flex-direction:column;gap:12px;}
+.how-point{display:flex;align-items:flex-start;gap:12px;padding:16px;background:var(--navy);border-radius:10px;border:1px solid rgba(255,255,255,0.05);}
+.how-point-icon{width:32px;height:32px;border-radius:8px;background:rgba(199,32,40,0.12);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.how-point-icon svg{width:16px;height:16px;stroke:var(--crimson-lt);}
+.how-point-text{font-size:14px;color:rgba(245,240,232,0.7);line-height:1.5;}
+.how-visual img{width:100%;height:460px;object-fit:cover;border-radius:16px;}
+
+/* CTA */
+.page-cta{padding:80px 8%;background:var(--crimson);text-align:center;position:relative;overflow:hidden;}
+.page-cta::before{content:'';position:absolute;top:-80px;right:-80px;width:400px;height:400px;border-radius:50%;background:rgba(255,255,255,0.05);pointer-events:none;}
+.page-cta h2{font-family:'Cormorant Garamond',serif;font-size:clamp(36px,5vw,64px);font-weight:700;color:white;margin-bottom:14px;line-height:1.1;position:relative;z-index:1;}
+.page-cta p{font-size:17px;color:rgba(255,255,255,0.75);margin-bottom:36px;max-width:460px;margin-left:auto;margin-right:auto;position:relative;z-index:1;}
+.cta-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;position:relative;z-index:1;}
+.btn-white{display:inline-flex;align-items:center;gap:8px;background:white;color:var(--crimson);font-family:'DM Sans',sans-serif;font-size:14px;font-weight:700;padding:13px 26px;border-radius:8px;border:none;cursor:pointer;transition:0.2s;}
+.btn-white:hover{transform:translateY(-2px);}
+.btn-outline-white{display:inline-flex;align-items:center;gap:8px;background:transparent;color:white;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:600;padding:13px 26px;border-radius:8px;border:2px solid rgba(255,255,255,0.5);cursor:pointer;transition:0.2s;}
+.btn-outline-white:hover{background:rgba(255,255,255,0.1);transform:translateY(-2px);}
+
+.footer-min{background:#070e1c;padding:40px 8%;border-top:1px solid rgba(255,255,255,0.05);display:flex;align-items:center;justify-content:space-between;}
+.footer-min-logo{font-family:'Cormorant Garamond',serif;font-size:15px;font-weight:700;color:rgba(245,240,232,0.4);}
+.footer-min-links{display:flex;gap:24px;}
+.footer-min-links a{font-size:12px;color:rgba(245,240,232,0.25);transition:color 0.2s;}
+.footer-min-links a:hover{color:var(--cream);}
+
+@media(max-width:1024px){.page-hero-inner,.how-inner{grid-template-columns:1fr;gap:48px;}.courses-grid{grid-template-columns:1fr 1fr;}.hero-stats{grid-template-columns:1fr 1fr;}}
+@media(max-width:768px){.courses-grid{grid-template-columns:1fr;}.footer-min{flex-direction:column;gap:16px;text-align:center;}}
+</style>
+</head>
+<body>
+<nav class="nav">
+  <a href="../index.html" class="nav-logo">
+    <img src="../assets/icons/fws-logo.svg" alt="FWS">
+    <div class="nav-name">Family World School</div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="educators.html">For Educators</a></li>
+    <li><a href="institutions.html">For Institutions</a></li>
+    <li><a href="courses.html" class="active">Courses</a></li>
+    <li><a href="esi.html">ESI</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="booking.html" class="nav-cta">Book Now</a></li>
+  </ul>
+</nav>
+
+<section class="page-hero">
+  <div class="page-hero-inner">
+    <div>
+      <div class="eyebrow">Course Library</div>
+      <h1>Expert courses,<br><span>every subject</span></h1>
+      <p>Every FWS educator contributes a 10-video course to the cooperative library. Browse subjects, purchase individual courses, or subscribe monthly for full access plus tutoring.</p>
+      <a href="members.html" class="btn-primary" style="margin-top:8px;">Subscribe for Full Access <svg width="16" height="16" viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+    </div>
+    <div class="hero-stats">
+      <div class="hero-stat"><div class="stat-num">10<span>+</span></div><div class="stat-label">Videos per course</div></div>
+      <div class="hero-stat"><div class="stat-num">6<span>+</span></div><div class="stat-label">Subject areas</div></div>
+      <div class="hero-stat"><div class="stat-num">1<span>:1</span></div><div class="stat-label">Live tutoring</div></div>
+      <div class="hero-stat"><div class="stat-num">24<span>/7</span></div><div class="stat-label">Course access</div></div>
+    </div>
+  </div>
+</section>
+
+<div class="filters-bar">
+  <div class="filters-inner">
+    <span class="filter-label">Filter:</span>
+    <button class="filter-btn active">All Subjects</button>
+    <button class="filter-btn">Mathematics</button>
+    <button class="filter-btn">Science</button>
+    <button class="filter-btn">Language Arts</button>
+    <button class="filter-btn">History</button>
+    <button class="filter-btn">Arts</button>
+    <button class="filter-btn">Health</button>
+  </div>
+</div>
+
+<section class="course-library">
+  <div class="courses-grid">
+    <div class="course-card">
+      <div class="course-cover math"><svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg><div class="course-tag">Mathematics</div></div>
+      <div class="course-body">
+        <div class="course-educator"><span class="educator-dot"></span>FWS Educator - Mathematics</div>
+        <div class="course-title">Foundations of Algebra</div>
+        <div class="course-desc">Master variables, equations, and algebraic thinking. A complete foundation for middle and high school mathematics.</div>
+        <div class="course-meta"><div class="course-videos"><svg viewBox="0 0 16 16"><polygon points="5,3 13,8 5,13"/></svg>10 videos</div><div class="course-level">All Levels</div></div>
+      </div>
+    </div>
+    <div class="course-card">
+      <div class="course-cover science"><svg viewBox="0 0 24 24"><path d="M9 3H5a2 2 0 0 0-2 2v4m6-6h10a2 2 0 0 1 2 2v4M9 3v18m0 0h10a2 2 0 0 0 2-2V9M9 21H5a2 2 0 0 1-2-2V9m0 0h18"/></svg><div class="course-tag">Science</div></div>
+      <div class="course-body">
+        <div class="course-educator"><span class="educator-dot"></span>FWS Educator - Biology</div>
+        <div class="course-title">Introduction to Biology</div>
+        <div class="course-desc">Cells, ecosystems, genetics, and life systems. Engaging video lessons designed for curious young scientists.</div>
+        <div class="course-meta"><div class="course-videos"><svg viewBox="0 0 16 16"><polygon points="5,3 13,8 5,13"/></svg>10 videos</div><div class="course-level">Middle School</div></div>
+      </div>
+    </div>
+    <div class="course-card">
+      <div class="course-cover language"><svg viewBox="0 0 24 24"><path d="M12 19l7-7 3 3-7 7-3-3zM18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/></svg><div class="course-tag">Language Arts</div></div>
+      <div class="course-body">
+        <div class="course-educator"><span class="educator-dot"></span>FWS Educator - English</div>
+        <div class="course-title">Creative Writing Mastery</div>
+        <div class="course-desc">Story structure, character development, voice, and craft. Build confidence and skill as a writer.</div>
+        <div class="course-meta"><div class="course-videos"><svg viewBox="0 0 16 16"><polygon points="5,3 13,8 5,13"/></svg>10 videos</div><div class="course-level">Ages 10+</div></div>
+      </div>
+    </div>
+    <div class="course-card">
+      <div class="course-cover history"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg><div class="course-tag">History</div></div>
+      <div class="course-body">
+        <div class="course-educator"><span class="educator-dot"></span>FWS Educator - History</div>
+        <div class="course-title">World History Overview</div>
+        <div class="course-desc">Ancient civilizations to the modern era. A sweeping, engaging video journey through world history.</div>
+        <div class="course-meta"><div class="course-videos"><svg viewBox="0 0 16 16"><polygon points="5,3 13,8 5,13"/></svg>10 videos</div><div class="course-level">All Levels</div></div>
+      </div>
+    </div>
+    <div class="course-card">
+      <div class="course-cover arts"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M4.22 4.22l2.12 2.12M17.66 17.66l2.12 2.12M2 12h3M19 12h3M4.22 19.78l2.12-2.12M17.66 6.34l2.12-2.12"/></svg><div class="course-tag">Arts</div></div>
+      <div class="course-body">
+        <div class="course-educator"><span class="educator-dot"></span>FWS Educator - Visual Arts</div>
+        <div class="course-title">Drawing and Illustration</div>
+        <div class="course-desc">Line, form, perspective, and composition. Learn to draw with confidence through guided video lessons.</div>
+        <div class="course-meta"><div class="course-videos"><svg viewBox="0 0 16 16"><polygon points="5,3 13,8 5,13"/></svg>10 videos</div><div class="course-level">Beginner</div></div>
+      </div>
+    </div>
+    <div class="course-card">
+      <div class="course-cover health"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg><div class="course-tag">Health</div></div>
+      <div class="course-body">
+        <div class="course-educator"><span class="educator-dot"></span>FWS Educator - Wellness</div>
+        <div class="course-title">Plant-Based Living and Nutrition</div>
+        <div class="course-desc">Foundations of plant-based nutrition, healthy habits, and holistic wellness for the whole family.</div>
+        <div class="course-meta"><div class="course-videos"><svg viewBox="0 0 16 16"><polygon points="5,3 13,8 5,13"/></svg>10 videos</div><div class="course-level">All Ages</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="how-courses">
+  <div class="how-inner">
+    <div class="how-text">
+      <div class="eyebrow2">How It Works</div>
+      <h2>Every educator. Every subject. One cooperative.</h2>
+      <p>FWS courses are created by cooperative educators - people who teach, who care, and who know their subject deeply. Each course is a 10-video series designed for independent learners.</p>
+      <div class="how-points">
+        <div class="how-point">
+          <div class="how-point-icon"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></div>
+          <div class="how-point-text">Purchase any course for lifetime video access - watch at your own pace, replay as many times as you need.</div>
+        </div>
+        <div class="how-point">
+          <div class="how-point-icon"><svg viewBox="0 0 24 24"><path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01"/></svg></div>
+          <div class="how-point-text">Subscribe monthly to unlock both the full course library and tutoring booking access with all FWS educators.</div>
+        </div>
+        <div class="how-point">
+          <div class="how-point-icon"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+          <div class="how-point-text">Once subscribed, book live tutoring directly from any educator's availability calendar for 1-on-1 sessions.</div>
+        </div>
+      </div>
+    </div>
+    <div class="how-visual">
+      <img src="../assets/images/hero-courses.jpg" alt="FWS course learning">
+    </div>
+  </div>
+</section>
+
+<section class="page-cta">
+  <h2>Ready to start learning?</h2>
+  <p>Browse the full FWS course library, or subscribe for live tutoring access with cooperative educators.</p>
+  <div class="cta-btns">
+    <a href="members.html" class="btn-white">Subscribe Now <svg width="16" height="16" viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+    <a href="booking.html" class="btn-outline-white">Book Tutoring <svg width="16" height="16" viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+  </div>
+</section>
+
+<footer class="footer-min">
+  <div class="footer-min-logo">Family World School Cooperative</div>
+  <div class="footer-min-links">
+    <a href="../index.html">Home</a>
+    <a href="members.html">For Families</a>
+    <a href="booking.html">Book Now</a>
+  </div>
+</footer>
+
+<script>
+document.querySelectorAll('.filter-btn').forEach(btn => {
+  btn.addEventListener('click', function() {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    this.classList.add('active');
+  });
+});
+</script>
+</body>
+</html>

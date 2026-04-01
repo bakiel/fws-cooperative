@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Favicon -->
+<link rel="icon" type="image/svg+xml" href="../assets/icons/favicon.svg">
+<link rel="shortcut icon" href="../assets/icons/favicon.svg">
+<!-- Open Graph / WhatsApp / Social Sharing -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Family World School Cooperative">
+<meta property="og:description" content="A cooperative of world-class educators supporting homes, families, and independent schools globally.">
+<meta property="og:image" content="https://familyworldschoolcooperative.org/assets/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:site_name" content="Family World School Cooperative">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://familyworldschoolcooperative.org/assets/og-image.jpg">
+<title>For Institutions - Family World School Cooperative</title>
+<style>
+@font-face { font-family: 'Cormorant Garamond'; src: url('../assets/fonts/cormorant-garamond-400.woff2') format('woff2'); font-weight: 400; font-display: swap; }
+@font-face { font-family: 'Cormorant Garamond'; src: url('../assets/fonts/cormorant-garamond-700.woff2') format('woff2'); font-weight: 700; font-display: swap; }
+@font-face { font-family: 'DM Sans'; src: url('../assets/fonts/dm-sans-400.woff2') format('woff2'); font-weight: 400; font-display: swap; }
+@font-face { font-family: 'DM Sans'; src: url('../assets/fonts/dm-sans-600.woff2') format('woff2'); font-weight: 600; font-display: swap; }
+@font-face { font-family: 'DM Sans'; src: url('../assets/fonts/dm-sans-700.woff2') format('woff2'); font-weight: 700; font-display: swap; }
+:root { --crimson:#c72028; --crimson-dk:#a01820; --crimson-lt:#e84040; --navy:#0f1a2e; --navy-s:#1a2a3a; --navy-l:#243447; --gold:#c9a84c; --cream:#f5f0e8; --off-white:#f8f5f0; --dark:#1a1a1a; --muted:#6b7a8d; --border:rgba(201,168,76,0.25); }
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'DM Sans',sans-serif;background:var(--navy);color:var(--cream);overflow-x:hidden;line-height:1.7;}
+img{display:block;max-width:100%;}a{text-decoration:none;color:inherit;}
+svg{stroke:currentColor;fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;}
+
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:0 5%;height:72px;display:flex;align-items:center;justify-content:space-between;background:rgba(15,26,46,0.95);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);}
+.nav-logo{display:flex;align-items:center;gap:12px;}
+.nav-logo img{width:36px;height:36px;filter:brightness(0) invert(1);}
+.nav-name{font-family:'Cormorant Garamond',serif;font-size:17px;font-weight:700;color:var(--cream);}
+.nav-links{display:flex;align-items:center;gap:4px;list-style:none;}
+.nav-links a{font-size:13px;font-weight:600;color:rgba(245,240,232,0.6);padding:6px 12px;border-radius:6px;transition:0.2s;}
+.nav-links a:hover{color:var(--cream);}
+.nav-links a.active{color:var(--crimson);}
+.nav-cta{background:var(--crimson)!important;color:white!important;padding:7px 18px!important;border-radius:6px!important;}
+
+/* HERO */
+.page-hero{padding:140px 8% 80px;position:relative;overflow:hidden;}
+.page-hero::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(199,32,40,0.06),transparent 60%);pointer-events:none;}
+.hero-inner{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;max-width:1280px;margin:0 auto;}
+.hero-text .eyebrow{font-size:11px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:16px;display:flex;align-items:center;gap:8px;}
+.hero-text .eyebrow::before{content:'';width:24px;height:1px;background:var(--gold);}
+.hero-text h1{font-family:'Cormorant Garamond',serif;font-size:clamp(44px,6vw,80px);font-weight:700;line-height:1.05;letter-spacing:-0.02em;color:var(--cream);margin-bottom:20px;}
+.hero-text h1 span{color:var(--crimson);}
+.hero-text p{font-size:16px;color:rgba(245,240,232,0.65);line-height:1.8;margin-bottom:32px;}
+.hero-actions{display:flex;gap:14px;flex-wrap:wrap;}
+.btn-primary{display:inline-flex;align-items:center;gap:8px;background:var(--crimson);color:white;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:700;padding:13px 26px;border-radius:8px;border:none;cursor:pointer;transition:0.2s;}
+.btn-primary:hover{background:var(--crimson-dk);transform:translateY(-2px);box-shadow:0 12px 30px rgba(199,32,40,0.35);}
+.btn-ghost{display:inline-flex;align-items:center;gap:8px;background:transparent;color:var(--cream);font-family:'DM Sans',sans-serif;font-size:14px;font-weight:600;padding:13px 26px;border-radius:8px;border:1px solid rgba(245,240,232,0.25);cursor:pointer;transition:0.2s;}
+.btn-ghost:hover{background:rgba(255,255,255,0.06);transform:translateY(-2px);}
+.hero-img{position:relative;border-radius:16px;overflow:hidden;}
+.hero-img img{width:100%;height:480px;object-fit:cover;object-position:center 20%;}
+.hero-img::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(199,32,40,0.1),transparent);pointer-events:none;border-radius:16px;}
+
+/* WHO IS THIS FOR */
+.who-for{padding:80px 8%;background:var(--navy-s);}
+.section-header{text-align:center;margin-bottom:56px;}
+.section-eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:11px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:14px;}
+.section-eyebrow::before,.section-eyebrow::after{content:'';width:24px;height:1px;background:var(--gold);}
+.section-header h2{font-family:'Cormorant Garamond',serif;font-size:clamp(32px,4vw,52px);font-weight:700;color:var(--cream);margin-bottom:12px;line-height:1.1;}
+.section-header p{font-size:16px;color:rgba(245,240,232,0.55);max-width:500px;margin:0 auto;}
+.who-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;max-width:1100px;margin:0 auto;}
+.who-card{background:var(--navy);border:1px solid var(--border);border-radius:14px;padding:32px;text-align:center;transition:0.3s;}
+.who-card:hover{transform:translateY(-4px);border-color:rgba(199,32,40,0.4);}
+.who-icon{width:56px;height:56px;border-radius:14px;background:rgba(199,32,40,0.12);border:1px solid rgba(199,32,40,0.25);display:flex;align-items:center;justify-content:center;margin:0 auto 20px;}
+.who-icon svg{width:24px;height:24px;stroke:var(--crimson);}
+.who-title{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:700;color:var(--cream);margin-bottom:10px;}
+.who-desc{font-size:14px;color:rgba(245,240,232,0.55);line-height:1.65;}
+
+/* BENEFITS */
+.benefits{padding:80px 8%;background:var(--navy);}
+.benefits-inner{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;max-width:1280px;margin:0 auto;}
+.benefits-text .eyebrow{font-size:11px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:16px;display:flex;align-items:center;gap:8px;}
+.benefits-text .eyebrow::before{content:'';width:24px;height:1px;background:var(--gold);}
+.benefits-text h2{font-family:'Cormorant Garamond',serif;font-size:clamp(32px,4vw,52px);font-weight:700;color:var(--cream);margin-bottom:20px;line-height:1.1;}
+.benefits-text p{font-size:15px;color:rgba(245,240,232,0.6);line-height:1.8;margin-bottom:32px;}
+.benefit-list{display:flex;flex-direction:column;gap:16px;}
+.benefit-item{display:flex;align-items:flex-start;gap:16px;padding:20px;background:var(--navy-s);border-radius:12px;border:1px solid rgba(255,255,255,0.05);transition:0.25s;}
+.benefit-item:hover{border-color:var(--border);}
+.benefit-num{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:700;color:var(--crimson);line-height:1;flex-shrink:0;width:32px;}
+.benefit-content-title{font-size:14px;font-weight:700;color:var(--cream);margin-bottom:4px;}
+.benefit-content-desc{font-size:13px;color:rgba(245,240,232,0.5);line-height:1.5;}
+.benefits-visual{position:relative;}
+.benefits-visual img{width:100%;height:520px;object-fit:cover;border-radius:16px;}
+.benefits-visual::before{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,transparent 60%,rgba(15,26,46,0.8));z-index:1;border-radius:16px;pointer-events:none;}
+.float-stat{position:absolute;top:24px;right:24px;z-index:2;background:rgba(15,26,46,0.92);backdrop-filter:blur(12px);border:1px solid var(--border);border-radius:12px;padding:16px 20px;text-align:center;}
+.float-stat-num{font-family:'Cormorant Garamond',serif;font-size:36px;font-weight:700;color:var(--crimson);line-height:1;}
+.float-stat-label{font-size:11px;color:rgba(245,240,232,0.5);font-weight:600;text-transform:uppercase;letter-spacing:0.08em;margin-top:4px;}
+
+/* ESI FOR INSTITUTIONS */
+.esi-how{padding:80px 8%;background:var(--navy-s);}
+.esi-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;max-width:1100px;margin:0 auto;}
+.esi-card{background:var(--navy);border:1px solid var(--border);border-radius:14px;padding:32px;position:relative;overflow:hidden;transition:0.3s;}
+.esi-card:hover{transform:translateY(-4px);}
+.esi-card::before{content:'';position:absolute;top:0;left:0;width:4px;height:100%;background:var(--crimson);}
+.esi-card-label{font-size:10px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:var(--crimson-lt);margin-bottom:10px;}
+.esi-card-title{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:700;color:var(--cream);margin-bottom:12px;}
+.esi-card-desc{font-size:14px;color:rgba(245,240,232,0.6);line-height:1.7;margin-bottom:16px;}
+.esi-card-detail{font-size:13px;color:rgba(245,240,232,0.4);line-height:1.6;padding:12px;background:rgba(255,255,255,0.03);border-radius:8px;border:1px solid rgba(255,255,255,0.05);}
+
+/* HOW TO JOIN */
+.join-steps{padding:80px 8%;background:var(--navy);}
+.steps-row{display:grid;grid-template-columns:repeat(4,1fr);gap:0;max-width:1100px;margin:0 auto;position:relative;}
+.steps-row::before{content:'';position:absolute;top:28px;left:12.5%;right:12.5%;height:1px;background:linear-gradient(to right,transparent,var(--border),var(--border),transparent);}
+.join-step{text-align:center;padding:0 20px;}
+.step-circle{width:56px;height:56px;border-radius:50%;background:var(--navy-s);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;margin:0 auto 20px;font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:700;color:var(--gold);position:relative;z-index:1;transition:0.3s;}
+.join-step:hover .step-circle{background:rgba(199,32,40,0.15);border-color:var(--crimson);color:var(--crimson-lt);}
+.step-title{font-family:'Cormorant Garamond',serif;font-size:19px;font-weight:700;color:var(--cream);margin-bottom:8px;}
+.step-desc{font-size:13px;color:rgba(245,240,232,0.5);line-height:1.55;}
+
+/* CTA */
+.page-cta{padding:80px 8%;background:var(--crimson);text-align:center;position:relative;overflow:hidden;}
+.page-cta::before{content:'';position:absolute;top:-80px;right:-80px;width:400px;height:400px;border-radius:50%;background:rgba(255,255,255,0.05);pointer-events:none;}
+.page-cta h2{font-family:'Cormorant Garamond',serif;font-size:clamp(36px,5vw,64px);font-weight:700;color:white;margin-bottom:14px;line-height:1.1;position:relative;z-index:1;}
+.page-cta p{font-size:17px;color:rgba(255,255,255,0.75);margin-bottom:36px;max-width:460px;margin-left:auto;margin-right:auto;position:relative;z-index:1;}
+.cta-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;position:relative;z-index:1;}
+.btn-white{display:inline-flex;align-items:center;gap:8px;background:white;color:var(--crimson);font-family:'DM Sans',sans-serif;font-size:14px;font-weight:700;padding:13px 26px;border-radius:8px;border:none;cursor:pointer;transition:0.2s;}
+.btn-white:hover{transform:translateY(-2px);box-shadow:0 12px 30px rgba(0,0,0,0.2);}
+.btn-outline-white{display:inline-flex;align-items:center;gap:8px;background:transparent;color:white;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:600;padding:13px 26px;border-radius:8px;border:2px solid rgba(255,255,255,0.5);cursor:pointer;transition:0.2s;}
+.btn-outline-white:hover{background:rgba(255,255,255,0.1);transform:translateY(-2px);}
+
+.footer-min{background:#070e1c;padding:40px 8%;border-top:1px solid rgba(255,255,255,0.05);display:flex;align-items:center;justify-content:space-between;}
+.footer-min-logo{font-family:'Cormorant Garamond',serif;font-size:15px;font-weight:700;color:rgba(245,240,232,0.4);}
+.footer-min-links{display:flex;gap:24px;}
+.footer-min-links a{font-size:12px;color:rgba(245,240,232,0.25);transition:color 0.2s;}
+.footer-min-links a:hover{color:var(--cream);}
+
+@media(max-width:1024px){.hero-inner,.benefits-inner{grid-template-columns:1fr;gap:48px;}.who-grid{grid-template-columns:1fr 1fr;}.steps-row{grid-template-columns:1fr 1fr;}.steps-row::before{display:none;}.esi-grid{grid-template-columns:1fr;}}
+@media(max-width:768px){.who-grid{grid-template-columns:1fr;}.steps-row{grid-template-columns:1fr;}.footer-min{flex-direction:column;gap:16px;text-align:center;}}
+</style>
+</head>
+<body>
+<nav class="nav">
+  <a href="../index.html" class="nav-logo">
+    <img src="../assets/icons/fws-logo.svg" alt="FWS">
+    <div class="nav-name">Family World School</div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="educators.html">For Educators</a></li>
+    <li><a href="institutions.html" class="active">For Institutions</a></li>
+    <li><a href="courses.html">Courses</a></li>
+    <li><a href="esi.html">ESI</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="booking.html" class="nav-cta">Book Now</a></li>
+  </ul>
+</nav>
+
+<section class="page-hero">
+  <div class="hero-inner">
+    <div class="hero-text">
+      <div class="eyebrow">Institution Portal</div>
+      <h1>Staffed. Supported.<br><span>Stable.</span></h1>
+      <p>FWS connects independent schools, home-school cooperatives, and private learning programs with qualified educators. Substitute coverage, regular weekly educators, online contracts - all in one cooperative.</p>
+      <div class="hero-actions">
+        <a href="booking.html" class="btn-primary">Request an Educator <svg width="16" height="16" viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+        <a href="esi.html" class="btn-ghost">Learn About ESI <svg width="16" height="16" viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+      </div>
+    </div>
+    <div class="hero-img">
+      <img src="../assets/images/hero-institutions.jpg" alt="Independent School">
+    </div>
+  </div>
+</section>
+
+<section class="who-for">
+  <div class="section-header">
+    <div class="section-eyebrow">Who FWS Serves</div>
+    <h2>Built for independent programs</h2>
+    <p>Any non-government operated learning program can join FWS as a member institution.</p>
+  </div>
+  <div class="who-grid">
+    <div class="who-card">
+      <div class="who-icon"><svg viewBox="0 0 24 24"><path d="M3 21h18M3 10h18M5 6l7-3 7 3M4 10v11M20 10v11M9 21v-6h6v6"/></svg></div>
+      <div class="who-title">Private Schools</div>
+      <div class="who-desc">Non-government operated private schools needing reliable educator support, substitute coverage, and professional contract management.</div>
+    </div>
+    <div class="who-card">
+      <div class="who-icon"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+      <div class="who-title">Home-School Cooperatives</div>
+      <div class="who-desc">Groups of families teaching together who need structure, qualified educators, and shared resources to run a professional cooperative program.</div>
+    </div>
+    <div class="who-card">
+      <div class="who-icon"><svg viewBox="0 0 24 24"><path d="M12 14l9-5-9-5-9 5 9 5z"/><path d="M12 14l6.16-3.422A12 12 0 0 1 22 21a12 12 0 0 1-10-5z"/><path d="M2 21a12 12 0 0 1 3.84-10.422L12 14"/></svg></div>
+      <div class="who-title">Learning Centers</div>
+      <div class="who-desc">Independent after-school programs, learning centers, and community education initiatives seeking FWS educator access and course content.</div>
+    </div>
+  </div>
+</section>
+
+<section class="benefits">
+  <div class="benefits-inner">
+    <div class="benefits-text">
+      <div class="eyebrow">What You Get</div>
+      <h2>Everything your program needs to run smoothly</h2>
+      <p>FWS membership gives institutions access to a pool of trained educators, a streamlined booking system, and the support structures that make independent programs thrive.</p>
+      <div class="benefit-list">
+        <div class="benefit-item">
+          <div class="benefit-num">01</div>
+          <div>
+            <div class="benefit-content-title">Substitute Educator Pool</div>
+            <div class="benefit-content-desc">Access FWS-trained substitute educators who post availability on the cooperative calendar. Request coverage with confidence.</div>
+          </div>
+        </div>
+        <div class="benefit-item">
+          <div class="benefit-num">02</div>
+          <div>
+            <div class="benefit-content-title">Semester-Long Regular Educators</div>
+            <div class="benefit-content-desc">Match with a regular educator on a semester contract. Same schedule, same educator, every week. Built-in absence coverage included.</div>
+          </div>
+        </div>
+        <div class="benefit-item">
+          <div class="benefit-num">03</div>
+          <div>
+            <div class="benefit-content-title">Online Contract Management</div>
+            <div class="benefit-content-desc">All contracts are signed online weeks before term begins. Renew, review, and manage agreements without paperwork.</div>
+          </div>
+        </div>
+        <div class="benefit-item">
+          <div class="benefit-num">04</div>
+          <div>
+            <div class="benefit-content-title">Zoom and Google Meets Integration</div>
+            <div class="benefit-content-desc">Educator meeting links are managed through the FWS platform. Members and institutions access live sessions seamlessly.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="benefits-visual">
+      <img src="../assets/images/hero-about.jpg" alt="FWS educators collaborating">
+      <div class="float-stat">
+        <div class="float-stat-num">2</div>
+        <div class="float-stat-label">Educator Tracks</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="esi-how">
+  <div class="section-header">
+    <div class="section-eyebrow">ESI Details</div>
+    <h2>How the Educator Support Initiative works</h2>
+    <p>Two types of ESI educators - both available to member institutions.</p>
+  </div>
+  <div class="esi-grid">
+    <div class="esi-card">
+      <div class="esi-card-label">Short-Term Coverage</div>
+      <div class="esi-card-title">Substitute Educators</div>
+      <div class="esi-card-desc">Substitute educators post their availability on the FWS calendar. When you need coverage, you request a substitute and FWS matches you with an available, qualified educator.</div>
+      <div class="esi-card-detail">Rate structure: Hourly rate applies for sessions up to 2 hours. A daily rate applies for sessions running longer than 2 hours. Rates are set cooperatively.</div>
+    </div>
+    <div class="esi-card">
+      <div class="esi-card-label">Semester Commitment</div>
+      <div class="esi-card-title">Regular Educators</div>
+      <div class="esi-card-desc">Regular educators commit to a full semester contract with your institution. They teach on the same days and times each week, providing your program with stability and continuity.</div>
+      <div class="esi-card-detail">Absence policy: If a regular educator is absent, a financial penalty is applied. FWS uses this to fund an FWS substitute so your program is never left without coverage.</div>
+    </div>
+  </div>
+</section>
+
+<section class="join-steps">
+  <div class="section-header">
+    <div class="section-eyebrow">Getting Started</div>
+    <h2>How to join FWS as an institution</h2>
+  </div>
+  <div class="steps-row">
+    <div class="join-step">
+      <div class="step-circle">1</div>
+      <div class="step-title">Apply for Membership</div>
+      <div class="step-desc">Submit your institution profile including program type, student age range, and educator needs.</div>
+    </div>
+    <div class="join-step">
+      <div class="step-circle">2</div>
+      <div class="step-title">Intake Consultation</div>
+      <div class="step-desc">A 30-minute call to understand your program, match you with the right ESI tier, and set expectations.</div>
+    </div>
+    <div class="join-step">
+      <div class="step-circle">3</div>
+      <div class="step-title">Sign Your Agreement</div>
+      <div class="step-desc">Institution membership agreement signed online. Contracts for regular educators signed weeks before the term begins.</div>
+    </div>
+    <div class="join-step">
+      <div class="step-circle">4</div>
+      <div class="step-title">Start Teaching</div>
+      <div class="step-desc">Your educator is matched, scheduled, and ready. Zoom links are set up and your program runs with professional support.</div>
+    </div>
+  </div>
+</section>
+
+<section class="page-cta">
+  <h2>Ready to strengthen your program?</h2>
+  <p>Join the FWS Cooperative as a member institution and access the educator support your program deserves.</p>
+  <div class="cta-btns">
+    <a href="apply-institution.html" class="btn-white">Apply for Membership <svg width="16" height="16" viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+    <a href="booking.html" class="btn-outline-white">Book Intake Call <svg width="16" height="16" viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+  </div>
+</section>
+
+<footer class="footer-min">
+  <div class="footer-min-logo">Family World School Cooperative</div>
+  <div class="footer-min-links">
+    <a href="../index.html">Home</a>
+    <a href="esi.html">ESI</a>
+    <a href="contact.html">Contact</a>
+  </div>
+</footer>
+</body>
+</html>

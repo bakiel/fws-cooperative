@@ -1,0 +1,1496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<style>
+@page { margin: 0; size: A4 portrait; }
+@font-face { font-family: 'Cormorant Garamond'; src: url('../assets/fonts/cormorant-garamond-700.woff2') format('woff2'); font-weight: 700; font-display: swap; }
+@font-face { font-family: 'Cormorant Garamond'; src: url('../assets/fonts/cormorant-garamond-600.woff2') format('woff2'); font-weight: 600; font-display: swap; }
+@font-face { font-family: 'Cormorant Garamond'; src: url('../assets/fonts/cormorant-garamond-400.woff2') format('woff2'); font-weight: 400; font-display: swap; }
+@font-face { font-family: 'DM Sans'; src: url('../assets/fonts/dm-sans-400.woff2') format('woff2'); font-weight: 400; font-display: swap; }
+@font-face { font-family: 'DM Sans'; src: url('../assets/fonts/dm-sans-600.woff2') format('woff2'); font-weight: 600; font-display: swap; }
+@font-face { font-family: 'DM Sans'; src: url('../assets/fonts/dm-sans-700.woff2') format('woff2'); font-weight: 700; font-display: swap; }
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  width: 210mm;
+  background: #f5f0e8;
+}
+
+.page {
+  width: 210mm;
+  height: 297mm;
+  overflow: hidden;
+  position: relative;
+  page-break-after: always;
+}
+
+/* ==================== PAGE 1: COVER ==================== */
+.cover {
+  background: #0f1a2e;
+}
+.cover-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+.cover-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.15;
+  mask-image: radial-gradient(ellipse 75% 75% at 50% 40%, black 30%, transparent 90%);
+  -webkit-mask-image: radial-gradient(ellipse 75% 75% at 50% 40%, black 30%, transparent 90%);
+}
+.cover-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(160deg, rgba(15,26,46,0.5) 0%, rgba(15,26,46,0.85) 60%, rgba(15,26,46,1) 100%);
+  z-index: 1;
+}
+.cover-content {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20mm;
+  text-align: center;
+}
+.cover-gold-line {
+  width: 48px;
+  height: 1px;
+  background: #c9a84c;
+  margin: 0 auto 20px;
+}
+.cover-eyebrow {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: #c9a84c;
+  margin-bottom: 28px;
+}
+.cover-logo {
+  width: 90px;
+  height: 90px;
+  margin: 0 auto 28px;
+  filter: brightness(0) invert(1);
+}
+.cover-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 36px;
+  font-weight: 700;
+  color: #f5f0e8;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+  margin-bottom: 8px;
+}
+.cover-name span { color: #c72028; }
+.cover-tagline {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  color: rgba(245,240,232,0.5);
+  letter-spacing: 0.08em;
+  margin-bottom: 40px;
+  text-transform: uppercase;
+}
+.cover-divider {
+  width: 60px;
+  height: 1px;
+  background: rgba(201,168,76,0.35);
+  margin: 0 auto 32px;
+}
+.cover-subtitle {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 22px;
+  font-weight: 600;
+  color: rgba(245,240,232,0.75);
+  font-style: italic;
+  margin-bottom: 12px;
+}
+.cover-doc-label {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: rgba(245,240,232,0.3);
+}
+.cover-footer {
+  position: absolute;
+  bottom: 16mm;
+  left: 20mm;
+  right: 20mm;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.cover-footer-brand {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(245,240,232,0.2);
+}
+.cover-footer-year {
+  font-size: 9px;
+  color: rgba(245,240,232,0.2);
+}
+.cover-accent-tl {
+  position: absolute;
+  top: 20mm;
+  left: 20mm;
+  z-index: 2;
+  width: 24px;
+  height: 24px;
+  border-top: 1.5px solid rgba(201,168,76,0.4);
+  border-left: 1.5px solid rgba(201,168,76,0.4);
+}
+.cover-accent-br {
+  position: absolute;
+  bottom: 20mm;
+  right: 20mm;
+  z-index: 2;
+  width: 24px;
+  height: 24px;
+  border-bottom: 1.5px solid rgba(201,168,76,0.4);
+  border-right: 1.5px solid rgba(201,168,76,0.4);
+}
+
+/* ==================== PAGE 2: BRAND STORY ==================== */
+.story-page {
+  background: #f8f5f0;
+}
+.page-header {
+  background: #0f1a2e;
+  padding: 10mm 20mm 8mm;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.page-header-logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.page-header-logo img {
+  width: 24px;
+  height: 24px;
+  filter: brightness(0) invert(1);
+}
+.page-header-name {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  color: rgba(245,240,232,0.6);
+  letter-spacing: 0.05em;
+}
+.page-header-label {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #c9a84c;
+}
+.story-content {
+  padding: 12mm 20mm;
+  height: calc(297mm - 48mm - 18mm);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.story-eyebrow {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #c72028;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.story-eyebrow::before { content: ''; width: 16px; height: 1px; background: #c72028; }
+.story-heading {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 38px;
+  font-weight: 700;
+  color: #0f1a2e;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  margin-bottom: 12mm;
+}
+.story-heading span { color: #c72028; }
+.story-body {
+  font-size: 12px;
+  line-height: 1.85;
+  color: #2a2a2a;
+  max-width: 140mm;
+  margin-bottom: 10mm;
+}
+.story-mission {
+  background: #0f1a2e;
+  border-left: 3px solid #c72028;
+  padding: 10mm 12mm;
+  border-radius: 0 8px 8px 0;
+  margin-bottom: 10mm;
+}
+.story-mission-label {
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #c9a84c;
+  margin-bottom: 6px;
+}
+.story-mission p {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 18px;
+  font-weight: 600;
+  color: #f5f0e8;
+  line-height: 1.45;
+  font-style: italic;
+}
+.story-pillars {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 5mm;
+  margin-top: auto;
+}
+.story-pillar {
+  background: white;
+  border: 0.5px solid rgba(15,26,46,0.1);
+  border-radius: 8px;
+  padding: 5mm;
+}
+.story-pillar-icon {
+  width: 28px;
+  height: 28px;
+  background: rgba(199,32,40,0.08);
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 6px;
+}
+.story-pillar-icon svg {
+  width: 14px;
+  height: 14px;
+  stroke: #c72028;
+  fill: none;
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.story-pillar h4 {
+  font-size: 11px;
+  font-weight: 700;
+  color: #0f1a2e;
+  margin-bottom: 3px;
+}
+.story-pillar p {
+  font-size: 10px;
+  color: #6b7a8d;
+  line-height: 1.5;
+}
+.page-footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 18mm;
+  background: #0f1a2e;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20mm;
+  z-index: 10;
+}
+.footer-line {
+  position: absolute;
+  top: 0;
+  left: 20mm;
+  right: 20mm;
+  height: 0.5px;
+  background: rgba(201,168,76,0.3);
+}
+.pf-left {
+  font-size: 9px;
+  color: rgba(245,240,232,0.25);
+}
+.pf-page {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 14px;
+  font-weight: 700;
+  color: rgba(245,240,232,0.35);
+}
+
+/* ==================== PAGE 3: LOGO SYSTEM ==================== */
+.logo-page { background: #f8f5f0; }
+.logo-content {
+  padding: 12mm 20mm;
+  height: calc(297mm - 48mm - 18mm);
+  overflow: hidden;
+}
+.logo-section-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 32px;
+  font-weight: 700;
+  color: #0f1a2e;
+  margin-bottom: 8mm;
+}
+.logo-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 5mm;
+  margin-bottom: 8mm;
+}
+.logo-variant {
+  border-radius: 8px;
+  overflow: hidden;
+  aspect-ratio: 3/2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.logo-variant img {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+}
+.logo-variant.on-dark { background: #0f1a2e; }
+.logo-variant.on-mid { background: #1a2a3a; }
+.logo-variant.on-crimson { background: #c72028; }
+.logo-variant.on-light { background: #f8f5f0; border: 0.5px solid rgba(15,26,46,0.12); }
+.logo-variant.on-cream { background: #f5f0e8; border: 0.5px solid rgba(15,26,46,0.08); }
+.logo-variant.on-gold { background: linear-gradient(135deg, #b8943e, #c9a84c); }
+.logo-variant-label {
+  position: absolute;
+  bottom: 4px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+.logo-variant.on-dark .logo-variant-label,
+.logo-variant.on-mid .logo-variant-label,
+.logo-variant.on-crimson .logo-variant-label,
+.logo-variant.on-gold .logo-variant-label { color: rgba(255,255,255,0.4); }
+.logo-variant.on-light .logo-variant-label,
+.logo-variant.on-cream .logo-variant-label { color: rgba(15,26,46,0.4); }
+.logo-variant.on-dark img { filter: brightness(0) invert(1); }
+.logo-variant.on-mid img { filter: brightness(0) invert(1); }
+.logo-variant.on-crimson img { filter: brightness(0) invert(1); }
+.logo-variant.on-gold img { filter: brightness(0) invert(1); }
+.logo-rules {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5mm;
+}
+.logo-rule-card {
+  background: white;
+  border: 0.5px solid rgba(15,26,46,0.1);
+  border-radius: 8px;
+  padding: 5mm;
+}
+.logo-rule-card.do { border-left: 2px solid #22c55e; }
+.logo-rule-card.dont { border-left: 2px solid #c72028; }
+.rule-label {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom: 5px;
+}
+.rule-label.green { color: #22c55e; }
+.rule-label.red { color: #c72028; }
+.rule-item {
+  font-size: 10px;
+  color: #4a5568;
+  line-height: 1.6;
+  padding: 2px 0;
+  display: flex;
+  align-items: flex-start;
+  gap: 6px;
+}
+.rule-item::before { content: ''; width: 4px; height: 4px; border-radius: 50%; margin-top: 5px; flex-shrink: 0; }
+.do .rule-item::before { background: #22c55e; }
+.dont .rule-item::before { background: #c72028; }
+
+/* ==================== PAGE 4: COLOR PALETTE ==================== */
+.color-page { background: #f8f5f0; }
+.color-content {
+  padding: 12mm 20mm;
+  height: calc(297mm - 48mm - 18mm);
+  overflow: hidden;
+}
+.color-section-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 32px;
+  font-weight: 700;
+  color: #0f1a2e;
+  margin-bottom: 8mm;
+}
+.color-primary-strip {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 4mm;
+  margin-bottom: 6mm;
+}
+.color-swatch {
+  border-radius: 8px;
+  overflow: hidden;
+}
+.swatch-color {
+  height: 24mm;
+}
+.swatch-info {
+  background: white;
+  padding: 4mm;
+  border: 0.5px solid rgba(15,26,46,0.08);
+  border-top: none;
+  border-radius: 0 0 8px 8px;
+}
+.swatch-name {
+  font-size: 11px;
+  font-weight: 700;
+  color: #0f1a2e;
+  margin-bottom: 2px;
+}
+.swatch-hex {
+  font-size: 10px;
+  color: #6b7a8d;
+  font-family: monospace;
+  margin-bottom: 1px;
+}
+.swatch-use {
+  font-size: 9px;
+  color: #8a9ab0;
+  line-height: 1.4;
+}
+.color-secondary-strip {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 4mm;
+  margin-bottom: 8mm;
+}
+.color-usage-note {
+  background: white;
+  border: 0.5px solid rgba(15,26,46,0.1);
+  border-radius: 8px;
+  padding: 6mm;
+}
+.color-usage-note h4 {
+  font-size: 11px;
+  font-weight: 700;
+  color: #0f1a2e;
+  margin-bottom: 4mm;
+}
+.usage-row {
+  display: flex;
+  gap: 3mm;
+  margin-bottom: 3mm;
+  align-items: center;
+}
+.usage-swatch {
+  width: 24px;
+  height: 24px;
+  border-radius: 4px;
+  flex-shrink: 0;
+}
+.usage-desc {
+  font-size: 10px;
+  color: #4a5568;
+  line-height: 1.5;
+}
+
+/* ==================== PAGE 5: TYPOGRAPHY ==================== */
+.type-page { background: #f8f5f0; }
+.type-content {
+  padding: 12mm 20mm;
+  height: calc(297mm - 48mm - 18mm);
+  overflow: hidden;
+}
+.type-section-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 32px;
+  font-weight: 700;
+  color: #0f1a2e;
+  margin-bottom: 8mm;
+}
+.type-specimen-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5mm;
+  margin-bottom: 6mm;
+}
+.type-specimen {
+  background: white;
+  border: 0.5px solid rgba(15,26,46,0.1);
+  border-radius: 8px;
+  padding: 6mm;
+}
+.type-specimen-label {
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #c9a84c;
+  margin-bottom: 4mm;
+}
+.type-display {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 40px;
+  font-weight: 700;
+  color: #0f1a2e;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  margin-bottom: 3mm;
+}
+.type-body-sample {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 11px;
+  color: #4a5568;
+  line-height: 1.75;
+}
+.type-hierarchy {
+  background: white;
+  border: 0.5px solid rgba(15,26,46,0.1);
+  border-radius: 8px;
+  padding: 6mm;
+  margin-bottom: 5mm;
+}
+.type-hierarchy-label {
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #c72028;
+  margin-bottom: 5mm;
+}
+.hier-row {
+  display: flex;
+  align-items: baseline;
+  gap: 5mm;
+  padding: 2mm 0;
+  border-bottom: 0.5px solid rgba(15,26,46,0.06);
+}
+.hier-row:last-child { border-bottom: none; }
+.hier-label {
+  font-size: 8px;
+  color: #8a9ab0;
+  white-space: nowrap;
+  min-width: 28mm;
+}
+.hier-sample { color: #0f1a2e; }
+.h-display { font-family: 'Cormorant Garamond', serif; font-size: 24px; font-weight: 700; }
+.h-h1 { font-family: 'Cormorant Garamond', serif; font-size: 18px; font-weight: 700; }
+.h-h2 { font-family: 'Cormorant Garamond', serif; font-size: 14px; font-weight: 600; }
+.h-h3 { font-family: 'DM Sans', sans-serif; font-size: 12px; font-weight: 700; }
+.h-body { font-family: 'DM Sans', sans-serif; font-size: 11px; font-weight: 400; }
+.h-label { font-family: 'DM Sans', sans-serif; font-size: 8px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; }
+.h-btn { font-family: 'DM Sans', sans-serif; font-size: 10px; font-weight: 700; }
+.type-rules {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4mm;
+}
+.type-rule {
+  background: white;
+  border: 0.5px solid rgba(15,26,46,0.1);
+  border-radius: 8px;
+  padding: 4mm;
+}
+.type-rule h4 { font-size: 10px; font-weight: 700; color: #0f1a2e; margin-bottom: 3px; }
+.type-rule p { font-size: 9px; color: #6b7a8d; line-height: 1.5; }
+
+/* ==================== PAGE 6: PHOTOGRAPHY ==================== */
+.photo-page { background: #f8f5f0; }
+.photo-content {
+  padding: 12mm 20mm;
+  height: calc(297mm - 48mm - 18mm);
+  overflow: hidden;
+}
+.photo-section-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 32px;
+  font-weight: 700;
+  color: #0f1a2e;
+  margin-bottom: 3mm;
+}
+.photo-intro {
+  font-size: 11px;
+  color: #6b7a8d;
+  margin-bottom: 8mm;
+  line-height: 1.6;
+}
+.photo-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 42mm 42mm;
+  gap: 4mm;
+  margin-bottom: 6mm;
+}
+.photo-item {
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative;
+}
+.photo-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.photo-item-label {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 4mm;
+  background: linear-gradient(to top, rgba(15,26,46,0.9) 0%, transparent 100%);
+}
+.photo-item-label h4 {
+  font-size: 10px;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 1px;
+}
+.photo-item-label p {
+  font-size: 8.5px;
+  color: rgba(255,255,255,0.6);
+}
+.photo-principles {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 4mm;
+}
+.photo-principle {
+  background: white;
+  border: 0.5px solid rgba(15,26,46,0.1);
+  border-radius: 8px;
+  padding: 4mm;
+  border-top: 2px solid #c72028;
+}
+.photo-principle h4 { font-size: 10px; font-weight: 700; color: #0f1a2e; margin-bottom: 3px; }
+.photo-principle p { font-size: 9px; color: #6b7a8d; line-height: 1.5; }
+
+/* ==================== PAGE 7: UI COMPONENTS ==================== */
+.ui-page { background: #f8f5f0; }
+.ui-content {
+  padding: 12mm 20mm;
+  height: calc(297mm - 48mm - 18mm);
+  overflow: hidden;
+}
+.ui-section-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 32px;
+  font-weight: 700;
+  color: #0f1a2e;
+  margin-bottom: 8mm;
+}
+.ui-subsection { margin-bottom: 7mm; }
+.ui-sub-label {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #c9a84c;
+  margin-bottom: 3mm;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.ui-sub-label::before { content: ''; width: 12px; height: 0.5px; background: #c9a84c; }
+.ui-buttons { display: flex; gap: 4mm; flex-wrap: wrap; align-items: center; }
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #c72028;
+  color: white;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 8px 18px;
+  border-radius: 6px;
+}
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: transparent;
+  color: #c72028;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 7px 18px;
+  border-radius: 6px;
+  border: 1.5px solid #c72028;
+}
+.btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: transparent;
+  color: #0f1a2e;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 7px 18px;
+  border-radius: 6px;
+  border: 1.5px solid rgba(15,26,46,0.2);
+}
+.btn-gold {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #c9a84c;
+  color: #1a1000;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 8px 18px;
+  border-radius: 6px;
+}
+.ui-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 3mm; }
+.ui-card {
+  background: #0f1a2e;
+  border: 0.5px solid rgba(201,168,76,0.25);
+  border-radius: 8px;
+  padding: 4mm;
+  border-top: 2px solid;
+}
+.ui-card.c { border-color: #c72028; }
+.ui-card.g { border-color: #c9a84c; }
+.ui-card.n { border-color: #6b7a8d; }
+.ui-card h4 { font-size: 11px; font-weight: 700; color: #f5f0e8; margin-bottom: 3px; }
+.ui-card p { font-size: 9px; color: rgba(245,240,232,0.45); line-height: 1.5; }
+.ui-form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 3mm; }
+.ui-form-field {
+  background: #1a2a3a;
+  border: 0.5px solid rgba(255,255,255,0.12);
+  border-radius: 6px;
+  padding: 3mm 4mm;
+}
+.ui-field-label { font-size: 8px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(245,240,232,0.4); margin-bottom: 2px; }
+.ui-field-value { font-size: 10px; color: rgba(245,240,232,0.35); }
+.ui-field-focus {
+  background: #1a2a3a;
+  border: 0.5px solid #c72028;
+  border-radius: 6px;
+  padding: 3mm 4mm;
+}
+.ui-tags { display: flex; gap: 2mm; flex-wrap: wrap; }
+.ui-tag {
+  display: inline-block;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+.tag-c { background: rgba(199,32,40,0.15); color: #c72028; }
+.tag-g { background: rgba(201,168,76,0.15); color: #c9a84c; }
+.tag-b { background: rgba(107,122,141,0.15); color: #6b7a8d; }
+.tag-s { background: rgba(45,90,61,0.2); color: #5fba7d; }
+
+/* ==================== PAGE 8: APPLICATIONS ==================== */
+.app-page { background: #0f1a2e; }
+.app-content {
+  padding: 12mm 20mm;
+  height: calc(297mm - 18mm);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.app-section-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 32px;
+  font-weight: 700;
+  color: #f5f0e8;
+  margin-bottom: 3mm;
+}
+.app-intro {
+  font-size: 11px;
+  color: rgba(245,240,232,0.45);
+  margin-bottom: 8mm;
+}
+.app-mock-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 5mm;
+  margin-bottom: 7mm;
+}
+.app-mock {
+  background: #1a2a3a;
+  border: 0.5px solid rgba(201,168,76,0.2);
+  border-radius: 10px;
+  overflow: hidden;
+}
+.app-mock-header {
+  background: #c72028;
+  padding: 3mm 5mm;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.app-mock-header span {
+  font-size: 9px;
+  font-weight: 700;
+  color: white;
+  letter-spacing: 0.05em;
+}
+.app-mock-dots { display: flex; gap: 3px; margin-left: auto; }
+.app-mock-dot { width: 6px; height: 6px; border-radius: 50%; }
+.dot-r { background: rgba(255,255,255,0.3); }
+.dot-y { background: rgba(255,255,255,0.5); }
+.dot-g { background: rgba(255,255,255,0.7); }
+.app-mock-body { padding: 4mm; }
+.mock-nav-bar {
+  display: flex;
+  gap: 4mm;
+  margin-bottom: 3mm;
+  padding-bottom: 2mm;
+  border-bottom: 0.5px solid rgba(255,255,255,0.08);
+}
+.mock-nav-item { font-size: 8px; color: rgba(245,240,232,0.35); }
+.mock-nav-item.active { color: #c72028; font-weight: 700; }
+.mock-hero-bar {
+  background: linear-gradient(135deg, rgba(199,32,40,0.3), rgba(15,26,46,0.8));
+  border-radius: 5px;
+  padding: 5mm;
+  margin-bottom: 3mm;
+}
+.mock-hero-label { font-size: 7px; color: #c9a84c; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 2px; }
+.mock-hero-title { font-family: 'Cormorant Garamond', serif; font-size: 15px; font-weight: 700; color: white; line-height: 1.2; }
+.mock-cards { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 2mm; }
+.mock-card { background: rgba(255,255,255,0.05); border-radius: 4px; padding: 2mm; }
+.mock-card-color { height: 8mm; border-radius: 3px; margin-bottom: 2mm; }
+.mock-card p { font-size: 7px; color: rgba(245,240,232,0.35); }
+.email-mock-body { padding: 4mm; }
+.email-header { background: #c72028; padding: 4mm; border-radius: 6px 6px 0 0; margin-bottom: 2mm; }
+.email-header p { font-family: 'Cormorant Garamond', serif; font-size: 16px; font-weight: 700; color: white; }
+.email-body { background: #f8f5f0; border-radius: 0 0 6px 6px; padding: 4mm; }
+.email-body p { font-size: 9px; color: #2a2a2a; line-height: 1.6; }
+.app-final-cta {
+  background: linear-gradient(135deg, rgba(199,32,40,0.15), rgba(201,168,76,0.08));
+  border: 0.5px solid rgba(201,168,76,0.25);
+  border-radius: 10px;
+  padding: 6mm 8mm;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: auto;
+}
+.afc-left h3 { font-family: 'Cormorant Garamond', serif; font-size: 20px; font-weight: 700; color: #f5f0e8; margin-bottom: 3px; }
+.afc-left p { font-size: 10px; color: rgba(245,240,232,0.5); }
+.afc-right { display: flex; flex-direction: column; gap: 2mm; text-align: right; }
+.afc-contact { font-size: 10px; color: rgba(245,240,232,0.6); }
+.afc-contact strong { color: #c9a84c; }
+.app-footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 18mm;
+  background: rgba(7,14,28,0.9);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20mm;
+  z-index: 10;
+  border-top: 0.5px solid rgba(201,168,76,0.2);
+}
+</style>
+</head>
+<body>
+
+<!-- ========================================
+     PAGE 1: COVER
+     ======================================== -->
+<div class="page cover">
+  <div class="cover-bg">
+    <img src="../assets/images/brand-dark-bg.jpg" alt="">
+  </div>
+  <div class="cover-overlay"></div>
+  <div class="cover-accent-tl"></div>
+  <div class="cover-accent-br"></div>
+  <div class="cover-content">
+    <div class="cover-gold-line"></div>
+    <div class="cover-eyebrow">Brand Identity System</div>
+    <img class="cover-logo" src="../assets/icons/fws-logo.svg" alt="FWS Logo">
+    <div class="cover-name">Family World School<br><span>Cooperative</span></div>
+    <div class="cover-tagline">Learning. Together. Everywhere.</div>
+    <div class="cover-divider"></div>
+    <div class="cover-subtitle">"A warm, scholarly cooperative that brings the world's best educators into every home and learning community."</div>
+    <div style="height:8mm;"></div>
+    <div class="cover-doc-label">Brand Presentation - Aleph Creative-Hub - 2026</div>
+  </div>
+  <div class="cover-footer">
+    <div class="cover-footer-brand">Designed by Aleph Creative-Hub</div>
+    <div class="cover-footer-year">Confidential - April 2026</div>
+  </div>
+</div>
+
+<!-- ========================================
+     PAGE 2: BRAND STORY
+     ======================================== -->
+<div class="page story-page">
+  <div class="page-header">
+    <div class="page-header-logo">
+      <img src="../assets/icons/fws-logo.svg" alt="">
+      <div class="page-header-name">Family World School Cooperative</div>
+    </div>
+    <div class="page-header-label">Brand Story</div>
+  </div>
+  <div class="story-content">
+    <div class="story-eyebrow">Our Story</div>
+    <div class="story-heading">What is <span>FWS</span>?</div>
+    <div class="story-body">
+      Family World School Cooperative is a learning support cooperative for independent education programs - serving home schools, private non-government schools, and cooperative learning groups. FWS operates under the umbrella of the It's My Miracle nonprofit, aligned with the Miraculous Transitions initiative and the DCA Network.
+      <br><br>
+      FWS was built to solve a real problem: independent education programs are growing rapidly, but they lack the institutional infrastructure to access quality educators on demand, offer structured courses, or provide consistent learning support. FWS bridges that gap - connecting world-class educators with the families and communities that need them most.
+    </div>
+    <div class="story-mission">
+      <div class="story-mission-label">Mission Statement</div>
+      <p>"To connect world-class educators with families and independent learning communities - making high-quality education accessible, flexible, and alive wherever learners are."</p>
+    </div>
+    <div class="story-pillars">
+      <div class="story-pillar">
+        <div class="story-pillar-icon">
+          <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </div>
+        <h4>ESI Program</h4>
+        <p>Substitute and regular educators placed into institutions via calendar booking and contracts.</p>
+      </div>
+      <div class="story-pillar">
+        <div class="story-pillar-icon">
+          <svg viewBox="0 0 24 24"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg>
+        </div>
+        <h4>FWS Courses</h4>
+        <p>10-video course libraries produced by educators. Learners purchase and access anytime.</p>
+      </div>
+      <div class="story-pillar">
+        <div class="story-pillar-icon">
+          <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+        </div>
+        <h4>Tutoring</h4>
+        <p>Monthly subscription plans. Members book sessions directly via educator availability calendars.</p>
+      </div>
+    </div>
+  </div>
+  <div class="page-footer">
+    <div class="footer-line"></div>
+    <div class="pf-left">Family World School Cooperative - Brand Presentation 2026</div>
+    <div class="pf-page">02</div>
+  </div>
+</div>
+
+<!-- ========================================
+     PAGE 3: LOGO SYSTEM
+     ======================================== -->
+<div class="page logo-page">
+  <div class="page-header">
+    <div class="page-header-logo">
+      <img src="../assets/icons/fws-logo.svg" alt="">
+      <div class="page-header-name">Family World School Cooperative</div>
+    </div>
+    <div class="page-header-label">Logo System</div>
+  </div>
+  <div class="logo-content">
+    <div class="logo-section-title">Logo System</div>
+    <div class="logo-grid">
+      <div class="logo-variant on-dark">
+        <img src="../assets/icons/fws-logo.svg" alt="Logo on dark">
+        <div class="logo-variant-label">On Deep Navy</div>
+      </div>
+      <div class="logo-variant on-mid">
+        <img src="../assets/icons/fws-logo.svg" alt="Logo on mid">
+        <div class="logo-variant-label">On Navy Surface</div>
+      </div>
+      <div class="logo-variant on-crimson">
+        <img src="../assets/icons/fws-logo.svg" alt="Logo on crimson">
+        <div class="logo-variant-label">On Crimson Red</div>
+      </div>
+      <div class="logo-variant on-light">
+        <img src="../assets/icons/fws-logo.svg" alt="Logo on light">
+        <div class="logo-variant-label">On Off-White</div>
+      </div>
+      <div class="logo-variant on-cream">
+        <img src="../assets/icons/fws-logo.svg" alt="Logo on cream">
+        <div class="logo-variant-label">On Warm Cream</div>
+      </div>
+      <div class="logo-variant on-gold">
+        <img src="../assets/icons/fws-logo.svg" alt="Logo on gold">
+        <div class="logo-variant-label">On Heritage Gold</div>
+      </div>
+    </div>
+    <div class="logo-rules">
+      <div class="logo-rule-card do">
+        <div class="rule-label green">Do</div>
+        <div class="rule-item">Use logo on approved background colours only</div>
+        <div class="rule-item">Maintain clear space equal to the logo's height on all sides</div>
+        <div class="rule-item">Use white (inverted) version on dark backgrounds</div>
+        <div class="rule-item">Minimum size: 32px height for digital, 12mm for print</div>
+        <div class="rule-item">SVG format preferred for all digital applications</div>
+      </div>
+      <div class="logo-rule-card dont">
+        <div class="rule-label red">Don't</div>
+        <div class="rule-item">Don't stretch, compress, or distort the logo proportions</div>
+        <div class="rule-item">Don't place on busy photographic backgrounds without a backing</div>
+        <div class="rule-item">Don't recolour individual logo elements</div>
+        <div class="rule-item">Don't add shadows, outlines, or visual effects to the logo</div>
+        <div class="rule-item">Don't use low-resolution rasterized versions where SVG is available</div>
+      </div>
+    </div>
+  </div>
+  <div class="page-footer">
+    <div class="footer-line"></div>
+    <div class="pf-left">Family World School Cooperative - Brand Presentation 2026</div>
+    <div class="pf-page">03</div>
+  </div>
+</div>
+
+<!-- ========================================
+     PAGE 4: COLOR PALETTE
+     ======================================== -->
+<div class="page color-page">
+  <div class="page-header">
+    <div class="page-header-logo">
+      <img src="../assets/icons/fws-logo.svg" alt="">
+      <div class="page-header-name">Family World School Cooperative</div>
+    </div>
+    <div class="page-header-label">Colour Palette</div>
+  </div>
+  <div class="color-content">
+    <div class="color-section-title">Colour Palette</div>
+    <div class="color-primary-strip">
+      <div class="color-swatch">
+        <div class="swatch-color" style="background:#c72028;"></div>
+        <div class="swatch-info">
+          <div class="swatch-name">Crimson Red</div>
+          <div class="swatch-hex">#c72028</div>
+          <div class="swatch-use">Primary brand, CTAs, logo colour</div>
+        </div>
+      </div>
+      <div class="color-swatch">
+        <div class="swatch-color" style="background:#0f1a2e;"></div>
+        <div class="swatch-info">
+          <div class="swatch-name">Deep Navy</div>
+          <div class="swatch-hex">#0f1a2e</div>
+          <div class="swatch-use">Primary backgrounds, headers</div>
+        </div>
+      </div>
+      <div class="color-swatch">
+        <div class="swatch-color" style="background:#c9a84c;"></div>
+        <div class="swatch-info">
+          <div class="swatch-name">Heritage Gold</div>
+          <div class="swatch-hex">#c9a84c</div>
+          <div class="swatch-use">Highlights, premium elements, accents</div>
+        </div>
+      </div>
+      <div class="color-swatch">
+        <div class="swatch-color" style="background:#f5f0e8;"></div>
+        <div class="swatch-info">
+          <div class="swatch-name">Warm Cream</div>
+          <div class="swatch-hex">#f5f0e8</div>
+          <div class="swatch-use">Body text on dark, light accents</div>
+        </div>
+      </div>
+    </div>
+    <div class="color-secondary-strip">
+      <div class="color-swatch">
+        <div class="swatch-color" style="background:#1a2a3a;"></div>
+        <div class="swatch-info">
+          <div class="swatch-name">Navy Surface</div>
+          <div class="swatch-hex">#1a2a3a</div>
+          <div class="swatch-use">Cards, panels, secondary bg</div>
+        </div>
+      </div>
+      <div class="color-swatch">
+        <div class="swatch-color" style="background:#f8f5f0;"></div>
+        <div class="swatch-info">
+          <div class="swatch-name">Off-White</div>
+          <div class="swatch-hex">#f8f5f0</div>
+          <div class="swatch-use">Light section backgrounds</div>
+        </div>
+      </div>
+      <div class="color-swatch">
+        <div class="swatch-color" style="background:#1a1a1a;"></div>
+        <div class="swatch-info">
+          <div class="swatch-name">Near Black</div>
+          <div class="swatch-hex">#1a1a1a</div>
+          <div class="swatch-use">Text on light backgrounds</div>
+        </div>
+      </div>
+      <div class="color-swatch">
+        <div class="swatch-color" style="background:#6b7a8d;"></div>
+        <div class="swatch-info">
+          <div class="swatch-name">Cool Grey</div>
+          <div class="swatch-hex">#6b7a8d</div>
+          <div class="swatch-use">Labels, secondary text, muted</div>
+        </div>
+      </div>
+    </div>
+    <div class="color-usage-note">
+      <h4>Colour Usage Guidelines</h4>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:4mm;">
+        <div>
+          <div class="usage-row">
+            <div class="usage-swatch" style="background:#c72028;"></div>
+            <div class="usage-desc"><strong>Crimson</strong> - Primary CTAs, brand marks, key highlights. Use sparingly for maximum impact.</div>
+          </div>
+          <div class="usage-row">
+            <div class="usage-swatch" style="background:#0f1a2e;"></div>
+            <div class="usage-desc"><strong>Deep Navy</strong> - Primary page backgrounds and navigation. The dominant dark tone.</div>
+          </div>
+          <div class="usage-row">
+            <div class="usage-swatch" style="background:#c9a84c;"></div>
+            <div class="usage-desc"><strong>Heritage Gold</strong> - Eyebrows, borders, premium indicators. Never overuse - it signals excellence.</div>
+          </div>
+        </div>
+        <div>
+          <div class="usage-row">
+            <div class="usage-swatch" style="background:#f5f0e8;border:0.5px solid #ddd;"></div>
+            <div class="usage-desc"><strong>Warm Cream</strong> - Primary text on dark backgrounds. Warmer than white - more scholarly.</div>
+          </div>
+          <div class="usage-row">
+            <div class="usage-swatch" style="background:#1a2a3a;"></div>
+            <div class="usage-desc"><strong>Navy Surface</strong> - Cards and elevated panels within dark-background sections.</div>
+          </div>
+          <div class="usage-row">
+            <div class="usage-swatch" style="background:#6b7a8d;"></div>
+            <div class="usage-desc"><strong>Cool Grey</strong> - Secondary labels, metadata, muted descriptions. Always paired with stronger elements.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="page-footer">
+    <div class="footer-line"></div>
+    <div class="pf-left">Family World School Cooperative - Brand Presentation 2026</div>
+    <div class="pf-page">04</div>
+  </div>
+</div>
+
+<!-- ========================================
+     PAGE 5: TYPOGRAPHY
+     ======================================== -->
+<div class="page type-page">
+  <div class="page-header">
+    <div class="page-header-logo">
+      <img src="../assets/icons/fws-logo.svg" alt="">
+      <div class="page-header-name">Family World School Cooperative</div>
+    </div>
+    <div class="page-header-label">Typography</div>
+  </div>
+  <div class="type-content">
+    <div class="type-section-title">Typography System</div>
+    <div class="type-specimen-grid">
+      <div class="type-specimen">
+        <div class="type-specimen-label">Display - Cormorant Garamond</div>
+        <div class="type-display">Learning.<br>Together.</div>
+        <div class="type-body-sample">Cormorant Garamond brings scholarly warmth to every headline. Its classical proportions signal educational depth and institutional credibility.</div>
+      </div>
+      <div class="type-specimen">
+        <div class="type-specimen-label">Body - DM Sans</div>
+        <div style="font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:600;color:#0f1a2e;margin-bottom:3mm;">DM Sans</div>
+        <div class="type-body-sample" style="font-size:12px;color:#1a1a1a;">
+          DM Sans provides clean, modern readability for all body copy, UI elements, labels, and navigation. It pairs perfectly with Cormorant Garamond - offering digital clarity alongside editorial warmth.
+          <br><br>
+          <strong>Bold (700)</strong> for CTAs, labels, and UI elements.
+          <span style="font-weight:600;">SemiBold (600)</span> for subheadings.
+          Regular (400) for all body text.
+        </div>
+      </div>
+    </div>
+    <div class="type-hierarchy">
+      <div class="type-hierarchy-label">Type Scale</div>
+      <div class="hier-row">
+        <div class="hier-label">Display / Hero</div>
+        <div class="hier-sample h-display">Learning Together</div>
+      </div>
+      <div class="hier-row">
+        <div class="hier-label">Heading H1</div>
+        <div class="hier-sample h-h1">For Educators, Institutions, Families</div>
+      </div>
+      <div class="hier-row">
+        <div class="hier-label">Heading H2</div>
+        <div class="hier-sample h-h2">Educator Support Initiative</div>
+      </div>
+      <div class="hier-row">
+        <div class="hier-label">Heading H3</div>
+        <div class="hier-sample h-h3">How the Program Works</div>
+      </div>
+      <div class="hier-row">
+        <div class="hier-label">Body Text</div>
+        <div class="hier-sample h-body">A cooperative of world-class educators supporting homes and schools globally.</div>
+      </div>
+      <div class="hier-row">
+        <div class="hier-label">Label / UI</div>
+        <div class="hier-sample h-label">Educator Support Initiative</div>
+      </div>
+      <div class="hier-row" style="border-bottom:none;">
+        <div class="hier-label">Button</div>
+        <div class="hier-sample h-btn">Explore FWS Programs</div>
+      </div>
+    </div>
+    <div class="type-rules">
+      <div class="type-rule">
+        <h4>Never use these fonts</h4>
+        <p>Inter, Roboto, Arial, Open Sans, Poppins, Montserrat - these carry no distinctive voice. FWS deserves a scholarly, warm identity.</p>
+      </div>
+      <div class="type-rule">
+        <h4>Contrast principle</h4>
+        <p>Cormorant Garamond for emotion and hierarchy. DM Sans for clarity and function. Two fonts only - always.</p>
+      </div>
+    </div>
+  </div>
+  <div class="page-footer">
+    <div class="footer-line"></div>
+    <div class="pf-left">Family World School Cooperative - Brand Presentation 2026</div>
+    <div class="pf-page">05</div>
+  </div>
+</div>
+
+<!-- ========================================
+     PAGE 6: PHOTOGRAPHY STYLE
+     ======================================== -->
+<div class="page photo-page">
+  <div class="page-header">
+    <div class="page-header-logo">
+      <img src="../assets/icons/fws-logo.svg" alt="">
+      <div class="page-header-name">Family World School Cooperative</div>
+    </div>
+    <div class="page-header-label">Photography Style</div>
+  </div>
+  <div class="photo-content">
+    <div class="photo-section-title">Photography Style</div>
+    <div class="photo-intro">All FWS photography is warm, editorial, and human. Authentic learning moments. Diverse communities. Golden hour tones. Never stock-photo sterile - always alive.</div>
+    <div class="photo-grid">
+      <div class="photo-item">
+        <img src="../assets/images/hero-home.jpg" alt="Home Learning">
+        <div class="photo-item-label">
+          <h4>Home Learning</h4>
+          <p>Multi-generational, warm afternoon light, joyful</p>
+        </div>
+      </div>
+      <div class="photo-item">
+        <img src="../assets/images/hero-educators.jpg" alt="Educators">
+        <div class="photo-item-label">
+          <h4>Educators</h4>
+          <p>Confident, modern, editorial photography</p>
+        </div>
+      </div>
+      <div class="photo-item">
+        <img src="../assets/images/hero-institutions.jpg" alt="Institutions">
+        <div class="photo-item-label">
+          <h4>Institutions</h4>
+          <p>Architectural warmth, diverse learners, welcoming</p>
+        </div>
+      </div>
+      <div class="photo-item">
+        <img src="../assets/images/hero-about.jpg" alt="Community">
+        <div class="photo-item-label">
+          <h4>Cooperative Community</h4>
+          <p>Documentary style, collaborative warmth</p>
+        </div>
+      </div>
+    </div>
+    <div class="photo-principles">
+      <div class="photo-principle">
+        <h4>Warm Tones</h4>
+        <p>Golden hour, amber, soft shadows. Never cold blue-toned lighting.</p>
+      </div>
+      <div class="photo-principle">
+        <h4>Real People</h4>
+        <p>Authentic moments over posed. Documentary style. Genuine expression.</p>
+      </div>
+      <div class="photo-principle">
+        <h4>Diverse</h4>
+        <p>Global community represented. Ages, cultures, family structures all welcome.</p>
+      </div>
+      <div class="photo-principle">
+        <h4>Editorial</h4>
+        <p>Cinematic framing. Depth of field. Professional quality - never phone snapshots.</p>
+      </div>
+    </div>
+  </div>
+  <div class="page-footer">
+    <div class="footer-line"></div>
+    <div class="pf-left">Family World School Cooperative - Brand Presentation 2026</div>
+    <div class="pf-page">06</div>
+  </div>
+</div>
+
+<!-- ========================================
+     PAGE 7: UI COMPONENTS
+     ======================================== -->
+<div class="page ui-page">
+  <div class="page-header">
+    <div class="page-header-logo">
+      <img src="../assets/icons/fws-logo.svg" alt="">
+      <div class="page-header-name">Family World School Cooperative</div>
+    </div>
+    <div class="page-header-label">UI Components</div>
+  </div>
+  <div class="ui-content">
+    <div class="ui-section-title">UI Components</div>
+    <div class="ui-subsection">
+      <div class="ui-sub-label">Buttons</div>
+      <div class="ui-buttons">
+        <div class="btn-primary">Primary Action</div>
+        <div class="btn-secondary">Secondary</div>
+        <div class="btn-ghost">Ghost</div>
+        <div class="btn-gold">Heritage Gold</div>
+      </div>
+    </div>
+    <div class="ui-subsection">
+      <div class="ui-sub-label">Program Cards (Dark Background)</div>
+      <div class="ui-cards">
+        <div class="ui-card c">
+          <h4>ESI Program</h4>
+          <p>Educator Support Initiative. Substitute and regular placements via calendar and contracts.</p>
+        </div>
+        <div class="ui-card g">
+          <h4>FWS Courses</h4>
+          <p>10-video course libraries produced by FWS educators. Available on demand.</p>
+        </div>
+        <div class="ui-card n">
+          <h4>Tutoring</h4>
+          <p>Monthly subscription. Book sessions via educator availability calendar.</p>
+        </div>
+      </div>
+    </div>
+    <div class="ui-subsection">
+      <div class="ui-sub-label">Form Elements</div>
+      <div class="ui-form-row">
+        <div class="ui-form-field">
+          <div class="ui-field-label">Your Name</div>
+          <div class="ui-field-value">Miriam Thomas</div>
+        </div>
+        <div class="ui-form-field">
+          <div class="ui-field-label">Email Address</div>
+          <div class="ui-field-value">your@email.com</div>
+        </div>
+        <div class="ui-field-focus">
+          <div class="ui-field-label">Role</div>
+          <div class="ui-field-value">Educator - joining FWS</div>
+        </div>
+        <div class="ui-form-field">
+          <div class="ui-field-label">Subject</div>
+          <div class="ui-field-value">ESI enquiry...</div>
+        </div>
+      </div>
+    </div>
+    <div class="ui-subsection">
+      <div class="ui-sub-label">Tags and Status Labels</div>
+      <div class="ui-tags">
+        <span class="ui-tag tag-c">Educator</span>
+        <span class="ui-tag tag-g">Institution</span>
+        <span class="ui-tag tag-b">Member</span>
+        <span class="ui-tag tag-s">Active</span>
+        <span class="ui-tag tag-c">Track A - Substitute</span>
+        <span class="ui-tag tag-g">Track B - Regular</span>
+        <span class="ui-tag tag-b">Course Access</span>
+        <span class="ui-tag tag-s">Enrolled</span>
+      </div>
+    </div>
+  </div>
+  <div class="page-footer">
+    <div class="footer-line"></div>
+    <div class="pf-left">Family World School Cooperative - Brand Presentation 2026</div>
+    <div class="pf-page">07</div>
+  </div>
+</div>
+
+<!-- ========================================
+     PAGE 8: APPLICATION EXAMPLES
+     ======================================== -->
+<div class="page app-page">
+  <div class="app-content">
+    <div class="app-section-title">Application Examples</div>
+    <div class="app-intro">How the FWS brand system comes to life across website, email, and communications.</div>
+    <div class="app-mock-grid">
+      <div class="app-mock">
+        <div class="app-mock-header">
+          <span>familyworldschool.org</span>
+          <div class="app-mock-dots">
+            <div class="app-mock-dot dot-r"></div>
+            <div class="app-mock-dot dot-y"></div>
+            <div class="app-mock-dot dot-g"></div>
+          </div>
+        </div>
+        <div class="app-mock-body">
+          <div class="mock-nav-bar">
+            <div class="mock-nav-item active">Home</div>
+            <div class="mock-nav-item">Educators</div>
+            <div class="mock-nav-item">Institutions</div>
+            <div class="mock-nav-item">Members</div>
+            <div class="mock-nav-item">Courses</div>
+          </div>
+          <div class="mock-hero-bar">
+            <div class="mock-hero-label">Family World School Cooperative</div>
+            <div class="mock-hero-title">Learning.<br>Together.<br>Everywhere.</div>
+          </div>
+          <div class="mock-cards">
+            <div class="mock-card"><div class="mock-card-color" style="background:#c72028;opacity:0.6;"></div><p>ESI Program</p></div>
+            <div class="mock-card"><div class="mock-card-color" style="background:#c9a84c;opacity:0.5;"></div><p>Courses</p></div>
+            <div class="mock-card"><div class="mock-card-color" style="background:#1a2a3a;border:0.5px solid rgba(201,168,76,0.3);"></div><p>Tutoring</p></div>
+          </div>
+        </div>
+      </div>
+      <div class="app-mock">
+        <div class="app-mock-header" style="background:#1a2a3a;">
+          <span>Email Template</span>
+          <div class="app-mock-dots">
+            <div class="app-mock-dot dot-r"></div>
+            <div class="app-mock-dot dot-y"></div>
+            <div class="app-mock-dot dot-g"></div>
+          </div>
+        </div>
+        <div class="email-mock-body">
+          <div class="email-header">
+            <p>Family World School Cooperative</p>
+          </div>
+          <div class="email-body">
+            <p style="font-weight:700;font-size:11px;color:#0f1a2e;margin-bottom:3mm;">Welcome to the FWS Network</p>
+            <p>Thank you for joining Family World School Cooperative. Your application has been received and our team will be in touch within 2 business days to confirm your onboarding call.<br><br>In the meantime, you can explore our booking portal and review the ESI educator guidelines.</p>
+            <div style="background:#c72028;padding:2mm 4mm;border-radius:4px;margin-top:4mm;display:inline-block;">
+              <p style="font-size:10px;font-weight:700;color:white;">Access Your Portal</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="app-final-cta">
+      <div class="afc-left">
+        <h3>Ready to work with FWS?</h3>
+        <p>Join the cooperative as an educator, institution, or member family.</p>
+      </div>
+      <div class="afc-right">
+        <div class="afc-contact"><strong>Email:</strong> luciusmel@gmail.com</div>
+        <div class="afc-contact"><strong>Network:</strong> DCA / It's My Miracle / Miraculous Transitions</div>
+        <div class="afc-contact"><strong>Booking:</strong> Square Appointments via FWS portal</div>
+      </div>
+    </div>
+  </div>
+  <div class="app-footer">
+    <div class="pf-left" style="color:rgba(245,240,232,0.2);">Family World School Cooperative - Brand Presentation 2026</div>
+    <div class="pf-page">08</div>
+  </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Favicon -->
+<link rel="icon" type="image/svg+xml" href="../assets/icons/favicon.svg">
+<link rel="shortcut icon" href="../assets/icons/favicon.svg">
+<!-- Open Graph / WhatsApp / Social Sharing -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Family World School Cooperative">
+<meta property="og:description" content="A cooperative of world-class educators supporting homes, families, and independent schools globally.">
+<meta property="og:image" content="https://familyworldschoolcooperative.org/assets/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:site_name" content="Family World School Cooperative">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://familyworldschoolcooperative.org/assets/og-image.jpg">
+<title>About FWS Cooperative - Family World School</title>
+<style>
+@font-face { font-family: 'Cormorant Garamond'; src: url('../assets/fonts/cormorant-garamond-400.woff2') format('woff2'); font-weight: 400; font-display: swap; }
+@font-face { font-family: 'Cormorant Garamond'; src: url('../assets/fonts/cormorant-garamond-700.woff2') format('woff2'); font-weight: 700; font-display: swap; }
+@font-face { font-family: 'DM Sans'; src: url('../assets/fonts/dm-sans-400.woff2') format('woff2'); font-weight: 400; font-display: swap; }
+@font-face { font-family: 'DM Sans'; src: url('../assets/fonts/dm-sans-600.woff2') format('woff2'); font-weight: 600; font-display: swap; }
+@font-face { font-family: 'DM Sans'; src: url('../assets/fonts/dm-sans-700.woff2') format('woff2'); font-weight: 700; font-display: swap; }
+:root { --crimson:#c72028; --crimson-dk:#a01820; --navy:#0f1a2e; --navy-s:#1a2a3a; --navy-l:#243447; --gold:#c9a84c; --cream:#f5f0e8; --off-white:#f8f5f0; --dark:#1a1a1a; --muted:#6b7a8d; --border:rgba(201,168,76,0.25); }
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'DM Sans',sans-serif;background:var(--navy);color:var(--cream);overflow-x:hidden;line-height:1.7;}
+img{display:block;max-width:100%;}a{text-decoration:none;color:inherit;}
+svg{stroke:currentColor;fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;}
+
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:0 5%;height:72px;display:flex;align-items:center;justify-content:space-between;background:rgba(15,26,46,0.95);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);}
+.nav-logo{display:flex;align-items:center;gap:12px;}
+.nav-logo img{width:36px;height:36px;filter:brightness(0) invert(1);}
+.nav-logo-text .name{font-family:'Cormorant Garamond',serif;font-size:17px;font-weight:700;color:var(--cream);}
+.nav-links{display:flex;align-items:center;gap:4px;list-style:none;}
+.nav-links a{font-size:13px;font-weight:600;color:rgba(245,240,232,0.6);padding:6px 12px;border-radius:6px;transition:0.2s;}
+.nav-links a:hover,.nav-links a.active{color:var(--cream);}
+.nav-links a.active{color:var(--crimson);}
+.nav-cta{background:var(--crimson)!important;color:white!important;padding:7px 18px!important;border-radius:6px!important;}
+
+/* HERO WITH IMAGE */
+.about-hero{padding:140px 8% 80px;position:relative;overflow:hidden;background:var(--navy);}
+.about-hero::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(199,32,40,0.06),transparent 60%);pointer-events:none;}
+.hero-inner{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;max-width:1280px;margin:0 auto;}
+.hero-text .eyebrow{font-size:11px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:16px;display:flex;align-items:center;gap:8px;}
+.hero-text .eyebrow::before{content:'';width:24px;height:1px;background:var(--gold);}
+.hero-text h1{font-family:'Cormorant Garamond',serif;font-size:clamp(44px,6vw,80px);font-weight:700;line-height:1.05;letter-spacing:-0.02em;color:var(--cream);margin-bottom:20px;}
+.hero-text h1 em{font-style:italic;color:var(--crimson);}
+.hero-text p{font-size:16px;color:rgba(245,240,232,0.65);line-height:1.8;margin-bottom:16px;}
+.hero-img{position:relative;border-radius:16px;overflow:hidden;}
+.hero-img img{width:100%;height:520px;object-fit:cover;object-position:center 30%;}
+.hero-img::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(199,32,40,0.1),transparent);pointer-events:none;}
+
+/* MISSION STATEMENT */
+.mission{padding:80px 8%;background:var(--crimson);text-align:center;position:relative;overflow:hidden;}
+.mission::before{content:'';position:absolute;top:-100px;right:-100px;width:500px;height:500px;border-radius:50%;background:rgba(255,255,255,0.06);pointer-events:none;}
+.mission blockquote{font-family:'Cormorant Garamond',serif;font-size:clamp(28px,4vw,48px);font-weight:700;color:white;line-height:1.3;max-width:900px;margin:0 auto;font-style:italic;position:relative;z-index:1;}
+.mission cite{display:block;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:600;color:rgba(255,255,255,0.65);margin-top:24px;font-style:normal;letter-spacing:0.06em;text-transform:uppercase;}
+
+/* NETWORK */
+.network-section{padding:80px 8%;background:var(--navy-s);}
+.section-header{text-align:center;margin-bottom:56px;}
+.section-eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:11px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:14px;}
+.section-eyebrow::before,.section-eyebrow::after{content:'';width:24px;height:1px;background:var(--gold);}
+.section-header h2{font-family:'Cormorant Garamond',serif;font-size:clamp(32px,4vw,52px);font-weight:700;color:var(--cream);margin-bottom:12px;line-height:1.1;}
+.section-header p{font-size:16px;color:rgba(245,240,232,0.55);max-width:500px;margin:0 auto;}
+.network-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;max-width:1100px;margin:0 auto;}
+.net-card{background:var(--navy);border:1px solid var(--border);border-radius:16px;padding:36px;transition:0.3s;}
+.net-card:hover{transform:translateY(-4px);border-color:rgba(199,32,40,0.4);}
+.net-logo{width:56px;height:56px;border-radius:12px;background:rgba(199,32,40,0.12);border:1px solid rgba(199,32,40,0.25);display:flex;align-items:center;justify-content:center;margin-bottom:20px;font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:700;color:var(--crimson);}
+.net-name{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:700;color:var(--cream);margin-bottom:8px;line-height:1.15;}
+.net-type{font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold);margin-bottom:12px;}
+.net-desc{font-size:14px;color:rgba(245,240,232,0.55);line-height:1.65;}
+
+/* VALUES */
+.values{padding:80px 8%;background:var(--navy);}
+.values-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;max-width:1100px;margin:0 auto;}
+.value-card{padding:28px;border:1px solid rgba(255,255,255,0.05);border-radius:12px;background:var(--navy-s);transition:0.3s;}
+.value-card:hover{border-color:var(--border);}
+.value-icon{font-family:'Cormorant Garamond',serif;font-size:40px;font-weight:700;color:var(--crimson);margin-bottom:12px;line-height:1;}
+.value-title{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:700;color:var(--cream);margin-bottom:8px;}
+.value-desc{font-size:13px;color:rgba(245,240,232,0.5);line-height:1.6;}
+
+/* TEAM / LEADERSHIP */
+.team{padding:80px 8%;background:var(--off-white);}
+.team .section-header h2{color:var(--dark);}
+.team .section-header p{color:rgba(26,26,26,0.5);}
+.team .section-eyebrow{color:var(--crimson);}
+.team .section-eyebrow::before,.team .section-eyebrow::after{background:var(--crimson);}
+.team-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;max-width:1100px;margin:0 auto;}
+.team-card{background:white;border-radius:16px;padding:32px;border:1px solid rgba(0,0,0,0.06);text-align:center;transition:0.3s;}
+.team-card:hover{box-shadow:0 20px 50px rgba(0,0,0,0.08);transform:translateY(-4px);}
+.team-avatar{width:72px;height:72px;border-radius:50%;background:var(--crimson);display:flex;align-items:center;justify-content:center;margin:0 auto 16px;font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:700;color:white;}
+.team-name{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:700;color:var(--dark);margin-bottom:4px;}
+.team-role{font-size:12px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--crimson);margin-bottom:12px;}
+.team-bio{font-size:13px;color:rgba(26,26,26,0.55);line-height:1.6;}
+
+/* CTA */
+.about-cta{padding:80px 8%;background:var(--navy-s);text-align:center;}
+.about-cta h2{font-family:'Cormorant Garamond',serif;font-size:clamp(36px,5vw,60px);font-weight:700;color:var(--cream);margin-bottom:14px;}
+.about-cta p{font-size:17px;color:rgba(245,240,232,0.6);margin-bottom:36px;max-width:480px;margin-left:auto;margin-right:auto;}
+.cta-row{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}
+.btn-primary{display:inline-flex;align-items:center;gap:8px;background:var(--crimson);color:white;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:700;padding:13px 26px;border-radius:8px;cursor:pointer;transition:0.2s;border:none;}
+.btn-primary:hover{background:var(--crimson-dk);transform:translateY(-2px);}
+.btn-ghost{display:inline-flex;align-items:center;gap:8px;background:transparent;color:var(--cream);font-family:'DM Sans',sans-serif;font-size:14px;font-weight:600;padding:13px 26px;border-radius:8px;border:1px solid rgba(245,240,232,0.25);cursor:pointer;transition:0.2s;}
+.btn-ghost:hover{background:rgba(255,255,255,0.06);transform:translateY(-2px);}
+
+.footer-min{background:#070e1c;padding:40px 8%;border-top:1px solid rgba(255,255,255,0.05);display:flex;align-items:center;justify-content:space-between;}
+.footer-min-logo{font-family:'Cormorant Garamond',serif;font-size:15px;font-weight:700;color:rgba(245,240,232,0.4);}
+.footer-min-links{display:flex;gap:24px;}
+.footer-min-links a{font-size:12px;color:rgba(245,240,232,0.25);transition:color 0.2s;}
+.footer-min-links a:hover{color:var(--cream);}
+
+@media(max-width:1024px){.hero-inner{grid-template-columns:1fr;gap:48px;}.network-grid{grid-template-columns:1fr 1fr;}.values-grid{grid-template-columns:1fr 1fr;}.team-grid{grid-template-columns:1fr 1fr;}}
+@media(max-width:768px){.network-grid,.values-grid,.team-grid{grid-template-columns:1fr;}.footer-min{flex-direction:column;gap:16px;text-align:center;}}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="../index.html" class="nav-logo">
+    <img src="../assets/icons/fws-logo.svg" alt="FWS">
+    <div class="nav-logo-text"><div class="name">Family World School</div></div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="educators.html">For Educators</a></li>
+    <li><a href="institutions.html">For Institutions</a></li>
+    <li><a href="courses.html">Courses</a></li>
+    <li><a href="esi.html">ESI</a></li>
+    <li><a href="about.html" class="active">About</a></li>
+    <li><a href="booking.html" class="nav-cta">Book Now</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="about-hero">
+  <div class="hero-inner">
+    <div class="hero-text">
+      <div class="eyebrow">Our Story</div>
+      <h1>Built by educators,<br>for <em>every learner</em></h1>
+      <p>Family World School Cooperative was founded with one purpose: to make world-class education accessible to every independent learning program, family, and cooperative - regardless of location.</p>
+      <p>We are a nonprofit-backed cooperative, part of the It's My Miracle and DCA Network, working with international educators, curriculum designers, and academic authors to build the future of independent education.</p>
+    </div>
+    <div class="hero-img">
+      <img src="../assets/images/hero-about.jpg" alt="FWS Educator Community">
+    </div>
+  </div>
+</section>
+
+<!-- MISSION QUOTE -->
+<section class="mission">
+  <blockquote>
+    "Working collaboratively to achieve shared goals with members and partners - building the future of independent education, one family and one community at a time."
+    <cite>Family World School Cooperative Mission</cite>
+  </blockquote>
+</section>
+
+<!-- NETWORK -->
+<section class="network-section" id="network">
+  <div class="section-header">
+    <div class="section-eyebrow">Our Network</div>
+    <h2>Part of something bigger</h2>
+    <p>FWS Cooperative is a member of a mission-aligned nonprofit network dedicated to education, transformation, and community.</p>
+  </div>
+  <div class="network-grid">
+    <div class="net-card">
+      <div class="net-logo">IM</div>
+      <div class="net-name">It's My Miracle</div>
+      <div class="net-type">Nonprofit Parent Organization</div>
+      <div class="net-desc">The nonprofit umbrella organization supporting FWS Cooperative and its mission of accessible, independent education globally.</div>
+    </div>
+    <div class="net-card">
+      <div class="net-logo">MT</div>
+      <div class="net-name">Miraculous Transitions</div>
+      <div class="net-type">Partner Organization</div>
+      <div class="net-desc">A sister initiative working alongside FWS to support learning and community development through cooperative frameworks.</div>
+    </div>
+    <div class="net-card">
+      <div class="net-logo">DC</div>
+      <div class="net-name">DCA Network</div>
+      <div class="net-type">Cooperative Network</div>
+      <div class="net-desc">The broader network of educators, curriculum designers, and academic authors that FWS Cooperative is proud to be part of and serve.</div>
+    </div>
+  </div>
+</section>
+
+<!-- VALUES -->
+<section class="values">
+  <div class="section-header">
+    <div class="section-eyebrow">What We Stand For</div>
+    <h2>Our core values</h2>
+  </div>
+  <div class="values-grid">
+    <div class="value-card">
+      <div class="value-icon">I</div>
+      <div class="value-title">Independence</div>
+      <div class="value-desc">We champion independent learning programs - home schools, private cooperatives, and family-run institutions deserve the same quality support as any institution.</div>
+    </div>
+    <div class="value-card">
+      <div class="value-icon">C</div>
+      <div class="value-title">Cooperation</div>
+      <div class="value-desc">Every educator, institution, and family that joins FWS contributes to a shared mission. We are stronger together than apart.</div>
+    </div>
+    <div class="value-card">
+      <div class="value-icon">E</div>
+      <div class="value-title">Excellence</div>
+      <div class="value-desc">Every FWS educator brings expertise, structure, and commitment. We hold ourselves and our community to a high standard in everything we do.</div>
+    </div>
+    <div class="value-card">
+      <div class="value-icon">A</div>
+      <div class="value-title">Access</div>
+      <div class="value-desc">Quality education should not be limited by geography, resources, or institutional affiliation. FWS is built to break down those barriers.</div>
+    </div>
+  </div>
+</section>
+
+<!-- TEAM -->
+<section class="team">
+  <div class="section-header">
+    <div class="section-eyebrow">Leadership</div>
+    <h2>Who leads FWS</h2>
+    <p>A team of experienced educators, curriculum designers, and community organizers.</p>
+  </div>
+  <div class="team-grid">
+    <div class="team-card">
+      <div class="team-avatar">D</div>
+      <div class="team-name">Daisy Ross</div>
+      <div class="team-role">Founder and Director</div>
+      <div class="team-bio">Founder of FWS Cooperative, educator, and advocate for independent learning. Building cooperative infrastructure for the global home-school community.</div>
+    </div>
+    <div class="team-card">
+      <div class="team-avatar">E</div>
+      <div class="team-name">ESI Coordinator</div>
+      <div class="team-role">Educator Relations</div>
+      <div class="team-bio">Manages educator onboarding, contract matching, and ESI training. The bridge between educators and the institutions that need them.</div>
+    </div>
+    <div class="team-card">
+      <div class="team-avatar">C</div>
+      <div class="team-name">Curriculum Lead</div>
+      <div class="team-role">Course Development</div>
+      <div class="team-bio">Supports FWS educators in producing high-quality 10-video courses. Ensures academic standards and accessibility for all learner levels.</div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="about-cta">
+  <h2>Join the FWS family</h2>
+  <p>Whether you teach, run a school, or learn at home - there is a place for you in the cooperative.</p>
+  <div class="cta-row">
+    <a href="educators.html" class="btn-primary">
+      For Educators
+      <svg width="16" height="16" viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+    </a>
+    <a href="contact.html" class="btn-ghost">
+      Contact Us
+      <svg width="16" height="16" viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+    </a>
+  </div>
+</section>
+
+<footer class="footer-min">
+  <div class="footer-min-logo">Family World School Cooperative</div>
+  <div class="footer-min-links">
+    <a href="../index.html">Home</a>
+    <a href="educators.html">Educators</a>
+    <a href="contact.html">Contact</a>
+  </div>
+</footer>
+</body>
+</html>

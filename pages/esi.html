@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Favicon -->
+<link rel="icon" type="image/svg+xml" href="../assets/icons/favicon.svg">
+<link rel="shortcut icon" href="../assets/icons/favicon.svg">
+<!-- Open Graph / WhatsApp / Social Sharing -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Family World School Cooperative">
+<meta property="og:description" content="A cooperative of world-class educators supporting homes, families, and independent schools globally.">
+<meta property="og:image" content="https://familyworldschoolcooperative.org/assets/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:site_name" content="Family World School Cooperative">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://familyworldschoolcooperative.org/assets/og-image.jpg">
+<title>Educator Support Initiative (ESI) - Family World School Cooperative</title>
+<style>
+@font-face { font-family: 'Cormorant Garamond'; src: url('../assets/fonts/cormorant-garamond-700.woff2') format('woff2'); font-weight: 700; font-display: swap; }
+@font-face { font-family: 'Cormorant Garamond'; src: url('../assets/fonts/cormorant-garamond-600.woff2') format('woff2'); font-weight: 600; font-display: swap; }
+@font-face { font-family: 'DM Sans'; src: url('../assets/fonts/dm-sans-400.woff2') format('woff2'); font-weight: 400; font-display: swap; }
+@font-face { font-family: 'DM Sans'; src: url('../assets/fonts/dm-sans-600.woff2') format('woff2'); font-weight: 600; font-display: swap; }
+@font-face { font-family: 'DM Sans'; src: url('../assets/fonts/dm-sans-700.woff2') format('woff2'); font-weight: 700; font-display: swap; }
+:root {
+  --crimson:#c72028; --crimson-dk:#a01820; --navy:#0f1a2e; --navy-s:#1a2a3a;
+  --gold:#c9a84c; --cream:#f5f0e8; --off-white:#f8f5f0; --dark:#1a1a1a; --muted:#6b7a8d;
+  --border:rgba(201,168,76,0.25);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'DM Sans',sans-serif;background:var(--navy);color:var(--cream);overflow-x:hidden;line-height:1.7;}
+img{display:block;max-width:100%;}a{text-decoration:none;color:inherit;}
+svg{stroke:currentColor;fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;}
+
+/* NAV */
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:0 5%;height:72px;display:flex;align-items:center;justify-content:space-between;background:rgba(15,26,46,0.95);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);}
+.nav-logo{display:flex;align-items:center;gap:12px;}
+.nav-logo img{width:36px;height:36px;filter:brightness(0) invert(1);}
+.nav-logo-name{font-family:'Cormorant Garamond',serif;font-size:17px;font-weight:700;color:var(--cream);}
+.nav-back{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:600;color:rgba(245,240,232,0.55);padding:6px 14px;border-radius:6px;border:1px solid rgba(255,255,255,0.1);transition:0.2s;}
+.nav-back:hover{color:var(--cream);border-color:rgba(255,255,255,0.25);}
+
+/* HERO */
+.esi-hero{min-height:72vh;padding:140px 8% 80px;position:relative;overflow:hidden;display:flex;align-items:center;}
+.esi-hero-bg{position:absolute;inset:0;z-index:0;}
+.esi-hero-bg img{width:100%;height:100%;object-fit:cover;opacity:0.18;}
+.esi-hero-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(15,26,46,0.9) 50%,rgba(199,32,40,0.12) 100%);}
+.esi-hero-content{position:relative;z-index:2;max-width:780px;}
+.eyebrow{font-size:11px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:16px;display:flex;align-items:center;gap:8px;}
+.eyebrow::before{content:'';width:24px;height:1px;background:var(--gold);}
+.esi-hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(44px,6vw,80px);font-weight:700;line-height:1.05;letter-spacing:-0.02em;color:var(--cream);margin-bottom:20px;}
+.esi-hero h1 span{color:var(--crimson);}
+.esi-hero p{font-size:18px;color:rgba(245,240,232,0.65);max-width:560px;line-height:1.75;margin-bottom:40px;}
+.hero-badge-row{display:flex;gap:16px;flex-wrap:wrap;}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.05);border:1px solid var(--border);border-radius:8px;padding:10px 18px;font-size:13px;font-weight:600;color:var(--cream);}
+.hero-badge svg{width:16px;height:16px;stroke:var(--gold);}
+.hero-stat-row{display:flex;gap:48px;margin-top:48px;padding-top:40px;border-top:1px solid rgba(255,255,255,0.08);flex-wrap:wrap;}
+.hero-stat-val{font-family:'Cormorant Garamond',serif;font-size:42px;font-weight:700;color:var(--crimson);line-height:1;}
+.hero-stat-lbl{font-size:12px;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:0.08em;margin-top:4px;}
+
+/* WHAT IS ESI */
+.what-esi{padding:96px 8%;background:var(--navy-s);}
+.section-header{text-align:center;margin-bottom:64px;}
+.section-header h2{font-family:'Cormorant Garamond',serif;font-size:clamp(32px,4vw,52px);font-weight:700;color:var(--cream);margin-bottom:12px;}
+.section-header p{font-size:16px;color:rgba(245,240,232,0.6);max-width:560px;margin:0 auto;}
+.esi-intro-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px;}
+.esi-intro-card{background:var(--navy);border:1px solid var(--border);border-radius:16px;padding:40px;position:relative;overflow:hidden;}
+.esi-intro-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;}
+.esi-intro-card.substitute::before{background:var(--crimson);}
+.esi-intro-card.regular::before{background:var(--gold);}
+.card-icon{width:52px;height:52px;border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:20px;}
+.card-icon.crimson{background:rgba(199,32,40,0.12);border:1px solid rgba(199,32,40,0.3);}
+.card-icon.gold{background:rgba(201,168,76,0.12);border:1px solid rgba(201,168,76,0.3);}
+.card-icon svg{width:24px;height:24px;}
+.card-icon.crimson svg{stroke:var(--crimson);}
+.card-icon.gold svg{stroke:var(--gold);}
+.esi-intro-card h3{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:700;color:var(--cream);margin-bottom:12px;}
+.esi-intro-card p{font-size:14px;color:rgba(245,240,232,0.6);line-height:1.75;}
+.card-tag{display:inline-block;font-size:10px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;padding:4px 10px;border-radius:4px;margin-bottom:16px;}
+.card-tag.crimson{background:rgba(199,32,40,0.15);color:var(--crimson);}
+.card-tag.gold{background:rgba(201,168,76,0.15);color:var(--gold);}
+
+/* SUBSTITUTE DEEP DIVE */
+.sub-section{padding:96px 8%;background:var(--navy);}
+.sub-layout{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start;}
+.sub-content h2{font-family:'Cormorant Garamond',serif;font-size:clamp(28px,3.5vw,44px);font-weight:700;color:var(--cream);margin-bottom:16px;}
+.sub-content p{font-size:15px;color:rgba(245,240,232,0.6);line-height:1.75;margin-bottom:32px;}
+.how-it-list{display:flex;flex-direction:column;gap:20px;}
+.how-item{display:flex;align-items:flex-start;gap:16px;}
+.how-num{width:32px;height:32px;border-radius:8px;background:var(--crimson);color:white;font-size:13px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px;}
+.how-item-body h4{font-size:14px;font-weight:700;color:var(--cream);margin-bottom:4px;}
+.how-item-body p{font-size:13px;color:rgba(245,240,232,0.55);line-height:1.65;}
+.rate-card{background:var(--navy-s);border:1px solid var(--border);border-radius:16px;overflow:hidden;}
+.rate-card-head{background:var(--crimson);padding:24px 28px;}
+.rate-card-head h3{font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:700;color:white;margin-bottom:4px;}
+.rate-card-head p{font-size:13px;color:rgba(255,255,255,0.7);}
+.rate-card-body{padding:28px;}
+.rate-row{display:flex;justify-content:space-between;align-items:center;padding:14px 0;border-bottom:1px solid rgba(255,255,255,0.06);}
+.rate-row:last-child{border-bottom:none;}
+.rate-label{font-size:13px;color:rgba(245,240,232,0.6);}
+.rate-value{font-size:16px;font-weight:700;color:var(--cream);}
+.rate-note{font-size:11px;color:var(--muted);margin-top:2px;}
+.rate-cap{background:rgba(199,32,40,0.08);border:1px solid rgba(199,32,40,0.2);border-radius:10px;padding:16px;margin-top:16px;}
+.rate-cap p{font-size:13px;color:rgba(245,240,232,0.6);line-height:1.6;}
+.rate-cap strong{color:var(--crimson);}
+.availability-info{display:flex;flex-direction:column;gap:12px;margin-top:24px;}
+.avail-item{display:flex;align-items:center;gap:12px;}
+.avail-dot{width:8px;height:8px;border-radius:50%;background:var(--gold);flex-shrink:0;}
+.avail-item p{font-size:13px;color:rgba(245,240,232,0.65);}
+
+/* REGULAR EDUCATOR */
+.regular-section{padding:96px 8%;background:var(--navy-s);}
+.regular-layout{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start;}
+.regular-content h2{font-family:'Cormorant Garamond',serif;font-size:clamp(28px,3.5vw,44px);font-weight:700;color:var(--cream);margin-bottom:16px;}
+.regular-content p{font-size:15px;color:rgba(245,240,232,0.6);line-height:1.75;margin-bottom:32px;}
+.contract-card{background:var(--navy);border:1px solid var(--border);border-radius:16px;overflow:hidden;}
+.contract-head{background:linear-gradient(135deg,#8a6a1a,var(--gold));padding:24px 28px;}
+.contract-head h3{font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:700;color:#1a1000;margin-bottom:4px;}
+.contract-head p{font-size:13px;color:rgba(26,16,0,0.65);}
+.contract-body{padding:28px;}
+.contract-feature{display:flex;align-items:flex-start;gap:14px;padding:14px 0;border-bottom:1px solid rgba(255,255,255,0.06);}
+.contract-feature:last-child{border-bottom:none;}
+.cf-icon{width:32px;height:32px;border-radius:8px;background:rgba(201,168,76,0.12);border:1px solid rgba(201,168,76,0.25);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.cf-icon svg{width:16px;height:16px;stroke:var(--gold);}
+.cf-body h4{font-size:13px;font-weight:700;color:var(--cream);margin-bottom:3px;}
+.cf-body p{font-size:12px;color:rgba(245,240,232,0.5);line-height:1.6;}
+.penalty-box{background:rgba(199,32,40,0.06);border:1px solid rgba(199,32,40,0.2);border-radius:10px;padding:16px;margin-top:16px;}
+.penalty-box-label{font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--crimson);margin-bottom:8px;}
+.penalty-box p{font-size:12px;color:rgba(245,240,232,0.55);line-height:1.65;}
+.benefits-list{display:flex;flex-direction:column;gap:14px;margin-top:32px;}
+.benefit-item{display:flex;align-items:center;gap:12px;}
+.benefit-check{width:20px;height:20px;border-radius:50%;background:rgba(201,168,76,0.15);border:1px solid rgba(201,168,76,0.3);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.benefit-check svg{width:10px;height:10px;stroke:var(--gold);}
+.benefit-item p{font-size:14px;color:rgba(245,240,232,0.7);}
+
+/* VIRTUAL CLASSROOM */
+.virtual-section{padding:96px 8%;background:var(--navy);}
+.virtual-intro{text-align:center;max-width:640px;margin:0 auto 64px;}
+.virtual-intro h2{font-family:'Cormorant Garamond',serif;font-size:clamp(32px,4vw,52px);font-weight:700;color:var(--cream);margin-bottom:12px;}
+.virtual-intro p{font-size:16px;color:rgba(245,240,232,0.6);line-height:1.75;}
+.platforms-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+.platform-card{background:var(--navy-s);border:1px solid var(--border);border-radius:16px;padding:32px;text-align:center;transition:0.25s;}
+.platform-card:hover{border-color:rgba(201,168,76,0.45);transform:translateY(-4px);}
+.platform-icon{width:56px;height:56px;border-radius:14px;background:rgba(199,32,40,0.1);border:1px solid rgba(199,32,40,0.2);margin:0 auto 20px;display:flex;align-items:center;justify-content:center;}
+.platform-icon svg{width:26px;height:26px;stroke:var(--crimson);}
+.platform-card h3{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:700;color:var(--cream);margin-bottom:8px;}
+.platform-card p{font-size:13px;color:rgba(245,240,232,0.5);line-height:1.65;}
+.platform-status{display:inline-block;font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;padding:4px 10px;border-radius:4px;margin-top:14px;}
+.platform-status.live{background:rgba(45,90,61,0.3);color:#5fba7d;}
+.platform-status.coming{background:rgba(201,168,76,0.1);color:var(--gold);}
+
+/* ESI PROCESS */
+.process-section{padding:96px 8%;background:var(--navy-s);}
+.process-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:64px;}
+.process-step{background:var(--navy);border:1px solid var(--border);border-radius:14px;padding:28px;position:relative;}
+.process-num{font-family:'Cormorant Garamond',serif;font-size:56px;font-weight:700;color:rgba(199,32,40,0.15);line-height:1;margin-bottom:12px;}
+.process-step h3{font-size:15px;font-weight:700;color:var(--cream);margin-bottom:8px;}
+.process-step p{font-size:13px;color:rgba(245,240,232,0.5);line-height:1.65;}
+.process-arrow{position:absolute;right:-13px;top:50%;transform:translateY(-50%);z-index:1;width:26px;height:26px;background:var(--navy-s);border:1px solid var(--border);border-radius:50%;display:flex;align-items:center;justify-content:center;}
+.process-arrow svg{width:12px;height:12px;stroke:var(--gold);}
+.process-step:last-child .process-arrow{display:none;}
+
+/* REQUIREMENTS */
+.reqs-section{padding:96px 8%;background:var(--navy);}
+.reqs-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;margin-top:48px;}
+.req-item{display:flex;align-items:flex-start;gap:16px;background:var(--navy-s);border:1px solid rgba(255,255,255,0.06);border-radius:12px;padding:24px;}
+.req-icon{width:40px;height:40px;border-radius:10px;background:rgba(199,32,40,0.1);border:1px solid rgba(199,32,40,0.2);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.req-icon svg{width:18px;height:18px;stroke:var(--crimson);}
+.req-body h4{font-size:14px;font-weight:700;color:var(--cream);margin-bottom:4px;}
+.req-body p{font-size:13px;color:rgba(245,240,232,0.5);line-height:1.6;}
+
+/* CTA */
+.esi-cta{padding:96px 8%;text-align:center;background:linear-gradient(135deg,var(--crimson) 0%,#8a1018 100%);}
+.esi-cta h2{font-family:'Cormorant Garamond',serif;font-size:clamp(36px,5vw,60px);font-weight:700;color:white;margin-bottom:16px;}
+.esi-cta p{font-size:18px;color:rgba(255,255,255,0.75);max-width:480px;margin:0 auto 40px;}
+.cta-btn-row{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;}
+.btn-white{display:inline-flex;align-items:center;gap:8px;background:white;color:var(--crimson);font-family:'DM Sans',sans-serif;font-size:14px;font-weight:700;padding:14px 32px;border-radius:8px;transition:0.2s;letter-spacing:0.01em;}
+.btn-white:hover{background:var(--cream);transform:translateY(-1px);}
+.btn-outline-white{display:inline-flex;align-items:center;gap:8px;background:transparent;color:white;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:700;padding:14px 32px;border-radius:8px;border:2px solid rgba(255,255,255,0.4);transition:0.2s;letter-spacing:0.01em;}
+.btn-outline-white:hover{border-color:white;background:rgba(255,255,255,0.1);}
+
+/* FOOTER */
+.footer-min{background:#070e1c;padding:32px 8%;border-top:1px solid rgba(255,255,255,0.05);display:flex;align-items:center;justify-content:space-between;}
+.footer-copy{font-size:12px;color:rgba(245,240,232,0.2);}
+.footer-links{display:flex;gap:20px;}
+.footer-links a{font-size:12px;color:rgba(245,240,232,0.2);transition:color 0.2s;}
+.footer-links a:hover{color:var(--cream);}
+
+/* REVEAL */
+.reveal{opacity:0;transform:translateY(32px);transition:opacity 0.65s ease,transform 0.65s ease;}
+.reveal.visible{opacity:1;transform:translateY(0);}
+
+@media(max-width:1024px){.sub-layout,.regular-layout{grid-template-columns:1fr;}.esi-intro-grid{grid-template-columns:1fr;}.process-grid{grid-template-columns:repeat(2,1fr);}.platforms-grid{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:768px){.reqs-grid{grid-template-columns:1fr;}.process-grid{grid-template-columns:1fr;}.platforms-grid{grid-template-columns:1fr;}.hero-stat-row{gap:28px;}.footer-min{flex-direction:column;gap:14px;text-align:center;}}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-logo">
+    <img src="../assets/icons/fws-logo.svg" alt="FWS">
+    <div class="nav-logo-name">Family World School Cooperative</div>
+  </div>
+  <a href="../index.html" class="nav-back">
+    <svg viewBox="0 0 16 16"><path d="M10 4l-4 4 4 4"/></svg>
+    Back to Home
+  </a>
+</nav>
+
+<!-- HERO -->
+<section class="esi-hero">
+  <div class="esi-hero-bg">
+    <img src="../assets/images/card-substitute.jpg" alt="ESI Educators">
+  </div>
+  <div class="esi-hero-content reveal">
+    <div class="eyebrow">Educator Support Initiative</div>
+    <h1>Connecting <span>educators</span><br>to institutions<br>that need them</h1>
+    <p>ESI is FWS's flagship staffing program - placing qualified substitute and regular educators into independent schools, home school cooperatives, and learning centers across the network.</p>
+    <div class="hero-badge-row">
+      <div class="hero-badge">
+        <svg viewBox="0 0 24 24"><path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01"/></svg>
+        Substitute Program
+      </div>
+      <div class="hero-badge">
+        <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+        Semester Contracts
+      </div>
+      <div class="hero-badge">
+        <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        Vetted Educators
+      </div>
+    </div>
+    <div class="hero-stat-row">
+      <div>
+        <div class="hero-stat-val">2</div>
+        <div class="hero-stat-lbl">ESI Tracks</div>
+      </div>
+      <div>
+        <div class="hero-stat-val">3</div>
+        <div class="hero-stat-lbl">Platforms</div>
+      </div>
+      <div>
+        <div class="hero-stat-val">1</div>
+        <div class="hero-stat-lbl">Booking System</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT IS ESI -->
+<section class="what-esi">
+  <div class="section-header reveal">
+    <div class="eyebrow" style="justify-content:center;">Two Tracks</div>
+    <h2>Choose Your ESI Engagement</h2>
+    <p>Institutions can access educators on short notice or build long-term teaching relationships - both under the ESI umbrella.</p>
+  </div>
+  <div class="esi-intro-grid">
+    <div class="esi-intro-card substitute reveal">
+      <div class="card-tag crimson">Track A</div>
+      <div class="card-icon crimson">
+        <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+      </div>
+      <h3>Substitute Educators</h3>
+      <p>Short-notice coverage for unexpected absences. Educators post their availability on the FWS calendar. Institutions select and book directly via Square Appointments. Ideal for day-of or week-ahead coverage needs.</p>
+    </div>
+    <div class="esi-intro-card regular reveal">
+      <div class="card-tag gold">Track B</div>
+      <div class="card-icon gold">
+        <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+      </div>
+      <h3>Regular Educators</h3>
+      <p>Semester-length contracts with consistent weekly schedules. Institutions gain a dependable educator who becomes familiar with students and curriculum. Structured agreements with clear rates and absence policies.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SUBSTITUTE SECTION -->
+<section class="sub-section">
+  <div class="sub-layout">
+    <div class="sub-content reveal">
+      <div class="eyebrow">Track A</div>
+      <h2>Substitute Educators - How It Works</h2>
+      <p>FWS substitute educators are ready-to-deploy professionals who can step into a classroom, co-op session, or virtual learning environment at short notice. No agency overhead. No long hiring timelines.</p>
+      <div class="how-it-list">
+        <div class="how-item">
+          <div class="how-num">1</div>
+          <div class="how-item-body">
+            <h4>Educator posts availability</h4>
+            <p>FWS educators update their availability calendar showing open days and session windows.</p>
+          </div>
+        </div>
+        <div class="how-item">
+          <div class="how-num">2</div>
+          <div class="how-item-body">
+            <h4>Institution finds a match</h4>
+            <p>Browse educator profiles filtered by subject area, age group, and available dates.</p>
+          </div>
+        </div>
+        <div class="how-item">
+          <div class="how-num">3</div>
+          <div class="how-item-body">
+            <h4>Book via Square Appointments</h4>
+            <p>Confirm the booking through the FWS booking portal - integrated Square Appointments system.</p>
+          </div>
+        </div>
+        <div class="how-item">
+          <div class="how-num">4</div>
+          <div class="how-item-body">
+            <h4>Educator shows up - on time</h4>
+            <p>Zoom, Google Meets, or in-person depending on the institution's setup. FWS handles the handoff.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="reveal">
+      <div class="rate-card">
+        <div class="rate-card-head">
+          <h3>Substitute Rate Structure</h3>
+          <p>Transparent pricing - no surprises</p>
+        </div>
+        <div class="rate-card-body">
+          <div class="rate-row">
+            <div>
+              <div class="rate-label">Short Session</div>
+              <div class="rate-note">Up to 2 hours</div>
+            </div>
+            <div class="rate-value">Per Hour Rate</div>
+          </div>
+          <div class="rate-row">
+            <div>
+              <div class="rate-label">Full Day</div>
+              <div class="rate-note">After 2 hours</div>
+            </div>
+            <div class="rate-value">Daily Rate</div>
+          </div>
+          <div class="rate-row">
+            <div>
+              <div class="rate-label">Booking Method</div>
+            </div>
+            <div class="rate-value" style="font-size:13px;">Square Appointments</div>
+          </div>
+          <div class="rate-cap">
+            <p><strong>Rate note:</strong> Specific hourly and daily rates are confirmed at the time of booking and vary by educator qualifications and subject area. Contact FWS for current rate schedules.</p>
+          </div>
+          <div class="availability-info">
+            <div class="avail-item">
+              <div class="avail-dot"></div>
+              <p>Educators update availability weekly</p>
+            </div>
+            <div class="avail-item">
+              <div class="avail-dot"></div>
+              <p>Calendar visible to member institutions</p>
+            </div>
+            <div class="avail-item">
+              <div class="avail-dot"></div>
+              <p>Booking confirmed within 24 hours</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REGULAR EDUCATOR SECTION -->
+<section class="regular-section">
+  <div class="regular-layout">
+    <div class="reveal">
+      <div class="contract-card">
+        <div class="contract-head">
+          <h3>Semester Contract</h3>
+          <p>Consistent. Committed. Contractual.</p>
+        </div>
+        <div class="contract-body">
+          <div class="contract-feature">
+            <div class="cf-icon"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></div>
+            <div class="cf-body">
+              <h4>Fixed Weekly Schedule</h4>
+              <p>Same days, same times every week for the full semester. Predictability for institutions and students.</p>
+            </div>
+          </div>
+          <div class="contract-feature">
+            <div class="cf-icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div>
+            <div class="cf-body">
+              <h4>Written Agreement</h4>
+              <p>Formal contract outlines hours, subjects, duration, compensation, and absence policy for both parties.</p>
+            </div>
+          </div>
+          <div class="contract-feature">
+            <div class="cf-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+            <div class="cf-body">
+              <h4>Semester Duration</h4>
+              <p>Runs for the full academic semester. Renewal is by mutual agreement before the next term begins.</p>
+            </div>
+          </div>
+          <div class="contract-feature">
+            <div class="cf-icon"><svg viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+            <div class="cf-body">
+              <h4>Agreed Compensation</h4>
+              <p>Rate negotiated and locked in at contract signing. Predictable income for educator, predictable cost for institution.</p>
+            </div>
+          </div>
+          <div class="penalty-box">
+            <div class="penalty-box-label">Absence Policy</div>
+            <p>Regular educators who miss scheduled sessions without sufficient notice are subject to the absence penalty clause outlined in the contract. This protects institutions from disruption and ensures educator accountability.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="regular-content reveal">
+      <div class="eyebrow">Track B</div>
+      <h2>Regular Educators - Semester Contracts</h2>
+      <p>When an institution needs more than a one-off substitute, ESI's regular educator track provides a semester-long teaching relationship. The educator becomes a familiar face - building rapport with students and deep knowledge of the institution's curriculum approach.</p>
+      <p>This is ideal for independent schools running structured programs, home school cooperatives with recurring group sessions, and learning centers offering consistent subject support.</p>
+      <div class="benefits-list">
+        <div class="benefit-item">
+          <div class="benefit-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+          <p>Educator becomes familiar with your students</p>
+        </div>
+        <div class="benefit-item">
+          <div class="benefit-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+          <p>No re-briefing every session - continuity built in</p>
+        </div>
+        <div class="benefit-item">
+          <div class="benefit-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+          <p>Contract protects both parties - clear expectations</p>
+        </div>
+        <div class="benefit-item">
+          <div class="benefit-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+          <p>Works via Zoom, Google Meets, or in-person</p>
+        </div>
+        <div class="benefit-item">
+          <div class="benefit-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+          <p>Absence penalty clause included for educator accountability</p>
+        </div>
+        <div class="benefit-item">
+          <div class="benefit-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+          <p>Supports home school, co-ops, and private institutions</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VIRTUAL CLASSROOM -->
+<section class="virtual-section">
+  <div class="virtual-intro reveal">
+    <div class="eyebrow" style="justify-content:center;">Delivery Platforms</div>
+    <h2>Virtual Classroom Integration</h2>
+    <p>ESI educators deliver sessions through industry-standard virtual classroom tools. FWS provides the connection - educators and institutions confirm the preferred platform at contract or booking stage.</p>
+  </div>
+  <div class="platforms-grid">
+    <div class="platform-card reveal">
+      <div class="platform-icon">
+        <svg viewBox="0 0 24 24"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg>
+      </div>
+      <h3>Zoom</h3>
+      <p>Primary platform for all ESI sessions. Educator posts their Zoom link via their profile. Institutions and students join directly.</p>
+      <span class="platform-status live">Live - MVP</span>
+    </div>
+    <div class="platform-card reveal">
+      <div class="platform-icon">
+        <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+      </div>
+      <h3>Google Meets</h3>
+      <p>Supported for institutions already in the Google Workspace ecosystem. Educator shares meet link at session start.</p>
+      <span class="platform-status live">Live - MVP</span>
+    </div>
+    <div class="platform-card reveal">
+      <div class="platform-icon">
+        <svg viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+      </div>
+      <h3>VEDAMO</h3>
+      <p>Purpose-built virtual classroom SaaS with whiteboard, breakout rooms, and attendance tracking. Under evaluation for regular educators.</p>
+      <span class="platform-status coming">Phase 2</span>
+    </div>
+  </div>
+</section>
+
+<!-- APPLICATION PROCESS -->
+<section class="process-section">
+  <div class="section-header reveal">
+    <div class="eyebrow" style="justify-content:center;">How to Apply</div>
+    <h2>Joining ESI as an Educator</h2>
+    <p>Four steps from application to your first session.</p>
+  </div>
+  <div class="process-grid">
+    <div class="process-step reveal">
+      <div class="process-num">01</div>
+      <h3>Submit Application</h3>
+      <p>Complete the FWS Educator Application Form with your qualifications, subject areas, age groups, and availability preferences.</p>
+      <div class="process-arrow">
+        <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+      </div>
+    </div>
+    <div class="process-step reveal">
+      <div class="process-num">02</div>
+      <h3>Profile Review</h3>
+      <p>FWS reviews your credentials and background. We verify qualifications and match your profile to institutional needs in the network.</p>
+      <div class="process-arrow">
+        <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+      </div>
+    </div>
+    <div class="process-step reveal">
+      <div class="process-num">03</div>
+      <h3>Onboarding Call</h3>
+      <p>A brief orientation call covers the FWS booking system, calendar setup, contract process, and platform integration.</p>
+      <div class="process-arrow">
+        <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+      </div>
+    </div>
+    <div class="process-step reveal">
+      <div class="process-num">04</div>
+      <h3>Go Live</h3>
+      <p>Your availability appears in the FWS network. Institutions can find and book you. Start teaching - start earning.</p>
+    </div>
+  </div>
+</section>
+
+<!-- REQUIREMENTS -->
+<section class="reqs-section">
+  <div class="section-header reveal">
+    <div class="eyebrow" style="justify-content:center;">Requirements</div>
+    <h2>Who Can Join ESI</h2>
+    <p>FWS maintains quality standards to protect institutions, students, and educators alike.</p>
+  </div>
+  <div class="reqs-grid">
+    <div class="req-item reveal">
+      <div class="req-icon"><svg viewBox="0 0 24 24"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg></div>
+      <div class="req-body">
+        <h4>Teaching Qualification</h4>
+        <p>A teaching degree, diploma, or recognised alternative credential in your subject area is required for ESI enrollment.</p>
+      </div>
+    </div>
+    <div class="req-item reveal">
+      <div class="req-icon"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div>
+      <div class="req-body">
+        <h4>Stable Internet + Device</h4>
+        <p>Reliable high-speed internet and a device capable of video conferencing is required for all virtual delivery.</p>
+      </div>
+    </div>
+    <div class="req-item reveal">
+      <div class="req-icon"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg></div>
+      <div class="req-body">
+        <h4>Background Check Consent</h4>
+        <p>All ESI educators consent to a background verification process before activation in the network. Protecting our learners is non-negotiable.</p>
+      </div>
+    </div>
+    <div class="req-item reveal">
+      <div class="req-icon"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></div>
+      <div class="req-body">
+        <h4>Availability Commitment</h4>
+        <p>Substitute educators must update their calendar weekly. Regular educators must commit to a full semester schedule before contract signing.</p>
+      </div>
+    </div>
+    <div class="req-item reveal">
+      <div class="req-icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div>
+      <div class="req-body">
+        <h4>Agreement to FWS Terms</h4>
+        <p>All educators sign the FWS Educator Agreement covering conduct, rates, booking protocol, and absence policies.</p>
+      </div>
+    </div>
+    <div class="req-item reveal">
+      <div class="req-icon"><svg viewBox="0 0 24 24"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg></div>
+      <div class="req-body">
+        <h4>Platform Proficiency</h4>
+        <p>Comfort with Zoom or Google Meets is essential. VEDAMO training will be provided for regular educators in Phase 2 of the program.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="esi-cta">
+  <h2 class="reveal">Ready to join the ESI network?</h2>
+  <p class="reveal">Whether you're an educator looking to earn or an institution seeking reliable staffing - ESI connects you.</p>
+  <div class="cta-btn-row reveal">
+    <a href="educators.html" class="btn-white">
+      Apply as Educator
+      <svg width="16" height="16" viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+    </a>
+    <a href="institutions.html" class="btn-outline-white">
+      Institutions - Learn More
+      <svg width="16" height="16" viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+    </a>
+  </div>
+</section>
+
+<footer class="footer-min">
+  <div class="footer-copy">&copy; 2026 Family World School Cooperative. Part of It's My Miracle nonprofit.</div>
+  <div class="footer-links">
+    <a href="../index.html">Home</a>
+    <a href="educators.html">Educators</a>
+    <a href="booking.html">Booking</a>
+  </div>
+</footer>
+
+<script>
+const io = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('visible'); io.unobserve(e.target); } });
+}, { threshold: 0.1, rootMargin: '0px 0px -48px 0px' });
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
+</body>
+</html>
